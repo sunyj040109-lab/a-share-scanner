@@ -2,8 +2,8 @@ name: A-share 14:30 intraday scan
 
 on:
   schedule:
-    # Start preparation at 14:27 Beijing time; scanner waits until 14:30.
-    - cron: "27 6 * * 1-5"
+    # Start preparation at 14:17 Beijing time; scanner waits until 14:30.
+    - cron: "17 6 * * 1-5"
   workflow_dispatch:
 
 permissions:
@@ -56,5 +56,6 @@ jobs:
           path: |
             REPORT.md
             docs/
+
 
 
