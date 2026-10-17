@@ -188,12 +188,12 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, default=Path(__file__).resolve().parent)
     parser.add_argument("--status-file", type=Path, help="供 GitHub Actions 区分新报告与休市跳过")
-    parser.add_argument("--wait-until-window", action="store_true", help="14:20 后启动时等待至北京时间 14:30")
+    parser.add_argument("--wait-until-window", action="store_true", help="14:15 后启动时等待至北京时间 14:30")
     args = parser.parse_args(argv)
     if args.status_file:
         args.status_file.write_text("false", encoding="utf-8")
     now = datetime.now(TZ)
-    if args.wait_until_window and clock_time(14, 20) <= now.time() < WINDOW_START:
+    if args.wait_until_window and clock_time(14, 15) <= now.time() < WINDOW_START:
         target = now.replace(hour=14, minute=30, second=0, microsecond=0)
         time.sleep((target - now).total_seconds())
         now = datetime.now(TZ)
@@ -220,4 +220,5 @@ def main(argv=None):
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
 
