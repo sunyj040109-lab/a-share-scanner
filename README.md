@@ -1,13 +1,13 @@
 # A 股 14:30 盘中候选扫描
 
-每个交易日北京时间约 14:30 扫描一次沪深主板、创业板、北交所 A 股，排除科创板。结果写入 [REPORT.md](REPORT.md)，在手机 GitHub App 或浏览器中可直接阅读；全量及筛选结果同时保存为 CSV / JSON。`docs/index.html` 是可选的手机网页。本版是盘中量价初筛，尚未实现用户战法中的历史涨停、爆量锚点和主线板块判断。
+每个交易日北京时间约 14:30 扫描一次沪深主板、创业板、北交所 A 股，排除科创板。结果写入 [REPORT.md](REPORT.md)，在手机 GitHub App 或浏览器中可直接阅读；全量及筛选结果同时保存为 CSV / JSON。[手机网页](https://sunyj040109-lab.github.io/a-share-scanner/) 从 `main/docs` 发布，首次扫描前显示占位说明。本版是盘中量价初筛，尚未实现用户战法中的历史涨停、爆量锚点和主线板块判断。
 
 ## 部署
 
 1. 把本目录文件放在你有写入权限的 GitHub 仓库**根目录**，并推送到默认分支。
 2. 在仓库的 **Actions** 页面允许工作流运行。工作流名称为 **A-share 14:30 intraday scan**；手动触发也只会在北京时间 14:30–14:45 窗口内执行。GitHub 的 `schedule` 只会从默认分支运行。
-3. 需要网页链接时，在仓库 **Settings → Pages → Build and deployment** 将 Source 选为 **GitHub Actions**，再在 **Settings → Secrets and variables → Actions → Variables** 创建 `ENABLE_PAGES=true`。后续运行会发布 `docs/`。不启用 Pages 时，`REPORT.md` 仍可在 GitHub 上直接阅读。
-4. 如果仓库策略禁止 `GITHUB_TOKEN` 写入或默认分支受保护，需要允许此工作流写入内容；否则报告仍会留在失败运行的日志中，仓库文件不会更新。
+3. 此仓库的 **Settings → Pages → Build and deployment** 已设为从 `main` 分支的 `/docs` 发布。工作流提交新报告后，GitHub Pages 会自动重建网页。
+4. 如果仓库策略禁止 `GITHUB_TOKEN` 写入或默认分支受保护，需要允许此工作流写入内容；否则报告不会写入仓库或网页。
 
 ## 定时与交易日
 
