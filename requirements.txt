@@ -1,0 +1,4 @@
+akshare==1.19.1
+exchange-calendars==4.13.2
+
+

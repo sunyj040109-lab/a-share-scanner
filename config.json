@@ -1,0 +1,8 @@
+{
+  "min_change_pct": 3.0,
+  "min_turnover_pct": 2.0,
+  "min_amount_cny": 100000000,
+  "max_report_rows": 100
+}
+
+

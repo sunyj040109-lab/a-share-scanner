@@ -1,0 +1,68 @@
+name: A-share 14:30 intraday scan
+
+on:
+  schedule:
+    # Start preparation at 14:27 Beijing time; scanner waits until 14:30.
+    - cron: "27 6 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: a-share-intraday-scan
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Scan at 14:30 Beijing time
+        id: scan
+        shell: bash
+        run: |
+          python scanner.py --wait-until-window --status-file "$RUNNER_TEMP/scan-status"
+          echo "updated=$(cat "$RUNNER_TEMP/scan-status")" >> "$GITHUB_OUTPUT"
+      - name: Save fresh report to repository
+        if: steps.scan.outputs.updated == 'true'
+        shell: bash
+        run: |
+          git add REPORT.md docs
+          if git diff --cached --quiet; then
+            echo "No new data to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update A-share scan $(date -u +%F)"
+          git push
+      - name: Upload mobile report and data
+        if: always() && steps.scan.outputs.updated == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: a-share-scan
+          path: |
+            REPORT.md
+            docs/
+      - name: Package optional GitHub Pages site
+        if: vars.ENABLE_PAGES == 'true' && steps.scan.outputs.updated == 'true'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: docs
+      - name: Deploy optional GitHub Pages site
+        if: vars.ENABLE_PAGES == 'true' && steps.scan.outputs.updated == 'true'
+        uses: actions/deploy-pages@v4
+
+
