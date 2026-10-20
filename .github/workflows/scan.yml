@@ -2,8 +2,8 @@ name: A-share 14:30 intraday scan
 
 on:
   schedule:
-    # Start preparation at 14:17 Beijing time; scanner waits until 14:30.
-    - cron: "17 6 * * 1-5"
+    # Start well before 14:30 Beijing time to absorb GitHub schedule delays.
+    - cron: "7 5 * * 1-5"
   workflow_dispatch:
 
 permissions:
@@ -16,7 +16,7 @@ concurrency:
 jobs:
   scan:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 110
     steps:
       - uses: actions/checkout@v4
         with:
@@ -33,7 +33,7 @@ jobs:
         id: scan
         shell: bash
         run: |
-          python scanner.py --wait-until-window --status-file "$RUNNER_TEMP/scan-status"
+          python scanner.py --wait-until-window --require-window --status-file "$RUNNER_TEMP/scan-status"
           echo "updated=$(cat "$RUNNER_TEMP/scan-status")" >> "$GITHUB_OUTPUT"
       - name: Save fresh report to repository
         if: steps.scan.outputs.updated == 'true'
@@ -56,6 +56,5 @@ jobs:
           path: |
             REPORT.md
             docs/
-
 
 
