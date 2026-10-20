@@ -20,12 +20,11 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: python -m pip install -r requirements.txt
-      - name: Check Tencent stock coverage without publishing
+      - name: Check scanner coverage without publishing
         run: |
           python - <<'PY'
           import akshare
-          frame = akshare.stock_zh_a_spot_tx()
-          print('rows', len(frame), 'columns', list(frame.columns))
-          print('sample', frame.head(2).to_dict('records'))
-          print('code samples', frame['code'].astype(str).head(20).tolist())
+          from scanner import fetch_universe
+          rows, counts = fetch_universe(akshare)
+          print('validated counts', counts, 'total', len(rows))
           PY
