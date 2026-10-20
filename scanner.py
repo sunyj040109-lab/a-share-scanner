@@ -17,6 +17,7 @@ from zoneinfo import ZoneInfo
 TZ = ZoneInfo("Asia/Shanghai")
 WINDOW_START = clock_time(14, 30)
 WINDOW_END = clock_time(14, 45)
+WAIT_START = clock_time(13, 0)
 BOARDS = {
     "SH": ("stock_sh_a_spot_em", 1000),
     "SZ": ("stock_sz_a_spot_em", 1500),
@@ -188,17 +189,22 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, default=Path(__file__).resolve().parent)
     parser.add_argument("--status-file", type=Path, help="供 GitHub Actions 区分新报告与休市跳过")
-    parser.add_argument("--wait-until-window", action="store_true", help="14:15 后启动时等待至北京时间 14:30")
+    parser.add_argument("--wait-until-window", action="store_true", help="13:00 后启动时等待至北京时间 14:30")
+    parser.add_argument("--require-window", action="store_true", help="交易日错过扫描窗口时报错，供定时任务识别")
     args = parser.parse_args(argv)
     if args.status_file:
         args.status_file.write_text("false", encoding="utf-8")
     now = datetime.now(TZ)
-    if args.wait_until_window and clock_time(14, 15) <= now.time() < WINDOW_START:
+    if args.wait_until_window and WAIT_START <= now.time() < WINDOW_START:
         target = now.replace(hour=14, minute=30, second=0, microsecond=0)
         time.sleep((target - now).total_seconds())
         now = datetime.now(TZ)
     if not in_scan_window(now):
-        print("当前不在北京时间 14:30–14:45 盘中扫描窗口，跳过。")
+        message = "当前不在北京时间 14:30–14:45 盘中扫描窗口"
+        if args.require_window and trading_day(now.date()):
+            print(message + "，交易日报告未生成。", file=sys.stderr)
+            return 1
+        print(message + "，跳过。")
         return 0
     if not trading_day(now.date()):
         print(f"{now.date()} 不是交易日，跳过。")
@@ -220,5 +226,4 @@ def main(argv=None):
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
 
