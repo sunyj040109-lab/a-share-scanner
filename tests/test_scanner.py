@@ -8,7 +8,7 @@ from zoneinfo import ZoneInfo
 
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from scanner import board_for, fetch_universe, in_scan_window, main, normalize, number, select, trading_day, write_outputs
+from scanner import board_for, fetch_universe, in_scan_window, main, normalize, normalize_tx, number, select, trading_day, write_outputs
 
 
 class FakeCalendar:
@@ -18,15 +18,15 @@ class FakeCalendar:
 
 
 class FakeFrame:
-    columns = ["代码", "名称", "最新价", "涨跌幅", "换手率", "成交额", "成交量"]
+    columns = ["code", "name", "zxj", "zdf", "hsl", "turnover", "volume"]
     empty = False
 
     def to_dict(self, kind):
-        return [{"代码": "600000", "名称": "甲", "最新价": 10, "涨跌幅": 4, "换手率": 3, "成交额": 2e8, "成交量": 100}]
+        return [{"code": "sh600000", "name": "甲", "zxj": 10, "zdf": 4, "hsl": 3, "turnover": 20000, "volume": 100}]
 
 
 class FakeAK:
-    def stock_sh_a_spot_em(self):
+    def stock_zh_a_spot_tx(self):
         return FakeFrame()
 
 
@@ -54,6 +54,16 @@ class ScannerTests(unittest.TestCase):
         config = {"min_change_pct": 3, "min_turnover_pct": 2, "min_amount_cny": 100000000, "max_report_rows": 100}
         self.assertEqual([r["code"] for r in select(rows, config)], ["300001"])
         self.assertIsNone(number(float("nan")))
+
+    def test_tencent_units_and_board_filter(self):
+        rows = normalize_tx([
+            {"code": "sh600000", "name": "甲", "zxj": "10", "zdf": "4", "hsl": "3", "turnover": "20000", "volume": "100"},
+            {"code": "sh688001", "name": "科创板", "zxj": "10"},
+            {"code": "bj920001", "name": "乙", "zxj": "8", "turnover": "-"},
+        ])
+        self.assertEqual([row["code"] for row in rows], ["600000", "920001"])
+        self.assertEqual(rows[0]["amount_cny"], 200000000)
+        self.assertIsNone(rows[1]["amount_cny"])
 
     def test_calendar_and_reports(self):
         self.assertTrue(trading_day(date(2026, 10, 16), FakeCalendar()))
