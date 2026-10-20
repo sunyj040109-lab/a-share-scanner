@@ -1,13 +1,14 @@
 import json
 import tempfile
 import unittest
+from unittest.mock import patch
 from datetime import date, datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from scanner import board_for, fetch_universe, in_scan_window, normalize, number, select, trading_day, write_outputs
+from scanner import board_for, fetch_universe, in_scan_window, main, normalize, number, select, trading_day, write_outputs
 
 
 class FakeCalendar:
@@ -77,6 +78,12 @@ class ScannerTests(unittest.TestCase):
         self.assertTrue(in_scan_window(datetime(2026, 10, 16, 14, 30, tzinfo=tz)))
         self.assertTrue(in_scan_window(datetime(2026, 10, 16, 14, 44, tzinfo=tz)))
         self.assertFalse(in_scan_window(datetime(2026, 10, 16, 14, 46, tzinfo=tz)))
+
+    def test_scheduled_run_reports_missed_window(self):
+        with patch("scanner.in_scan_window", return_value=False), patch("scanner.trading_day", return_value=True):
+            self.assertEqual(main(["--require-window"]), 1)
+        with patch("scanner.in_scan_window", return_value=False), patch("scanner.trading_day", return_value=False):
+            self.assertEqual(main(["--require-window"]), 0)
 
 
 if __name__ == "__main__":
