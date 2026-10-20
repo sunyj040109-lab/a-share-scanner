@@ -18,11 +18,7 @@ TZ = ZoneInfo("Asia/Shanghai")
 WINDOW_START = clock_time(14, 30)
 WINDOW_END = clock_time(14, 45)
 WAIT_START = clock_time(13, 0)
-BOARDS = {
-    "SH": ("stock_sh_a_spot_em", 1000),
-    "SZ": ("stock_sz_a_spot_em", 1500),
-    "BJ": ("stock_bj_a_spot_em", 100),
-}
+MIN_SOURCE_COUNTS = {"SH": 1000, "SZ": 1500, "BJ": 100}
 FIELDS = ["code", "name", "board", "price", "change_pct", "turnover_pct", "amount_cny", "volume_lots"]
 LABELS = {"SH": "沪市主板", "SZ_MAIN": "深市主板", "GEM": "创业板", "BJ": "北交所"}
 
@@ -96,18 +92,42 @@ def normalize(source: str, records: list[dict]) -> list[dict]:
     return output
 
 
+def normalize_tx(records: list[dict]) -> list[dict]:
+    output = []
+    for raw in records:
+        raw_code = str(raw.get("code", "")).strip().lower()
+        source, code = raw_code[:2].upper(), raw_code[2:]
+        board = board_for(source, code)
+        name = str(raw.get("name", "")).strip()
+        if not board or not name or name.lower() in ("nan", "none", "-"):
+            continue
+        amount = number(raw.get("turnover"))
+        output.append({
+            "code": code, "name": name, "board": board,
+            "price": number(raw.get("zxj")),
+            "change_pct": number(raw.get("zdf")),
+            "turnover_pct": number(raw.get("hsl")),
+            # 腾讯 turnover 的单位为万元，报告统一使用元。
+            "amount_cny": None if amount is None else amount * 10000,
+            "volume_lots": number(raw.get("volume")),
+        })
+    return output
+
+
 def fetch_universe(ak) -> tuple[list[dict], dict]:
-    rows, counts = [], {}
-    for source, (method_name, minimum) in BOARDS.items():
-        frame = retry(source, getattr(ak, method_name))
-        required = {"代码", "名称", "最新价", "涨跌幅", "换手率", "成交额", "成交量"}
-        if frame is None or frame.empty or not required.issubset(frame.columns):
-            raise RuntimeError(f"{source} 行情为空或缺少必要字段")
-        current = normalize(source, frame.to_dict("records"))
-        if len(current) < minimum:
-            raise RuntimeError(f"{source} 仅有 {len(current)} 条合格股票，低于防截断阈值 {minimum}")
-        counts[source] = len(current)
-        rows.extend(current)
+    frame = retry("Tencent 沪深京", ak.stock_zh_a_spot_tx)
+    required = {"code", "name", "zxj", "zdf", "hsl", "turnover", "volume"}
+    if frame is None or frame.empty or not required.issubset(frame.columns):
+        raise RuntimeError("Tencent 行情为空或缺少必要字段")
+    rows = normalize_tx(frame.to_dict("records"))
+    counts = {
+        "SH": sum(row["board"] == "SH" for row in rows),
+        "SZ": sum(row["board"] in ("SZ_MAIN", "GEM") for row in rows),
+        "BJ": sum(row["board"] == "BJ" for row in rows),
+    }
+    for source, minimum in MIN_SOURCE_COUNTS.items():
+        if counts[source] < minimum:
+            raise RuntimeError(f"{source} 仅有 {counts[source]} 条合格股票，低于防截断阈值 {minimum}")
     codes = [row["code"] for row in rows]
     if len(codes) != len(set(codes)):
         raise RuntimeError("不同市场出现重复股票代码，请检查数据源")
@@ -146,7 +166,7 @@ def write_outputs(root: Path, day: date, captured: datetime, rows: list[dict], c
     summary = {
         "trade_date": day.isoformat(), "captured_at_beijing": captured.isoformat(timespec="seconds"),
         "scan_type": "intraday_1430", "scheduled_time_beijing": "14:30",
-        "source": "AKShare / Eastmoney", "universe_count": len(rows), "selected_count": len(chosen),
+        "source": "AKShare / Tencent", "universe_count": len(rows), "selected_count": len(chosen),
         "boards": board_counts, "source_counts": counts, "filters": config,
         "missing_numeric_rows": sum(any(row[field] is None for field in FIELDS[3:]) for row in rows),
     }
