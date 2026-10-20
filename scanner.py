@@ -197,8 +197,11 @@ def main(argv=None):
     now = datetime.now(TZ)
     if args.wait_until_window and WAIT_START <= now.time() < WINDOW_START:
         target = now.replace(hour=14, minute=30, second=0, microsecond=0)
-        time.sleep((target - now).total_seconds())
-        now = datetime.now(TZ)
+        while now < target:
+            remaining = (target - now).total_seconds()
+            print(f"等待北京时间 14:30 扫描，剩余约 {math.ceil(remaining / 60)} 分钟。", flush=True)
+            time.sleep(min(60, remaining))
+            now = datetime.now(TZ)
     if not in_scan_window(now):
         message = "当前不在北京时间 14:30–14:45 盘中扫描窗口"
         if args.require_window and trading_day(now.date()):
