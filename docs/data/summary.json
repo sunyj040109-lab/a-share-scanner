@@ -1,0 +1,27 @@
+{
+  "trade_date": "2026-10-21",
+  "captured_at_beijing": "2026-10-21T14:30:21+08:00",
+  "scan_type": "intraday_1430",
+  "scheduled_time_beijing": "14:30",
+  "source": "AKShare / Tencent",
+  "universe_count": 4954,
+  "selected_count": 267,
+  "boards": {
+    "沪市主板": 1697,
+    "深市主板": 1494,
+    "创业板": 1411,
+    "北交所": 352
+  },
+  "source_counts": {
+    "SH": 1697,
+    "SZ": 2905,
+    "BJ": 352
+  },
+  "filters": {
+    "min_change_pct": 3.0,
+    "min_turnover_pct": 2.0,
+    "min_amount_cny": 100000000,
+    "max_report_rows": 100
+  },
+  "missing_numeric_rows": 0
+}

@@ -1,0 +1,2672 @@
+[
+  {
+    "code": "920296",
+    "name": "N文峰",
+    "board": "BJ",
+    "price": 37.54,
+    "change_pct": 227.86,
+    "turnover_pct": 90.89,
+    "amount_cny": 717240000.0,
+    "volume_lots": 181781.0
+  },
+  {
+    "code": "300296",
+    "name": "利亚德",
+    "board": "GEM",
+    "price": 5.63,
+    "change_pct": 20.04,
+    "turnover_pct": 12.84,
+    "amount_cny": 1578370000.0,
+    "volume_lots": 2981116.0
+  },
+  {
+    "code": "300006",
+    "name": "莱美药业",
+    "board": "GEM",
+    "price": 9.3,
+    "change_pct": 20.0,
+    "turnover_pct": 21.1,
+    "amount_cny": 1934390000.0,
+    "volume_lots": 2228283.0
+  },
+  {
+    "code": "301159",
+    "name": "三维天地",
+    "board": "GEM",
+    "price": 38.76,
+    "change_pct": 20.0,
+    "turnover_pct": 13.97,
+    "amount_cny": 262930000.0,
+    "volume_lots": 74061.0
+  },
+  {
+    "code": "301102",
+    "name": "兆讯传媒",
+    "board": "GEM",
+    "price": 11.32,
+    "change_pct": 19.03,
+    "turnover_pct": 7.83,
+    "amount_cny": 353400000.0,
+    "volume_lots": 317773.0
+  },
+  {
+    "code": "301486",
+    "name": "致尚科技",
+    "board": "GEM",
+    "price": 209.22,
+    "change_pct": 16.84,
+    "turnover_pct": 14.61,
+    "amount_cny": 2197880000.0,
+    "volume_lots": 106538.0
+  },
+  {
+    "code": "301313",
+    "name": "凡拓数创",
+    "board": "GEM",
+    "price": 53.36,
+    "change_pct": 14.02,
+    "turnover_pct": 40.92,
+    "amount_cny": 1686180000.0,
+    "volume_lots": 322121.0
+  },
+  {
+    "code": "300839",
+    "name": "博汇股份",
+    "board": "GEM",
+    "price": 16.24,
+    "change_pct": 13.09,
+    "turnover_pct": 11.56,
+    "amount_cny": 492000000.0,
+    "volume_lots": 329102.0
+  },
+  {
+    "code": "300096",
+    "name": "易联众",
+    "board": "GEM",
+    "price": 10.5,
+    "change_pct": 11.7,
+    "turnover_pct": 8.03,
+    "amount_cny": 353420000.0,
+    "volume_lots": 345473.0
+  },
+  {
+    "code": "600252",
+    "name": "中恒集团",
+    "board": "SH",
+    "price": 2.38,
+    "change_pct": 10.19,
+    "turnover_pct": 8.12,
+    "amount_cny": 605770000.0,
+    "volume_lots": 2583974.0
+  },
+  {
+    "code": "002086",
+    "name": "东方海洋",
+    "board": "SZ_MAIN",
+    "price": 2.39,
+    "change_pct": 10.14,
+    "turnover_pct": 17.58,
+    "amount_cny": 658880000.0,
+    "volume_lots": 2779300.0
+  },
+  {
+    "code": "600202",
+    "name": "哈空调",
+    "board": "SH",
+    "price": 5.57,
+    "change_pct": 10.08,
+    "turnover_pct": 14.31,
+    "amount_cny": 297480000.0,
+    "volume_lots": 548451.0
+  },
+  {
+    "code": "002591",
+    "name": "恒大高新",
+    "board": "SZ_MAIN",
+    "price": 6.88,
+    "change_pct": 10.08,
+    "turnover_pct": 16.12,
+    "amount_cny": 244180000.0,
+    "volume_lots": 360364.0
+  },
+  {
+    "code": "605388",
+    "name": "均瑶健康",
+    "board": "SH",
+    "price": 7.32,
+    "change_pct": 10.08,
+    "turnover_pct": 4.51,
+    "amount_cny": 192760000.0,
+    "volume_lots": 270537.0
+  },
+  {
+    "code": "600838",
+    "name": "上海九百",
+    "board": "SH",
+    "price": 9.09,
+    "change_pct": 10.05,
+    "turnover_pct": 8.09,
+    "amount_cny": 291960000.0,
+    "volume_lots": 324478.0
+  },
+  {
+    "code": "002696",
+    "name": "百洋股份",
+    "board": "SZ_MAIN",
+    "price": 10.52,
+    "change_pct": 10.04,
+    "turnover_pct": 15.54,
+    "amount_cny": 531020000.0,
+    "volume_lots": 519486.0
+  },
+  {
+    "code": "603330",
+    "name": "天洋新材",
+    "board": "SH",
+    "price": 10.09,
+    "change_pct": 10.03,
+    "turnover_pct": 15.05,
+    "amount_cny": 643760000.0,
+    "volume_lots": 651140.0
+  },
+  {
+    "code": "002835",
+    "name": "同为股份",
+    "board": "SZ_MAIN",
+    "price": 15.58,
+    "change_pct": 10.03,
+    "turnover_pct": 10.72,
+    "amount_cny": 212570000.0,
+    "volume_lots": 136632.0
+  },
+  {
+    "code": "002811",
+    "name": "郑中设计",
+    "board": "SZ_MAIN",
+    "price": 24.16,
+    "change_pct": 10.02,
+    "turnover_pct": 7.57,
+    "amount_cny": 501860000.0,
+    "volume_lots": 214235.0
+  },
+  {
+    "code": "002792",
+    "name": "通宇通讯",
+    "board": "SZ_MAIN",
+    "price": 32.09,
+    "change_pct": 10.01,
+    "turnover_pct": 14.07,
+    "amount_cny": 1497910000.0,
+    "volume_lots": 476837.0
+  },
+  {
+    "code": "603636",
+    "name": "南威软件",
+    "board": "SH",
+    "price": 9.78,
+    "change_pct": 10.01,
+    "turnover_pct": 15.56,
+    "amount_cny": 822200000.0,
+    "volume_lots": 903070.0
+  },
+  {
+    "code": "603999",
+    "name": "读者传媒",
+    "board": "SH",
+    "price": 7.47,
+    "change_pct": 10.01,
+    "turnover_pct": 11.55,
+    "amount_cny": 475390000.0,
+    "volume_lots": 665444.0
+  },
+  {
+    "code": "603138",
+    "name": "海量数据",
+    "board": "SH",
+    "price": 15.38,
+    "change_pct": 10.01,
+    "turnover_pct": 5.21,
+    "amount_cny": 229910000.0,
+    "volume_lots": 150238.0
+  },
+  {
+    "code": "601999",
+    "name": "出版传媒",
+    "board": "SH",
+    "price": 7.8,
+    "change_pct": 10.01,
+    "turnover_pct": 3.14,
+    "amount_cny": 133610000.0,
+    "volume_lots": 173236.0
+  },
+  {
+    "code": "603236",
+    "name": "移远通信",
+    "board": "SH",
+    "price": 83.72,
+    "change_pct": 10.0,
+    "turnover_pct": 12.45,
+    "amount_cny": 4155900000.0,
+    "volume_lots": 505981.0
+  },
+  {
+    "code": "603629",
+    "name": "利通电子",
+    "board": "SH",
+    "price": 92.03,
+    "change_pct": 10.0,
+    "turnover_pct": 11.16,
+    "amount_cny": 3643450000.0,
+    "volume_lots": 402419.0
+  },
+  {
+    "code": "002639",
+    "name": "雪人集团",
+    "board": "SZ_MAIN",
+    "price": 15.18,
+    "change_pct": 10.0,
+    "turnover_pct": 12.25,
+    "amount_cny": 1176470000.0,
+    "volume_lots": 808782.0
+  },
+  {
+    "code": "001216",
+    "name": "华瓷股份",
+    "board": "SZ_MAIN",
+    "price": 25.2,
+    "change_pct": 10.0,
+    "turnover_pct": 9.7,
+    "amount_cny": 575420000.0,
+    "volume_lots": 239337.0
+  },
+  {
+    "code": "603696",
+    "name": "安记食品",
+    "board": "SH",
+    "price": 14.96,
+    "change_pct": 10.0,
+    "turnover_pct": 11.63,
+    "amount_cny": 394630000.0,
+    "volume_lots": 273444.0
+  },
+  {
+    "code": "001239",
+    "name": "永达股份",
+    "board": "SZ_MAIN",
+    "price": 14.74,
+    "change_pct": 10.0,
+    "turnover_pct": 22.98,
+    "amount_cny": 378530000.0,
+    "volume_lots": 261934.0
+  },
+  {
+    "code": "600802",
+    "name": "福建水泥",
+    "board": "SH",
+    "price": 7.04,
+    "change_pct": 10.0,
+    "turnover_pct": 11.43,
+    "amount_cny": 359460000.0,
+    "volume_lots": 523693.0
+  },
+  {
+    "code": "600715",
+    "name": "文投控股",
+    "board": "SH",
+    "price": 1.87,
+    "change_pct": 10.0,
+    "turnover_pct": 6.55,
+    "amount_cny": 345180000.0,
+    "volume_lots": 1875598.0
+  },
+  {
+    "code": "002929",
+    "name": "润建股份",
+    "board": "SZ_MAIN",
+    "price": 56.14,
+    "change_pct": 9.99,
+    "turnover_pct": 8.72,
+    "amount_cny": 1039540000.0,
+    "volume_lots": 188810.0
+  },
+  {
+    "code": "600178",
+    "name": "东安动力",
+    "board": "SH",
+    "price": 13.65,
+    "change_pct": 9.99,
+    "turnover_pct": 9.26,
+    "amount_cny": 589480000.0,
+    "volume_lots": 432049.0
+  },
+  {
+    "code": "002565",
+    "name": "顺灏股份",
+    "board": "SZ_MAIN",
+    "price": 8.48,
+    "change_pct": 9.99,
+    "turnover_pct": 4.19,
+    "amount_cny": 371950000.0,
+    "volume_lots": 444004.0
+  },
+  {
+    "code": "601566",
+    "name": "九牧王",
+    "board": "SH",
+    "price": 10.24,
+    "change_pct": 9.99,
+    "turnover_pct": 4.43,
+    "amount_cny": 253840000.0,
+    "volume_lots": 254766.0
+  },
+  {
+    "code": "001201",
+    "name": "东瑞股份",
+    "board": "SZ_MAIN",
+    "price": 15.96,
+    "change_pct": 9.99,
+    "turnover_pct": 7.36,
+    "amount_cny": 242070000.0,
+    "volume_lots": 156327.0
+  },
+  {
+    "code": "002112",
+    "name": "三变科技",
+    "board": "SZ_MAIN",
+    "price": 14.43,
+    "change_pct": 9.98,
+    "turnover_pct": 11.78,
+    "amount_cny": 433440000.0,
+    "volume_lots": 308737.0
+  },
+  {
+    "code": "002242",
+    "name": "九阳股份",
+    "board": "SZ_MAIN",
+    "price": 22.61,
+    "change_pct": 9.97,
+    "turnover_pct": 18.3,
+    "amount_cny": 2992020000.0,
+    "volume_lots": 1393889.0
+  },
+  {
+    "code": "002368",
+    "name": "太极股份",
+    "board": "SZ_MAIN",
+    "price": 14.67,
+    "change_pct": 9.97,
+    "turnover_pct": 8.26,
+    "amount_cny": 721690000.0,
+    "volume_lots": 513602.0
+  },
+  {
+    "code": "002181",
+    "name": "粤 传 媒",
+    "board": "SZ_MAIN",
+    "price": 11.14,
+    "change_pct": 9.97,
+    "turnover_pct": 4.77,
+    "amount_cny": 593560000.0,
+    "volume_lots": 541075.0
+  },
+  {
+    "code": "002238",
+    "name": "天威视讯",
+    "board": "SZ_MAIN",
+    "price": 7.61,
+    "change_pct": 9.97,
+    "turnover_pct": 3.76,
+    "amount_cny": 220100000.0,
+    "volume_lots": 301769.0
+  },
+  {
+    "code": "000788",
+    "name": "北大医药",
+    "board": "SZ_MAIN",
+    "price": 5.86,
+    "change_pct": 9.94,
+    "turnover_pct": 8.85,
+    "amount_cny": 301260000.0,
+    "volume_lots": 527566.0
+  },
+  {
+    "code": "002076",
+    "name": "星光股份",
+    "board": "SZ_MAIN",
+    "price": 2.45,
+    "change_pct": 9.87,
+    "turnover_pct": 5.41,
+    "amount_cny": 137540000.0,
+    "volume_lots": 564161.0
+  },
+  {
+    "code": "300120",
+    "name": "经纬辉开",
+    "board": "GEM",
+    "price": 8.6,
+    "change_pct": 9.55,
+    "turnover_pct": 10.91,
+    "amount_cny": 473100000.0,
+    "volume_lots": 575270.0
+  },
+  {
+    "code": "300536",
+    "name": "农尚环境",
+    "board": "GEM",
+    "price": 8.32,
+    "change_pct": 9.47,
+    "turnover_pct": 5.87,
+    "amount_cny": 139550000.0,
+    "volume_lots": 172035.0
+  },
+  {
+    "code": "000518",
+    "name": "四环生物",
+    "board": "SZ_MAIN",
+    "price": 3.61,
+    "change_pct": 9.39,
+    "turnover_pct": 5.72,
+    "amount_cny": 208080000.0,
+    "volume_lots": 588502.0
+  },
+  {
+    "code": "300620",
+    "name": "光库科技",
+    "board": "GEM",
+    "price": 260.37,
+    "change_pct": 9.22,
+    "turnover_pct": 5.64,
+    "amount_cny": 3626600000.0,
+    "volume_lots": 139586.0
+  },
+  {
+    "code": "300243",
+    "name": "瑞丰高材",
+    "board": "GEM",
+    "price": 19.37,
+    "change_pct": 9.0,
+    "turnover_pct": 16.16,
+    "amount_cny": 684250000.0,
+    "volume_lots": 361398.0
+  },
+  {
+    "code": "300593",
+    "name": "新雷能",
+    "board": "GEM",
+    "price": 27.85,
+    "change_pct": 9.0,
+    "turnover_pct": 4.34,
+    "amount_cny": 537840000.0,
+    "volume_lots": 195599.0
+  },
+  {
+    "code": "300579",
+    "name": "数字认证",
+    "board": "GEM",
+    "price": 27.21,
+    "change_pct": 8.54,
+    "turnover_pct": 8.59,
+    "amount_cny": 591990000.0,
+    "volume_lots": 225778.0
+  },
+  {
+    "code": "300007",
+    "name": "汉威科技",
+    "board": "GEM",
+    "price": 33.82,
+    "change_pct": 8.4,
+    "turnover_pct": 12.11,
+    "amount_cny": 1124340000.0,
+    "volume_lots": 346634.0
+  },
+  {
+    "code": "920171",
+    "name": "志晟信息",
+    "board": "BJ",
+    "price": 16.94,
+    "change_pct": 8.04,
+    "turnover_pct": 12.26,
+    "amount_cny": 145260000.0,
+    "volume_lots": 82928.0
+  },
+  {
+    "code": "300115",
+    "name": "长盈精密",
+    "board": "GEM",
+    "price": 26.63,
+    "change_pct": 7.94,
+    "turnover_pct": 9.87,
+    "amount_cny": 3414970000.0,
+    "volume_lots": 1339505.0
+  },
+  {
+    "code": "301428",
+    "name": "世纪恒通",
+    "board": "GEM",
+    "price": 27.98,
+    "change_pct": 7.78,
+    "turnover_pct": 8.77,
+    "amount_cny": 166730000.0,
+    "volume_lots": 61031.0
+  },
+  {
+    "code": "000592",
+    "name": "平潭发展",
+    "board": "SZ_MAIN",
+    "price": 7.21,
+    "change_pct": 7.77,
+    "turnover_pct": 18.31,
+    "amount_cny": 2529390000.0,
+    "volume_lots": 3507045.0
+  },
+  {
+    "code": "002138",
+    "name": "顺络电子",
+    "board": "SZ_MAIN",
+    "price": 42.84,
+    "change_pct": 7.77,
+    "turnover_pct": 3.71,
+    "amount_cny": 1199460000.0,
+    "volume_lots": 284359.0
+  },
+  {
+    "code": "301716",
+    "name": "鸿富诚",
+    "board": "GEM",
+    "price": 499.0,
+    "change_pct": 7.64,
+    "turnover_pct": 21.75,
+    "amount_cny": 1356160000.0,
+    "volume_lots": 27082.0
+  },
+  {
+    "code": "300489",
+    "name": "光智科技",
+    "board": "GEM",
+    "price": 259.2,
+    "change_pct": 7.55,
+    "turnover_pct": 8.27,
+    "amount_cny": 2954660000.0,
+    "volume_lots": 113986.0
+  },
+  {
+    "code": "300857",
+    "name": "协创数据",
+    "board": "GEM",
+    "price": 216.45,
+    "change_pct": 7.53,
+    "turnover_pct": 4.3,
+    "amount_cny": 4472540000.0,
+    "volume_lots": 208571.0
+  },
+  {
+    "code": "001309",
+    "name": "德明利",
+    "board": "SZ_MAIN",
+    "price": 236.01,
+    "change_pct": 7.5,
+    "turnover_pct": 8.75,
+    "amount_cny": 4655120000.0,
+    "volume_lots": 203268.0
+  },
+  {
+    "code": "300493",
+    "name": "润欣科技",
+    "board": "GEM",
+    "price": 12.61,
+    "change_pct": 7.41,
+    "turnover_pct": 5.59,
+    "amount_cny": 351720000.0,
+    "volume_lots": 286156.0
+  },
+  {
+    "code": "001232",
+    "name": "嘉立创",
+    "board": "SZ_MAIN",
+    "price": 173.69,
+    "change_pct": 7.35,
+    "turnover_pct": 9.95,
+    "amount_cny": 742210000.0,
+    "volume_lots": 44007.0
+  },
+  {
+    "code": "920748",
+    "name": "路桥信息",
+    "board": "BJ",
+    "price": 31.45,
+    "change_pct": 7.34,
+    "turnover_pct": 7.12,
+    "amount_cny": 159450000.0,
+    "volume_lots": 50114.0
+  },
+  {
+    "code": "603083",
+    "name": "剑桥科技",
+    "board": "SH",
+    "price": 174.83,
+    "change_pct": 7.27,
+    "turnover_pct": 7.2,
+    "amount_cny": 3436950000.0,
+    "volume_lots": 198549.0
+  },
+  {
+    "code": "301183",
+    "name": "东田微",
+    "board": "GEM",
+    "price": 244.15,
+    "change_pct": 7.15,
+    "turnover_pct": 7.49,
+    "amount_cny": 1044870000.0,
+    "volume_lots": 43958.0
+  },
+  {
+    "code": "300300",
+    "name": "海峡创新",
+    "board": "GEM",
+    "price": 10.38,
+    "change_pct": 7.12,
+    "turnover_pct": 23.17,
+    "amount_cny": 1629310000.0,
+    "volume_lots": 1544909.0
+  },
+  {
+    "code": "600319",
+    "name": "亚星化学",
+    "board": "SH",
+    "price": 6.7,
+    "change_pct": 7.03,
+    "turnover_pct": 8.47,
+    "amount_cny": 222140000.0,
+    "volume_lots": 328521.0
+  },
+  {
+    "code": "002881",
+    "name": "美格智能",
+    "board": "SZ_MAIN",
+    "price": 41.21,
+    "change_pct": 7.01,
+    "turnover_pct": 13.82,
+    "amount_cny": 1016420000.0,
+    "volume_lots": 253789.0
+  },
+  {
+    "code": "002428",
+    "name": "云南锗业",
+    "board": "SZ_MAIN",
+    "price": 84.44,
+    "change_pct": 6.99,
+    "turnover_pct": 9.26,
+    "amount_cny": 5091650000.0,
+    "volume_lots": 604915.0
+  },
+  {
+    "code": "603162",
+    "name": "海通发展",
+    "board": "SH",
+    "price": 10.82,
+    "change_pct": 6.92,
+    "turnover_pct": 2.83,
+    "amount_cny": 412050000.0,
+    "volume_lots": 384782.0
+  },
+  {
+    "code": "300138",
+    "name": "晨光生物",
+    "board": "GEM",
+    "price": 12.5,
+    "change_pct": 6.84,
+    "turnover_pct": 3.85,
+    "amount_cny": 188490000.0,
+    "volume_lots": 153426.0
+  },
+  {
+    "code": "002940",
+    "name": "昂利康",
+    "board": "SZ_MAIN",
+    "price": 25.21,
+    "change_pct": 6.69,
+    "turnover_pct": 16.66,
+    "amount_cny": 776980000.0,
+    "volume_lots": 307681.0
+  },
+  {
+    "code": "300232",
+    "name": "洲明科技",
+    "board": "GEM",
+    "price": 5.58,
+    "change_pct": 6.69,
+    "turnover_pct": 5.94,
+    "amount_cny": 290820000.0,
+    "volume_lots": 527722.0
+  },
+  {
+    "code": "300307",
+    "name": "慈星股份",
+    "board": "GEM",
+    "price": 7.44,
+    "change_pct": 6.59,
+    "turnover_pct": 6.6,
+    "amount_cny": 384190000.0,
+    "volume_lots": 519643.0
+  },
+  {
+    "code": "600228",
+    "name": "返利科技",
+    "board": "SH",
+    "price": 10.25,
+    "change_pct": 6.55,
+    "turnover_pct": 6.34,
+    "amount_cny": 267640000.0,
+    "volume_lots": 263749.0
+  },
+  {
+    "code": "301234",
+    "name": "五洲医疗",
+    "board": "GEM",
+    "price": 141.4,
+    "change_pct": 6.49,
+    "turnover_pct": 4.29,
+    "amount_cny": 239030000.0,
+    "volume_lots": 17310.0
+  },
+  {
+    "code": "603171",
+    "name": "税友股份",
+    "board": "SH",
+    "price": 45.67,
+    "change_pct": 6.46,
+    "turnover_pct": 4.13,
+    "amount_cny": 762170000.0,
+    "volume_lots": 167454.0
+  },
+  {
+    "code": "605488",
+    "name": "福莱新材",
+    "board": "SH",
+    "price": 32.98,
+    "change_pct": 6.42,
+    "turnover_pct": 16.05,
+    "amount_cny": 1572500000.0,
+    "volume_lots": 479068.0
+  },
+  {
+    "code": "002100",
+    "name": "天康生物",
+    "board": "SZ_MAIN",
+    "price": 8.16,
+    "change_pct": 6.39,
+    "turnover_pct": 2.3,
+    "amount_cny": 251660000.0,
+    "volume_lots": 313919.0
+  },
+  {
+    "code": "002777",
+    "name": "久远银海",
+    "board": "SZ_MAIN",
+    "price": 14.55,
+    "change_pct": 6.36,
+    "turnover_pct": 12.9,
+    "amount_cny": 749210000.0,
+    "volume_lots": 521787.0
+  },
+  {
+    "code": "300314",
+    "name": "戴维医疗",
+    "board": "GEM",
+    "price": 14.07,
+    "change_pct": 6.35,
+    "turnover_pct": 14.39,
+    "amount_cny": 298650000.0,
+    "volume_lots": 206859.0
+  },
+  {
+    "code": "600573",
+    "name": "惠泉啤酒",
+    "board": "SH",
+    "price": 13.26,
+    "change_pct": 6.25,
+    "turnover_pct": 7.63,
+    "amount_cny": 249570000.0,
+    "volume_lots": 190802.0
+  },
+  {
+    "code": "600330",
+    "name": "天通股份",
+    "board": "SH",
+    "price": 23.33,
+    "change_pct": 6.19,
+    "turnover_pct": 5.22,
+    "amount_cny": 1488410000.0,
+    "volume_lots": 643349.0
+  },
+  {
+    "code": "300548",
+    "name": "长芯博创",
+    "board": "GEM",
+    "price": 180.82,
+    "change_pct": 6.03,
+    "turnover_pct": 4.15,
+    "amount_cny": 2213710000.0,
+    "volume_lots": 122223.0
+  },
+  {
+    "code": "301328",
+    "name": "维峰电子",
+    "board": "GEM",
+    "price": 47.65,
+    "change_pct": 6.01,
+    "turnover_pct": 2.5,
+    "amount_cny": 136780000.0,
+    "volume_lots": 28745.0
+  },
+  {
+    "code": "603186",
+    "name": "华正新材",
+    "board": "SH",
+    "price": 203.93,
+    "change_pct": 5.98,
+    "turnover_pct": 8.25,
+    "amount_cny": 2608490000.0,
+    "volume_lots": 129362.0
+  },
+  {
+    "code": "301085",
+    "name": "亚康股份",
+    "board": "GEM",
+    "price": 68.65,
+    "change_pct": 5.97,
+    "turnover_pct": 7.1,
+    "amount_cny": 289430000.0,
+    "volume_lots": 42388.0
+  },
+  {
+    "code": "603341",
+    "name": "龙旗科技",
+    "board": "SH",
+    "price": 40.52,
+    "change_pct": 5.91,
+    "turnover_pct": 15.08,
+    "amount_cny": 1611640000.0,
+    "volume_lots": 403360.0
+  },
+  {
+    "code": "000530",
+    "name": "冰山冷热",
+    "board": "SZ_MAIN",
+    "price": 8.65,
+    "change_pct": 5.88,
+    "turnover_pct": 38.55,
+    "amount_cny": 1911910000.0,
+    "volume_lots": 2313168.0
+  },
+  {
+    "code": "603477",
+    "name": "巨星农牧",
+    "board": "SH",
+    "price": 14.11,
+    "change_pct": 5.85,
+    "turnover_pct": 3.85,
+    "amount_cny": 272940000.0,
+    "volume_lots": 196389.0
+  },
+  {
+    "code": "001388",
+    "name": "信通电子",
+    "board": "SZ_MAIN",
+    "price": 21.55,
+    "change_pct": 5.79,
+    "turnover_pct": 11.81,
+    "amount_cny": 307240000.0,
+    "volume_lots": 147736.0
+  },
+  {
+    "code": "603790",
+    "name": "雅运股份",
+    "board": "SH",
+    "price": 25.13,
+    "change_pct": 5.77,
+    "turnover_pct": 2.15,
+    "amount_cny": 101050000.0,
+    "volume_lots": 41062.0
+  },
+  {
+    "code": "300469",
+    "name": "信息发展",
+    "board": "GEM",
+    "price": 45.83,
+    "change_pct": 5.72,
+    "turnover_pct": 2.53,
+    "amount_cny": 294060000.0,
+    "volume_lots": 62799.0
+  },
+  {
+    "code": "300378",
+    "name": "鼎捷数智",
+    "board": "GEM",
+    "price": 40.52,
+    "change_pct": 5.63,
+    "turnover_pct": 9.73,
+    "amount_cny": 1048420000.0,
+    "volume_lots": 262232.0
+  },
+  {
+    "code": "300421",
+    "name": "力星股份",
+    "board": "GEM",
+    "price": 16.53,
+    "change_pct": 5.62,
+    "turnover_pct": 7.99,
+    "amount_cny": 307990000.0,
+    "volume_lots": 186569.0
+  },
+  {
+    "code": "603893",
+    "name": "瑞芯微",
+    "board": "SH",
+    "price": 199.65,
+    "change_pct": 5.61,
+    "turnover_pct": 4.13,
+    "amount_cny": 3456510000.0,
+    "volume_lots": 174717.0
+  },
+  {
+    "code": "600825",
+    "name": "新华传媒",
+    "board": "SH",
+    "price": 16.04,
+    "change_pct": 5.6,
+    "turnover_pct": 14.93,
+    "amount_cny": 2472730000.0,
+    "volume_lots": 1559680.0
+  },
+  {
+    "code": "300056",
+    "name": "中创环保",
+    "board": "GEM",
+    "price": 8.12,
+    "change_pct": 5.59,
+    "turnover_pct": 6.02,
+    "amount_cny": 183450000.0,
+    "volume_lots": 231943.0
+  },
+  {
+    "code": "300170",
+    "name": "汉得信息",
+    "board": "GEM",
+    "price": 15.52,
+    "change_pct": 5.51,
+    "turnover_pct": 6.47,
+    "amount_cny": 995430000.0,
+    "volume_lots": 645932.0
+  },
+  {
+    "code": "300394",
+    "name": "天孚通信",
+    "board": "GEM",
+    "price": 215.77,
+    "change_pct": 5.49,
+    "turnover_pct": 2.73,
+    "amount_cny": 6397520000.0,
+    "volume_lots": 297045.0
+  },
+  {
+    "code": "600410",
+    "name": "华胜天成",
+    "board": "SH",
+    "price": 13.29,
+    "change_pct": 5.48,
+    "turnover_pct": 6.31,
+    "amount_cny": 908380000.0,
+    "volume_lots": 691662.0
+  },
+  {
+    "code": "301153",
+    "name": "中科江南",
+    "board": "GEM",
+    "price": 18.78,
+    "change_pct": 5.45,
+    "turnover_pct": 3.38,
+    "amount_cny": 206540000.0,
+    "volume_lots": 112077.0
+  },
+  {
+    "code": "600831",
+    "name": "广电网络",
+    "board": "SH",
+    "price": 3.68,
+    "change_pct": 5.44,
+    "turnover_pct": 8.84,
+    "amount_cny": 231760000.0,
+    "volume_lots": 628287.0
+  },
+  {
+    "code": "002803",
+    "name": "吉宏股份",
+    "board": "SZ_MAIN",
+    "price": 19.81,
+    "change_pct": 5.43,
+    "turnover_pct": 5.21,
+    "amount_cny": 305160000.0,
+    "volume_lots": 155089.0
+  },
+  {
+    "code": "301127",
+    "name": "武汉天源",
+    "board": "GEM",
+    "price": 14.38,
+    "change_pct": 5.43,
+    "turnover_pct": 2.75,
+    "amount_cny": 257360000.0,
+    "volume_lots": 179982.0
+  },
+  {
+    "code": "002357",
+    "name": "富临运业",
+    "board": "SZ_MAIN",
+    "price": 11.57,
+    "change_pct": 5.28,
+    "turnover_pct": 3.48,
+    "amount_cny": 125460000.0,
+    "volume_lots": 108980.0
+  },
+  {
+    "code": "002713",
+    "name": "东易日盛",
+    "board": "SZ_MAIN",
+    "price": 8.63,
+    "change_pct": 5.24,
+    "turnover_pct": 2.42,
+    "amount_cny": 108410000.0,
+    "volume_lots": 126635.0
+  },
+  {
+    "code": "600303",
+    "name": "曙光股份",
+    "board": "SH",
+    "price": 3.02,
+    "change_pct": 5.23,
+    "turnover_pct": 6.71,
+    "amount_cny": 135300000.0,
+    "volume_lots": 454645.0
+  },
+  {
+    "code": "300229",
+    "name": "拓尔思",
+    "board": "GEM",
+    "price": 13.71,
+    "change_pct": 5.22,
+    "turnover_pct": 4.41,
+    "amount_cny": 525100000.0,
+    "volume_lots": 385376.0
+  },
+  {
+    "code": "603459",
+    "name": "红板科技",
+    "board": "SH",
+    "price": 71.99,
+    "change_pct": 5.13,
+    "turnover_pct": 8.74,
+    "amount_cny": 506290000.0,
+    "volume_lots": 71550.0
+  },
+  {
+    "code": "002587",
+    "name": "奥拓电子",
+    "board": "SZ_MAIN",
+    "price": 5.53,
+    "change_pct": 5.13,
+    "turnover_pct": 7.63,
+    "amount_cny": 221820000.0,
+    "volume_lots": 406653.0
+  },
+  {
+    "code": "600267",
+    "name": "海正药业",
+    "board": "SH",
+    "price": 13.95,
+    "change_pct": 5.12,
+    "turnover_pct": 11.32,
+    "amount_cny": 1864340000.0,
+    "volume_lots": 1336529.0
+  },
+  {
+    "code": "002791",
+    "name": "坚朗五金",
+    "board": "SZ_MAIN",
+    "price": 16.03,
+    "change_pct": 5.11,
+    "turnover_pct": 5.42,
+    "amount_cny": 185570000.0,
+    "volume_lots": 115084.0
+  },
+  {
+    "code": "300236",
+    "name": "上海新阳",
+    "board": "GEM",
+    "price": 77.28,
+    "change_pct": 5.04,
+    "turnover_pct": 2.47,
+    "amount_cny": 538220000.0,
+    "volume_lots": 68774.0
+  },
+  {
+    "code": "301396",
+    "name": "宏景科技",
+    "board": "GEM",
+    "price": 132.62,
+    "change_pct": 5.02,
+    "turnover_pct": 8.56,
+    "amount_cny": 1609980000.0,
+    "volume_lots": 121105.0
+  },
+  {
+    "code": "300467",
+    "name": "迅游科技",
+    "board": "GEM",
+    "price": 32.19,
+    "change_pct": 5.02,
+    "turnover_pct": 2.23,
+    "amount_cny": 118750000.0,
+    "volume_lots": 37328.0
+  },
+  {
+    "code": "603368",
+    "name": "柳药集团",
+    "board": "SH",
+    "price": 16.77,
+    "change_pct": 5.01,
+    "turnover_pct": 4.5,
+    "amount_cny": 296340000.0,
+    "volume_lots": 178923.0
+  },
+  {
+    "code": "301273",
+    "name": "瑞晨环保",
+    "board": "GEM",
+    "price": 46.07,
+    "change_pct": 4.99,
+    "turnover_pct": 3.88,
+    "amount_cny": 136010000.0,
+    "volume_lots": 29868.0
+  },
+  {
+    "code": "301248",
+    "name": "杰创智能",
+    "board": "GEM",
+    "price": 53.77,
+    "change_pct": 4.96,
+    "turnover_pct": 5.57,
+    "amount_cny": 333350000.0,
+    "volume_lots": 62560.0
+  },
+  {
+    "code": "600186",
+    "name": "莲花控股",
+    "board": "SH",
+    "price": 10.39,
+    "change_pct": 4.95,
+    "turnover_pct": 8.73,
+    "amount_cny": 1613780000.0,
+    "volume_lots": 1561279.0
+  },
+  {
+    "code": "000815",
+    "name": "美利云",
+    "board": "SZ_MAIN",
+    "price": 15.49,
+    "change_pct": 4.95,
+    "turnover_pct": 10.84,
+    "amount_cny": 1148180000.0,
+    "volume_lots": 753574.0
+  },
+  {
+    "code": "600853",
+    "name": "龙建股份",
+    "board": "SH",
+    "price": 3.65,
+    "change_pct": 4.89,
+    "turnover_pct": 5.09,
+    "amount_cny": 185610000.0,
+    "volume_lots": 515949.0
+  },
+  {
+    "code": "603351",
+    "name": "威尔药业",
+    "board": "SH",
+    "price": 28.16,
+    "change_pct": 4.88,
+    "turnover_pct": 3.9,
+    "amount_cny": 151130000.0,
+    "volume_lots": 52880.0
+  },
+  {
+    "code": "601091",
+    "name": "沈鼓集团",
+    "board": "SH",
+    "price": 19.82,
+    "change_pct": 4.87,
+    "turnover_pct": 23.63,
+    "amount_cny": 969910000.0,
+    "volume_lots": 498906.0
+  },
+  {
+    "code": "003021",
+    "name": "兆威机电",
+    "board": "SZ_MAIN",
+    "price": 76.07,
+    "change_pct": 4.82,
+    "turnover_pct": 4.26,
+    "amount_cny": 657140000.0,
+    "volume_lots": 88746.0
+  },
+  {
+    "code": "301356",
+    "name": "天振股份",
+    "board": "GEM",
+    "price": 23.9,
+    "change_pct": 4.82,
+    "turnover_pct": 5.13,
+    "amount_cny": 133930000.0,
+    "volume_lots": 55807.0
+  },
+  {
+    "code": "000032",
+    "name": "深桑达Ａ",
+    "board": "SZ_MAIN",
+    "price": 13.29,
+    "change_pct": 4.81,
+    "turnover_pct": 9.69,
+    "amount_cny": 1583490000.0,
+    "volume_lots": 1177635.0
+  },
+  {
+    "code": "300003",
+    "name": "乐普医疗",
+    "board": "GEM",
+    "price": 11.98,
+    "change_pct": 4.81,
+    "turnover_pct": 2.18,
+    "amount_cny": 405630000.0,
+    "volume_lots": 344560.0
+  },
+  {
+    "code": "600397",
+    "name": "江钨装备",
+    "board": "SH",
+    "price": 14.85,
+    "change_pct": 4.8,
+    "turnover_pct": 4.36,
+    "amount_cny": 640300000.0,
+    "volume_lots": 432029.0
+  },
+  {
+    "code": "600888",
+    "name": "新疆众和",
+    "board": "SH",
+    "price": 9.17,
+    "change_pct": 4.8,
+    "turnover_pct": 2.62,
+    "amount_cny": 370870000.0,
+    "volume_lots": 406806.0
+  },
+  {
+    "code": "603703",
+    "name": "盛洋科技",
+    "board": "SH",
+    "price": 10.31,
+    "change_pct": 4.78,
+    "turnover_pct": 6.65,
+    "amount_cny": 288030000.0,
+    "volume_lots": 275867.0
+  },
+  {
+    "code": "301130",
+    "name": "西点药业",
+    "board": "GEM",
+    "price": 28.7,
+    "change_pct": 4.74,
+    "turnover_pct": 13.78,
+    "amount_cny": 239120000.0,
+    "volume_lots": 81323.0
+  },
+  {
+    "code": "603669",
+    "name": "灵康药业",
+    "board": "SH",
+    "price": 7.09,
+    "change_pct": 4.73,
+    "turnover_pct": 5.13,
+    "amount_cny": 258580000.0,
+    "volume_lots": 365511.0
+  },
+  {
+    "code": "605577",
+    "name": "龙版传媒",
+    "board": "SH",
+    "price": 16.23,
+    "change_pct": 4.71,
+    "turnover_pct": 7.55,
+    "amount_cny": 531750000.0,
+    "volume_lots": 335374.0
+  },
+  {
+    "code": "001211",
+    "name": "双枪科技",
+    "board": "SZ_MAIN",
+    "price": 31.15,
+    "change_pct": 4.71,
+    "turnover_pct": 13.24,
+    "amount_cny": 386120000.0,
+    "volume_lots": 123602.0
+  },
+  {
+    "code": "000576",
+    "name": "甘化科工",
+    "board": "SZ_MAIN",
+    "price": 9.6,
+    "change_pct": 4.69,
+    "turnover_pct": 20.11,
+    "amount_cny": 841160000.0,
+    "volume_lots": 872542.0
+  },
+  {
+    "code": "002722",
+    "name": "物产金轮",
+    "board": "SZ_MAIN",
+    "price": 13.18,
+    "change_pct": 4.69,
+    "turnover_pct": 5.02,
+    "amount_cny": 147420000.0,
+    "volume_lots": 111521.0
+  },
+  {
+    "code": "002436",
+    "name": "兴森科技",
+    "board": "SZ_MAIN",
+    "price": 37.13,
+    "change_pct": 4.65,
+    "turnover_pct": 5.88,
+    "amount_cny": 3286870000.0,
+    "volume_lots": 891831.0
+  },
+  {
+    "code": "300770",
+    "name": "新媒股份",
+    "board": "GEM",
+    "price": 37.98,
+    "change_pct": 4.63,
+    "turnover_pct": 3.6,
+    "amount_cny": 305930000.0,
+    "volume_lots": 81983.0
+  },
+  {
+    "code": "300846",
+    "name": "首都在线",
+    "board": "GEM",
+    "price": 18.37,
+    "change_pct": 4.61,
+    "turnover_pct": 6.63,
+    "amount_cny": 504290000.0,
+    "volume_lots": 276178.0
+  },
+  {
+    "code": "601700",
+    "name": "风范股份",
+    "board": "SH",
+    "price": 5.9,
+    "change_pct": 4.61,
+    "turnover_pct": 3.04,
+    "amount_cny": 203210000.0,
+    "volume_lots": 346725.0
+  },
+  {
+    "code": "603598",
+    "name": "引力传媒",
+    "board": "SH",
+    "price": 20.35,
+    "change_pct": 4.57,
+    "turnover_pct": 13.28,
+    "amount_cny": 721610000.0,
+    "volume_lots": 358634.0
+  },
+  {
+    "code": "002865",
+    "name": "钧达股份",
+    "board": "SZ_MAIN",
+    "price": 34.76,
+    "change_pct": 4.51,
+    "turnover_pct": 8.6,
+    "amount_cny": 701100000.0,
+    "volume_lots": 196769.0
+  },
+  {
+    "code": "002178",
+    "name": "延华智能",
+    "board": "SZ_MAIN",
+    "price": 5.1,
+    "change_pct": 4.51,
+    "turnover_pct": 6.04,
+    "amount_cny": 216930000.0,
+    "volume_lots": 430168.0
+  },
+  {
+    "code": "600996",
+    "name": "贵广网络",
+    "board": "SH",
+    "price": 6.75,
+    "change_pct": 4.49,
+    "turnover_pct": 2.24,
+    "amount_cny": 188330000.0,
+    "volume_lots": 279299.0
+  },
+  {
+    "code": "603122",
+    "name": "合富中国",
+    "board": "SH",
+    "price": 11.94,
+    "change_pct": 4.46,
+    "turnover_pct": 6.75,
+    "amount_cny": 323460000.0,
+    "volume_lots": 268677.0
+  },
+  {
+    "code": "301196",
+    "name": "唯科科技",
+    "board": "GEM",
+    "price": 91.02,
+    "change_pct": 4.45,
+    "turnover_pct": 7.58,
+    "amount_cny": 742880000.0,
+    "volume_lots": 81708.0
+  },
+  {
+    "code": "603151",
+    "name": "邦基科技",
+    "board": "SH",
+    "price": 17.99,
+    "change_pct": 4.41,
+    "turnover_pct": 3.29,
+    "amount_cny": 101790000.0,
+    "volume_lots": 56620.0
+  },
+  {
+    "code": "000571",
+    "name": "新大洲A",
+    "board": "SZ_MAIN",
+    "price": 5.71,
+    "change_pct": 4.39,
+    "turnover_pct": 2.79,
+    "amount_cny": 130290000.0,
+    "volume_lots": 226853.0
+  },
+  {
+    "code": "300094",
+    "name": "国联水产",
+    "board": "GEM",
+    "price": 2.88,
+    "change_pct": 4.35,
+    "turnover_pct": 7.76,
+    "amount_cny": 249640000.0,
+    "volume_lots": 857828.0
+  },
+  {
+    "code": "002995",
+    "name": "天地在线",
+    "board": "SZ_MAIN",
+    "price": 18.29,
+    "change_pct": 4.34,
+    "turnover_pct": 12.12,
+    "amount_cny": 268820000.0,
+    "volume_lots": 147518.0
+  },
+  {
+    "code": "002355",
+    "name": "兴民智通",
+    "board": "SZ_MAIN",
+    "price": 4.82,
+    "change_pct": 4.33,
+    "turnover_pct": 9.38,
+    "amount_cny": 293960000.0,
+    "volume_lots": 599287.0
+  },
+  {
+    "code": "002549",
+    "name": "凯美特气",
+    "board": "SZ_MAIN",
+    "price": 13.44,
+    "change_pct": 4.27,
+    "turnover_pct": 8.15,
+    "amount_cny": 767540000.0,
+    "volume_lots": 564603.0
+  },
+  {
+    "code": "300258",
+    "name": "精锻科技",
+    "board": "GEM",
+    "price": 9.39,
+    "change_pct": 4.22,
+    "turnover_pct": 3.87,
+    "amount_cny": 206180000.0,
+    "volume_lots": 220408.0
+  },
+  {
+    "code": "002353",
+    "name": "杰瑞股份",
+    "board": "SZ_MAIN",
+    "price": 90.25,
+    "change_pct": 4.21,
+    "turnover_pct": 5.8,
+    "amount_cny": 3698480000.0,
+    "volume_lots": 400780.0
+  },
+  {
+    "code": "300324",
+    "name": "旋极信息",
+    "board": "GEM",
+    "price": 3.71,
+    "change_pct": 4.21,
+    "turnover_pct": 4.98,
+    "amount_cny": 320940000.0,
+    "volume_lots": 852041.0
+  },
+  {
+    "code": "002840",
+    "name": "华统股份",
+    "board": "SZ_MAIN",
+    "price": 7.72,
+    "change_pct": 4.18,
+    "turnover_pct": 2.2,
+    "amount_cny": 134640000.0,
+    "volume_lots": 175342.0
+  },
+  {
+    "code": "920157",
+    "name": "宇特光电",
+    "board": "BJ",
+    "price": 68.22,
+    "change_pct": 4.15,
+    "turnover_pct": 40.69,
+    "amount_cny": 367540000.0,
+    "volume_lots": 52149.0
+  },
+  {
+    "code": "300353",
+    "name": "东土科技",
+    "board": "GEM",
+    "price": 15.72,
+    "change_pct": 4.11,
+    "turnover_pct": 3.17,
+    "amount_cny": 266450000.0,
+    "volume_lots": 171245.0
+  },
+  {
+    "code": "300871",
+    "name": "回盛生物",
+    "board": "GEM",
+    "price": 19.52,
+    "change_pct": 4.05,
+    "turnover_pct": 2.75,
+    "amount_cny": 107420000.0,
+    "volume_lots": 55450.0
+  },
+  {
+    "code": "301178",
+    "name": "天亿马",
+    "board": "GEM",
+    "price": 34.48,
+    "change_pct": 4.04,
+    "turnover_pct": 5.59,
+    "amount_cny": 133250000.0,
+    "volume_lots": 38374.0
+  },
+  {
+    "code": "300516",
+    "name": "久之洋",
+    "board": "GEM",
+    "price": 38.95,
+    "change_pct": 4.03,
+    "turnover_pct": 8.4,
+    "amount_cny": 817580000.0,
+    "volume_lots": 211631.0
+  },
+  {
+    "code": "300291",
+    "name": "百纳千成",
+    "board": "GEM",
+    "price": 5.42,
+    "change_pct": 4.03,
+    "turnover_pct": 10.47,
+    "amount_cny": 549130000.0,
+    "volume_lots": 974731.0
+  },
+  {
+    "code": "300277",
+    "name": "汽轮科技",
+    "board": "GEM",
+    "price": 12.66,
+    "change_pct": 4.03,
+    "turnover_pct": 3.08,
+    "amount_cny": 297400000.0,
+    "volume_lots": 235770.0
+  },
+  {
+    "code": "002201",
+    "name": "九鼎新材",
+    "board": "SZ_MAIN",
+    "price": 8.8,
+    "change_pct": 4.02,
+    "turnover_pct": 8.13,
+    "amount_cny": 426490000.0,
+    "volume_lots": 489247.0
+  },
+  {
+    "code": "301630",
+    "name": "同宇新材",
+    "board": "GEM",
+    "price": 178.94,
+    "change_pct": 4.01,
+    "turnover_pct": 4.76,
+    "amount_cny": 176690000.0,
+    "volume_lots": 9980.0
+  },
+  {
+    "code": "603677",
+    "name": "奇精机械",
+    "board": "SH",
+    "price": 14.65,
+    "change_pct": 3.97,
+    "turnover_pct": 4.16,
+    "amount_cny": 120260000.0,
+    "volume_lots": 80065.0
+  },
+  {
+    "code": "001266",
+    "name": "宏英智能",
+    "board": "SZ_MAIN",
+    "price": 41.8,
+    "change_pct": 3.95,
+    "turnover_pct": 13.89,
+    "amount_cny": 329070000.0,
+    "volume_lots": 80757.0
+  },
+  {
+    "code": "000860",
+    "name": "顺鑫农业",
+    "board": "SZ_MAIN",
+    "price": 11.62,
+    "change_pct": 3.94,
+    "turnover_pct": 3.96,
+    "amount_cny": 336670000.0,
+    "volume_lots": 293706.0
+  },
+  {
+    "code": "600633",
+    "name": "浙数文化",
+    "board": "SH",
+    "price": 11.12,
+    "change_pct": 3.93,
+    "turnover_pct": 2.79,
+    "amount_cny": 390410000.0,
+    "volume_lots": 353913.0
+  },
+  {
+    "code": "300657",
+    "name": "弘信电子",
+    "board": "GEM",
+    "price": 33.37,
+    "change_pct": 3.92,
+    "turnover_pct": 5.12,
+    "amount_cny": 826090000.0,
+    "volume_lots": 244697.0
+  },
+  {
+    "code": "603058",
+    "name": "永吉股份",
+    "board": "SH",
+    "price": 10.08,
+    "change_pct": 3.92,
+    "turnover_pct": 9.04,
+    "amount_cny": 390630000.0,
+    "volume_lots": 374909.0
+  },
+  {
+    "code": "301330",
+    "name": "熵基科技",
+    "board": "GEM",
+    "price": 27.55,
+    "change_pct": 3.92,
+    "turnover_pct": 4.03,
+    "amount_cny": 223000000.0,
+    "volume_lots": 82478.0
+  },
+  {
+    "code": "000639",
+    "name": "ST西王",
+    "board": "SZ_MAIN",
+    "price": 1.59,
+    "change_pct": 3.92,
+    "turnover_pct": 7.02,
+    "amount_cny": 122210000.0,
+    "volume_lots": 758272.0
+  },
+  {
+    "code": "300952",
+    "name": "恒辉安防",
+    "board": "GEM",
+    "price": 16.72,
+    "change_pct": 3.92,
+    "turnover_pct": 4.62,
+    "amount_cny": 111820000.0,
+    "volume_lots": 68644.0
+  },
+  {
+    "code": "603888",
+    "name": "新华网",
+    "board": "SH",
+    "price": 17.79,
+    "change_pct": 3.91,
+    "turnover_pct": 2.64,
+    "amount_cny": 346030000.0,
+    "volume_lots": 196030.0
+  },
+  {
+    "code": "002123",
+    "name": "梦网科技",
+    "board": "SZ_MAIN",
+    "price": 7.7,
+    "change_pct": 3.91,
+    "turnover_pct": 2.35,
+    "amount_cny": 129490000.0,
+    "volume_lots": 169353.0
+  },
+  {
+    "code": "300212",
+    "name": "*ST易录",
+    "board": "GEM",
+    "price": 7.99,
+    "change_pct": 3.9,
+    "turnover_pct": 2.16,
+    "amount_cny": 120710000.0,
+    "volume_lots": 151983.0
+  },
+  {
+    "code": "300821",
+    "name": "东岳硅材",
+    "board": "GEM",
+    "price": 17.64,
+    "change_pct": 3.89,
+    "turnover_pct": 9.19,
+    "amount_cny": 1921620000.0,
+    "volume_lots": 1102949.0
+  },
+  {
+    "code": "000665",
+    "name": "湖北广电",
+    "board": "SZ_MAIN",
+    "price": 4.3,
+    "change_pct": 3.86,
+    "turnover_pct": 2.26,
+    "amount_cny": 110200000.0,
+    "volume_lots": 256630.0
+  },
+  {
+    "code": "002009",
+    "name": "天奇股份",
+    "board": "SZ_MAIN",
+    "price": 16.01,
+    "change_pct": 3.83,
+    "turnover_pct": 7.84,
+    "amount_cny": 445450000.0,
+    "volume_lots": 277607.0
+  },
+  {
+    "code": "600501",
+    "name": "航天晨光",
+    "board": "SH",
+    "price": 15.98,
+    "change_pct": 3.83,
+    "turnover_pct": 6.08,
+    "amount_cny": 414600000.0,
+    "volume_lots": 260175.0
+  },
+  {
+    "code": "603068",
+    "name": "博通集成",
+    "board": "SH",
+    "price": 43.25,
+    "change_pct": 3.79,
+    "turnover_pct": 11.35,
+    "amount_cny": 744720000.0,
+    "volume_lots": 172223.0
+  },
+  {
+    "code": "603976",
+    "name": "正川股份",
+    "board": "SH",
+    "price": 32.96,
+    "change_pct": 3.75,
+    "turnover_pct": 3.28,
+    "amount_cny": 185220000.0,
+    "volume_lots": 56229.0
+  },
+  {
+    "code": "300687",
+    "name": "赛意信息",
+    "board": "GEM",
+    "price": 26.32,
+    "change_pct": 3.74,
+    "turnover_pct": 3.95,
+    "amount_cny": 348110000.0,
+    "volume_lots": 132706.0
+  },
+  {
+    "code": "600540",
+    "name": "新赛股份",
+    "board": "SH",
+    "price": 4.72,
+    "change_pct": 3.74,
+    "turnover_pct": 8.75,
+    "amount_cny": 243480000.0,
+    "volume_lots": 508779.0
+  },
+  {
+    "code": "603918",
+    "name": "金桥信息",
+    "board": "SH",
+    "price": 10.83,
+    "change_pct": 3.74,
+    "turnover_pct": 3.98,
+    "amount_cny": 156530000.0,
+    "volume_lots": 145426.0
+  },
+  {
+    "code": "301052",
+    "name": "果麦文化",
+    "board": "GEM",
+    "price": 33.59,
+    "change_pct": 3.7,
+    "turnover_pct": 32.95,
+    "amount_cny": 877940000.0,
+    "volume_lots": 264370.0
+  },
+  {
+    "code": "920045",
+    "name": "蘅东光",
+    "board": "BJ",
+    "price": 439.8,
+    "change_pct": 3.7,
+    "turnover_pct": 4.33,
+    "amount_cny": 541540000.0,
+    "volume_lots": 12199.0
+  },
+  {
+    "code": "301297",
+    "name": "富乐德",
+    "board": "GEM",
+    "price": 36.94,
+    "change_pct": 3.68,
+    "turnover_pct": 3.06,
+    "amount_cny": 607530000.0,
+    "volume_lots": 164954.0
+  },
+  {
+    "code": "300434",
+    "name": "金石亚药",
+    "board": "GEM",
+    "price": 12.7,
+    "change_pct": 3.67,
+    "turnover_pct": 9.77,
+    "amount_cny": 430200000.0,
+    "volume_lots": 335319.0
+  },
+  {
+    "code": "600593",
+    "name": "大连圣亚",
+    "board": "SH",
+    "price": 42.49,
+    "change_pct": 3.66,
+    "turnover_pct": 7.09,
+    "amount_cny": 384280000.0,
+    "volume_lots": 91266.0
+  },
+  {
+    "code": "002541",
+    "name": "鸿路钢构",
+    "board": "SZ_MAIN",
+    "price": 20.71,
+    "change_pct": 3.65,
+    "turnover_pct": 2.24,
+    "amount_cny": 253890000.0,
+    "volume_lots": 125871.0
+  },
+  {
+    "code": "603337",
+    "name": "杰克科技",
+    "board": "SH",
+    "price": 37.62,
+    "change_pct": 3.64,
+    "turnover_pct": 3.02,
+    "amount_cny": 529820000.0,
+    "volume_lots": 141064.0
+  },
+  {
+    "code": "603039",
+    "name": "泛微网络",
+    "board": "SH",
+    "price": 35.03,
+    "change_pct": 3.64,
+    "turnover_pct": 3.64,
+    "amount_cny": 390780000.0,
+    "volume_lots": 111914.0
+  },
+  {
+    "code": "002300",
+    "name": "太阳电缆",
+    "board": "SZ_MAIN",
+    "price": 7.11,
+    "change_pct": 3.64,
+    "turnover_pct": 4.69,
+    "amount_cny": 241190000.0,
+    "volume_lots": 339023.0
+  },
+  {
+    "code": "000048",
+    "name": "京基智农",
+    "board": "SZ_MAIN",
+    "price": 15.1,
+    "change_pct": 3.64,
+    "turnover_pct": 2.45,
+    "amount_cny": 194890000.0,
+    "volume_lots": 129792.0
+  },
+  {
+    "code": "002273",
+    "name": "水晶光电",
+    "board": "SZ_MAIN",
+    "price": 21.75,
+    "change_pct": 3.62,
+    "turnover_pct": 3.38,
+    "amount_cny": 990240000.0,
+    "volume_lots": 461923.0
+  },
+  {
+    "code": "002655",
+    "name": "共达电声",
+    "board": "SZ_MAIN",
+    "price": 32.64,
+    "change_pct": 3.62,
+    "turnover_pct": 5.68,
+    "amount_cny": 677470000.0,
+    "volume_lots": 208145.0
+  },
+  {
+    "code": "603662",
+    "name": "柯力传感",
+    "board": "SH",
+    "price": 47.3,
+    "change_pct": 3.61,
+    "turnover_pct": 2.67,
+    "amount_cny": 347240000.0,
+    "volume_lots": 74933.0
+  },
+  {
+    "code": "002029",
+    "name": "七 匹 狼",
+    "board": "SZ_MAIN",
+    "price": 8.89,
+    "change_pct": 3.61,
+    "turnover_pct": 5.86,
+    "amount_cny": 346620000.0,
+    "volume_lots": 389849.0
+  },
+  {
+    "code": "601869",
+    "name": "长飞光纤",
+    "board": "SH",
+    "price": 351.31,
+    "change_pct": 3.6,
+    "turnover_pct": 2.17,
+    "amount_cny": 3098660000.0,
+    "volume_lots": 88104.0
+  },
+  {
+    "code": "300234",
+    "name": "开尔新材",
+    "board": "GEM",
+    "price": 11.22,
+    "change_pct": 3.6,
+    "turnover_pct": 2.82,
+    "amount_cny": 108200000.0,
+    "volume_lots": 97141.0
+  },
+  {
+    "code": "002463",
+    "name": "沪电股份",
+    "board": "SZ_MAIN",
+    "price": 114.99,
+    "change_pct": 3.59,
+    "turnover_pct": 2.43,
+    "amount_cny": 5425580000.0,
+    "volume_lots": 468207.0
+  },
+  {
+    "code": "600506",
+    "name": "统一股份",
+    "board": "SH",
+    "price": 15.58,
+    "change_pct": 3.59,
+    "turnover_pct": 3.6,
+    "amount_cny": 140420000.0,
+    "volume_lots": 89794.0
+  },
+  {
+    "code": "603002",
+    "name": "宏昌电子",
+    "board": "SH",
+    "price": 15.35,
+    "change_pct": 3.58,
+    "turnover_pct": 5.19,
+    "amount_cny": 904850000.0,
+    "volume_lots": 589107.0
+  },
+  {
+    "code": "605136",
+    "name": "丽人丽妆",
+    "board": "SH",
+    "price": 9.02,
+    "change_pct": 3.56,
+    "turnover_pct": 12.44,
+    "amount_cny": 454440000.0,
+    "volume_lots": 498038.0
+  },
+  {
+    "code": "001339",
+    "name": "智微智能",
+    "board": "SZ_MAIN",
+    "price": 63.8,
+    "change_pct": 3.54,
+    "turnover_pct": 5.7,
+    "amount_cny": 592650000.0,
+    "volume_lots": 92305.0
+  },
+  {
+    "code": "301169",
+    "name": "零点有数",
+    "board": "GEM",
+    "price": 50.02,
+    "change_pct": 3.54,
+    "turnover_pct": 6.28,
+    "amount_cny": 222740000.0,
+    "volume_lots": 45244.0
+  },
+  {
+    "code": "600785",
+    "name": "新华百货",
+    "board": "SH",
+    "price": 11.16,
+    "change_pct": 3.53,
+    "turnover_pct": 4.82,
+    "amount_cny": 167410000.0,
+    "volume_lots": 152102.0
+  },
+  {
+    "code": "301218",
+    "name": "华是科技",
+    "board": "GEM",
+    "price": 68.91,
+    "change_pct": 3.52,
+    "turnover_pct": 20.11,
+    "amount_cny": 995630000.0,
+    "volume_lots": 144226.0
+  },
+  {
+    "code": "002706",
+    "name": "良信股份",
+    "board": "SZ_MAIN",
+    "price": 8.54,
+    "change_pct": 3.52,
+    "turnover_pct": 3.55,
+    "amount_cny": 276460000.0,
+    "volume_lots": 325151.0
+  },
+  {
+    "code": "002474",
+    "name": "榕基软件",
+    "board": "SZ_MAIN",
+    "price": 6.79,
+    "change_pct": 3.51,
+    "turnover_pct": 8.17,
+    "amount_cny": 295800000.0,
+    "volume_lots": 439073.0
+  },
+  {
+    "code": "002583",
+    "name": "海能达",
+    "board": "SZ_MAIN",
+    "price": 8.28,
+    "change_pct": 3.5,
+    "turnover_pct": 2.43,
+    "amount_cny": 255040000.0,
+    "volume_lots": 311276.0
+  },
+  {
+    "code": "300900",
+    "name": "广联航空",
+    "board": "GEM",
+    "price": 21.64,
+    "change_pct": 3.49,
+    "turnover_pct": 8.38,
+    "amount_cny": 468380000.0,
+    "volume_lots": 215126.0
+  },
+  {
+    "code": "002015",
+    "name": "协鑫能科",
+    "board": "SZ_MAIN",
+    "price": 13.96,
+    "change_pct": 3.48,
+    "turnover_pct": 3.19,
+    "amount_cny": 720380000.0,
+    "volume_lots": 518055.0
+  },
+  {
+    "code": "002908",
+    "name": "德生科技",
+    "board": "SZ_MAIN",
+    "price": 8.33,
+    "change_pct": 3.48,
+    "turnover_pct": 14.01,
+    "amount_cny": 371030000.0,
+    "volume_lots": 455535.0
+  },
+  {
+    "code": "301265",
+    "name": "华新科技",
+    "board": "GEM",
+    "price": 21.1,
+    "change_pct": 3.48,
+    "turnover_pct": 2.25,
+    "amount_cny": 111910000.0,
+    "volume_lots": 54765.0
+  },
+  {
+    "code": "300642",
+    "name": "透景生命",
+    "board": "GEM",
+    "price": 19.11,
+    "change_pct": 3.47,
+    "turnover_pct": 13.34,
+    "amount_cny": 355680000.0,
+    "volume_lots": 183710.0
+  },
+  {
+    "code": "002177",
+    "name": "御银股份",
+    "board": "SZ_MAIN",
+    "price": 5.66,
+    "change_pct": 3.47,
+    "turnover_pct": 7.29,
+    "amount_cny": 286820000.0,
+    "volume_lots": 498091.0
+  },
+  {
+    "code": "300244",
+    "name": "迪安诊断",
+    "board": "GEM",
+    "price": 22.54,
+    "change_pct": 3.44,
+    "turnover_pct": 17.41,
+    "amount_cny": 1965480000.0,
+    "volume_lots": 872889.0
+  },
+  {
+    "code": "301311",
+    "name": "昆船智能",
+    "board": "GEM",
+    "price": 20.01,
+    "change_pct": 3.41,
+    "turnover_pct": 8.85,
+    "amount_cny": 427270000.0,
+    "volume_lots": 212347.0
+  },
+  {
+    "code": "001306",
+    "name": "夏厦精密",
+    "board": "SZ_MAIN",
+    "price": 59.1,
+    "change_pct": 3.41,
+    "turnover_pct": 11.88,
+    "amount_cny": 111700000.0,
+    "volume_lots": 18788.0
+  },
+  {
+    "code": "002354",
+    "name": "天娱数科",
+    "board": "SZ_MAIN",
+    "price": 7.94,
+    "change_pct": 3.39,
+    "turnover_pct": 18.11,
+    "amount_cny": 2325040000.0,
+    "volume_lots": 2945904.0
+  },
+  {
+    "code": "002976",
+    "name": "瑞玛精密",
+    "board": "SZ_MAIN",
+    "price": 18.72,
+    "change_pct": 3.37,
+    "turnover_pct": 7.09,
+    "amount_cny": 162860000.0,
+    "volume_lots": 86492.0
+  },
+  {
+    "code": "000710",
+    "name": "贝瑞基因",
+    "board": "SZ_MAIN",
+    "price": 10.77,
+    "change_pct": 3.36,
+    "turnover_pct": 14.77,
+    "amount_cny": 541550000.0,
+    "volume_lots": 495495.0
+  },
+  {
+    "code": "002623",
+    "name": "亚玛顿",
+    "board": "SZ_MAIN",
+    "price": 18.83,
+    "change_pct": 3.35,
+    "turnover_pct": 4.54,
+    "amount_cny": 166420000.0,
+    "volume_lots": 87519.0
+  },
+  {
+    "code": "002851",
+    "name": "麦格米特",
+    "board": "SZ_MAIN",
+    "price": 98.27,
+    "change_pct": 3.34,
+    "turnover_pct": 3.44,
+    "amount_cny": 1666320000.0,
+    "volume_lots": 168920.0
+  },
+  {
+    "code": "600539",
+    "name": "狮头股份",
+    "board": "SH",
+    "price": 13.92,
+    "change_pct": 3.34,
+    "turnover_pct": 3.27,
+    "amount_cny": 103900000.0,
+    "volume_lots": 75253.0
+  },
+  {
+    "code": "002343",
+    "name": "慈文传媒",
+    "board": "SZ_MAIN",
+    "price": 10.59,
+    "change_pct": 3.32,
+    "turnover_pct": 24.4,
+    "amount_cny": 1207560000.0,
+    "volume_lots": 1155685.0
+  },
+  {
+    "code": "300302",
+    "name": "同有科技",
+    "board": "GEM",
+    "price": 23.96,
+    "change_pct": 3.32,
+    "turnover_pct": 5.47,
+    "amount_cny": 482950000.0,
+    "volume_lots": 203088.0
+  },
+  {
+    "code": "300166",
+    "name": "东方国信",
+    "board": "GEM",
+    "price": 11.55,
+    "change_pct": 3.31,
+    "turnover_pct": 3.56,
+    "amount_cny": 382450000.0,
+    "volume_lots": 331234.0
+  },
+  {
+    "code": "600843",
+    "name": "上工申贝",
+    "board": "SH",
+    "price": 8.76,
+    "change_pct": 3.3,
+    "turnover_pct": 9.95,
+    "amount_cny": 405180000.0,
+    "volume_lots": 466834.0
+  },
+  {
+    "code": "300757",
+    "name": "罗博特科",
+    "board": "GEM",
+    "price": 449.32,
+    "change_pct": 3.29,
+    "turnover_pct": 3.06,
+    "amount_cny": 2248800000.0,
+    "volume_lots": 49797.0
+  },
+  {
+    "code": "000798",
+    "name": "中水渔业",
+    "board": "SZ_MAIN",
+    "price": 9.43,
+    "change_pct": 3.29,
+    "turnover_pct": 6.37,
+    "amount_cny": 224010000.0,
+    "volume_lots": 232971.0
+  },
+  {
+    "code": "300788",
+    "name": "中信出版",
+    "board": "GEM",
+    "price": 29.86,
+    "change_pct": 3.29,
+    "turnover_pct": 3.4,
+    "amount_cny": 194830000.0,
+    "volume_lots": 64586.0
+  },
+  {
+    "code": "000670",
+    "name": "盈方微",
+    "board": "SZ_MAIN",
+    "price": 6.29,
+    "change_pct": 3.28,
+    "turnover_pct": 4.11,
+    "amount_cny": 213140000.0,
+    "volume_lots": 340791.0
+  },
+  {
+    "code": "301291",
+    "name": "明阳电气",
+    "board": "GEM",
+    "price": 37.57,
+    "change_pct": 3.27,
+    "turnover_pct": 3.21,
+    "amount_cny": 199740000.0,
+    "volume_lots": 53451.0
+  },
+  {
+    "code": "300570",
+    "name": "太辰光",
+    "board": "GEM",
+    "price": 176.18,
+    "change_pct": 3.26,
+    "turnover_pct": 7.77,
+    "amount_cny": 2649550000.0,
+    "volume_lots": 149375.0
+  },
+  {
+    "code": "002922",
+    "name": "伊戈尔",
+    "board": "SZ_MAIN",
+    "price": 20.06,
+    "change_pct": 3.24,
+    "turnover_pct": 3.4,
+    "amount_cny": 259880000.0,
+    "volume_lots": 129876.0
+  },
+  {
+    "code": "300747",
+    "name": "锐科激光",
+    "board": "GEM",
+    "price": 44.61,
+    "change_pct": 3.22,
+    "turnover_pct": 4.65,
+    "amount_cny": 1078240000.0,
+    "volume_lots": 242909.0
+  },
+  {
+    "code": "002745",
+    "name": "木林森",
+    "board": "SZ_MAIN",
+    "price": 10.66,
+    "change_pct": 3.19,
+    "turnover_pct": 3.49,
+    "amount_cny": 391690000.0,
+    "volume_lots": 368739.0
+  },
+  {
+    "code": "001359",
+    "name": "平安电工",
+    "board": "SZ_MAIN",
+    "price": 72.38,
+    "change_pct": 3.19,
+    "turnover_pct": 3.25,
+    "amount_cny": 142160000.0,
+    "volume_lots": 19580.0
+  },
+  {
+    "code": "603158",
+    "name": "腾龙股份",
+    "board": "SH",
+    "price": 9.7,
+    "change_pct": 3.19,
+    "turnover_pct": 2.35,
+    "amount_cny": 111470000.0,
+    "volume_lots": 115247.0
+  },
+  {
+    "code": "603859",
+    "name": "能科科技",
+    "board": "SH",
+    "price": 41.88,
+    "change_pct": 3.18,
+    "turnover_pct": 7.44,
+    "amount_cny": 749420000.0,
+    "volume_lots": 182146.0
+  },
+  {
+    "code": "300401",
+    "name": "花园生物",
+    "board": "GEM",
+    "price": 12.99,
+    "change_pct": 3.18,
+    "turnover_pct": 3.44,
+    "amount_cny": 242290000.0,
+    "volume_lots": 184432.0
+  },
+  {
+    "code": "001313",
+    "name": "粤海饲料",
+    "board": "SZ_MAIN",
+    "price": 7.46,
+    "change_pct": 3.18,
+    "turnover_pct": 2.75,
+    "amount_cny": 142510000.0,
+    "volume_lots": 192553.0
+  },
+  {
+    "code": "000892",
+    "name": "欢瑞世纪",
+    "board": "SZ_MAIN",
+    "price": 4.88,
+    "change_pct": 3.17,
+    "turnover_pct": 17.73,
+    "amount_cny": 625740000.0,
+    "volume_lots": 1259947.0
+  },
+  {
+    "code": "002085",
+    "name": "万丰奥威",
+    "board": "SZ_MAIN",
+    "price": 11.11,
+    "change_pct": 3.16,
+    "turnover_pct": 8.9,
+    "amount_cny": 2047730000.0,
+    "volume_lots": 1888996.0
+  },
+  {
+    "code": "600851",
+    "name": "海欣股份",
+    "board": "SH",
+    "price": 8.84,
+    "change_pct": 3.15,
+    "turnover_pct": 3.09,
+    "amount_cny": 203360000.0,
+    "volume_lots": 228120.0
+  },
+  {
+    "code": "603683",
+    "name": "晶华新材",
+    "board": "SH",
+    "price": 15.1,
+    "change_pct": 3.14,
+    "turnover_pct": 12.11,
+    "amount_cny": 521700000.0,
+    "volume_lots": 349398.0
+  },
+  {
+    "code": "000753",
+    "name": "漳州发展",
+    "board": "SZ_MAIN",
+    "price": 4.93,
+    "change_pct": 3.14,
+    "turnover_pct": 4.44,
+    "amount_cny": 219880000.0,
+    "volume_lots": 440647.0
+  },
+  {
+    "code": "300656",
+    "name": "民德电子",
+    "board": "GEM",
+    "price": 24.88,
+    "change_pct": 3.11,
+    "turnover_pct": 3.44,
+    "amount_cny": 115470000.0,
+    "volume_lots": 46471.0
+  },
+  {
+    "code": "600892",
+    "name": "大晟文化",
+    "board": "SH",
+    "price": 4.33,
+    "change_pct": 3.1,
+    "turnover_pct": 8.48,
+    "amount_cny": 208750000.0,
+    "volume_lots": 474032.0
+  },
+  {
+    "code": "000701",
+    "name": "厦门信达",
+    "board": "SZ_MAIN",
+    "price": 5.33,
+    "change_pct": 3.09,
+    "turnover_pct": 5.92,
+    "amount_cny": 212120000.0,
+    "volume_lots": 395387.0
+  },
+  {
+    "code": "600667",
+    "name": "太极实业",
+    "board": "SH",
+    "price": 15.04,
+    "change_pct": 3.08,
+    "turnover_pct": 5.53,
+    "amount_cny": 1732490000.0,
+    "volume_lots": 1156304.0
+  },
+  {
+    "code": "001267",
+    "name": "汇绿生态",
+    "board": "SZ_MAIN",
+    "price": 27.96,
+    "change_pct": 3.06,
+    "turnover_pct": 2.68,
+    "amount_cny": 458330000.0,
+    "volume_lots": 162960.0
+  },
+  {
+    "code": "301018",
+    "name": "申菱环境",
+    "board": "GEM",
+    "price": 76.26,
+    "change_pct": 3.04,
+    "turnover_pct": 2.44,
+    "amount_cny": 529900000.0,
+    "volume_lots": 69057.0
+  },
+  {
+    "code": "002174",
+    "name": "游族网络",
+    "board": "SZ_MAIN",
+    "price": 12.58,
+    "change_pct": 3.03,
+    "turnover_pct": 2.5,
+    "amount_cny": 308300000.0,
+    "volume_lots": 244756.0
+  },
+  {
+    "code": "002609",
+    "name": "捷顺科技",
+    "board": "SZ_MAIN",
+    "price": 8.15,
+    "change_pct": 3.03,
+    "turnover_pct": 3.0,
+    "amount_cny": 112760000.0,
+    "volume_lots": 137931.0
+  },
+  {
+    "code": "600246",
+    "name": "万通发展",
+    "board": "SH",
+    "price": 11.6,
+    "change_pct": 3.02,
+    "turnover_pct": 2.96,
+    "amount_cny": 645210000.0,
+    "volume_lots": 559541.0
+  },
+  {
+    "code": "603308",
+    "name": "应流股份",
+    "board": "SH",
+    "price": 33.75,
+    "change_pct": 3.02,
+    "turnover_pct": 2.36,
+    "amount_cny": 579550000.0,
+    "volume_lots": 171662.0
+  },
+  {
+    "code": "002702",
+    "name": "海欣食品",
+    "board": "SZ_MAIN",
+    "price": 5.82,
+    "change_pct": 3.01,
+    "turnover_pct": 14.21,
+    "amount_cny": 381950000.0,
+    "volume_lots": 651809.0
+  },
+  {
+    "code": "001896",
+    "name": "豫能控股",
+    "board": "SZ_MAIN",
+    "price": 9.96,
+    "change_pct": 3.0,
+    "turnover_pct": 2.38,
+    "amount_cny": 361460000.0,
+    "volume_lots": 362853.0
+  },
+  {
+    "code": "001314",
+    "name": "亿道信息",
+    "board": "SZ_MAIN",
+    "price": 45.3,
+    "change_pct": 3.0,
+    "turnover_pct": 2.49,
+    "amount_cny": 140590000.0,
+    "volume_lots": 31017.0
+  },
+  {
+    "code": "002767",
+    "name": "先锋电子",
+    "board": "SZ_MAIN",
+    "price": 16.85,
+    "change_pct": 3.0,
+    "turnover_pct": 5.85,
+    "amount_cny": 128500000.0,
+    "volume_lots": 76258.0
+  }
+]
