@@ -27,8 +27,12 @@ jobs:
           rows=[r for r in json.loads(Path('docs/data/universe.json').read_text()) if r['board']!='BJ'][:100]
           start=time.monotonic()
           def one(r):
-              c,b,e=fetch_bars(ak,r,date(2026,10,22),120)
-              return c,len(b or []),e
+              startdate=(date(2026,10,22)-timedelta(days=240)).strftime('%Y%m%d')
+              try:
+                  frame=ak.stock_zh_a_hist_tx(symbol=history_symbol(r),start_date=startdate,end_date='20261022',adjust='',timeout=12)
+                  return r['code'],len(frame),None
+              except Exception as exc:
+                  return r['code'],0,type(exc).__name__ + ': ' + str(exc)[:50]
           with ThreadPoolExecutor(max_workers=10) as pool:
               results=list(pool.map(one,rows))
           print('TX_100',sum(n>=120 for _,n,_ in results),sum(e is not None for _,_,e in results),round(time.monotonic()-start,2),flush=True)
