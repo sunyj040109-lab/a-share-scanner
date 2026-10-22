@@ -1,27 +1,114 @@
 {
-  "trade_date": "2026-10-21",
-  "captured_at_beijing": "2026-10-21T14:30:21+08:00",
-  "scan_type": "intraday_1430",
-  "scheduled_time_beijing": "14:30",
-  "source": "AKShare / Tencent",
-  "universe_count": 4954,
-  "selected_count": 267,
+  "trade_date": "2026-10-22",
+  "captured_at_beijing": "2026-10-22T14:26:06+08:00",
+  "scan_type": "intraday_strategy",
+  "scheduled_time_beijing": "14:25",
+  "source": "AKShare / Tencent spot + Tencent/Eastmoney/Sina daily + Eastmoney 5m + THS sectors",
+  "universe_count": 4957,
+  "selected_count": 32,
   "boards": {
-    "沪市主板": 1697,
+    "沪市主板": 1700,
     "深市主板": 1494,
     "创业板": 1411,
     "北交所": 352
   },
   "source_counts": {
-    "SH": 1697,
+    "SH": 1700,
     "SZ": 2905,
     "BJ": 352
   },
   "filters": {
-    "min_change_pct": 3.0,
-    "min_turnover_pct": 2.0,
-    "min_amount_cny": 100000000,
-    "max_report_rows": 100
+    "max_report_rows": 100,
+    "history_days": 120,
+    "history_workers": 12,
+    "minute_workers": 6,
+    "max_minute_stocks": 60,
+    "max_sector_report": 10,
+    "limit_up_tolerance_pct": 0.2,
+    "red_volume_ratio": 1.5,
+    "breakout_volume_ratio": 1.5,
+    "low_volume_ratio": 0.75,
+    "rebound_volume_ratio": 1.2,
+    "leading_sector_change_pct": 2.0
   },
-  "missing_numeric_rows": 0
+  "missing_numeric_rows": 0,
+  "coverage": {
+    "pass": 32,
+    "fail": 4662,
+    "unknown": 76,
+    "excluded": 187,
+    "history_available": 4956,
+    "history_by_board": {
+      "沪市主板": {
+        "available": 1699,
+        "total": 1700
+      },
+      "深市主板": {
+        "available": 1494,
+        "total": 1494
+      },
+      "创业板": {
+        "available": 1411,
+        "total": 1411
+      },
+      "北交所": {
+        "available": 352,
+        "total": 352
+      }
+    },
+    "minute_available": 6,
+    "minute_attempted": 32
+  },
+  "market": {
+    "up_count": 663,
+    "down_count": 4237,
+    "amount_cny": 1135632630000.0,
+    "checks": {
+      "leading_sector": {
+        "status": "pass",
+        "evidence": [
+          {
+            "name": "电机",
+            "change_pct": 4.7,
+            "up_count": 19,
+            "down_count": 6,
+            "leader": "华阳智能",
+            "three_day_return_pct": 3.04,
+            "up_days_of_three": 2
+          },
+          {
+            "name": "工程机械",
+            "change_pct": 1.05,
+            "up_count": 24,
+            "down_count": 11,
+            "leader": "山河智能",
+            "three_day_return_pct": 1.85,
+            "up_days_of_three": 2
+          },
+          {
+            "name": "石油加工贸易",
+            "change_pct": -0.41,
+            "up_count": 6,
+            "down_count": 21,
+            "leader": "博汇股份",
+            "three_day_return_pct": -0.6,
+            "up_days_of_three": 1
+          }
+        ],
+        "reason": "同花顺行业涨幅与最近三日持续性代理"
+      },
+      "above_ma5": {
+        "status": "unknown",
+        "evidence": null,
+        "reason": "指数数据不足：ReadTimeout"
+      },
+      "volume_rebound": {
+        "status": "unknown",
+        "evidence": null,
+        "reason": "指数数据不足：ReadTimeout"
+      }
+    },
+    "reversal_status": "unknown"
+  },
+  "sector_count": 10
 }

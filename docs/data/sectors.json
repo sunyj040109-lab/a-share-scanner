@@ -1,0 +1,92 @@
+[
+  {
+    "name": "电机",
+    "change_pct": 4.7,
+    "up_count": 19,
+    "down_count": 6,
+    "leader": "华阳智能",
+    "three_day_return_pct": 3.04,
+    "up_days_of_three": 2
+  },
+  {
+    "name": "工程机械",
+    "change_pct": 1.05,
+    "up_count": 24,
+    "down_count": 11,
+    "leader": "山河智能",
+    "three_day_return_pct": 1.85,
+    "up_days_of_three": 2
+  },
+  {
+    "name": "石油加工贸易",
+    "change_pct": -0.41,
+    "up_count": 6,
+    "down_count": 21,
+    "leader": "博汇股份",
+    "three_day_return_pct": -0.6,
+    "up_days_of_three": 1
+  },
+  {
+    "name": "美容护理",
+    "change_pct": -0.44,
+    "up_count": 14,
+    "down_count": 19,
+    "leader": "锦波生物",
+    "three_day_return_pct": -1.02,
+    "up_days_of_three": 1
+  },
+  {
+    "name": "证券",
+    "change_pct": -0.61,
+    "up_count": 6,
+    "down_count": 40,
+    "leader": "华鑫股份",
+    "three_day_return_pct": -2.34,
+    "up_days_of_three": 0
+  },
+  {
+    "name": "银行",
+    "change_pct": -0.62,
+    "up_count": 7,
+    "down_count": 34,
+    "leader": "建设银行",
+    "three_day_return_pct": -0.18,
+    "up_days_of_three": 1
+  },
+  {
+    "name": "轨交设备",
+    "change_pct": -0.72,
+    "up_count": 10,
+    "down_count": 20,
+    "leader": "金鹰重工",
+    "three_day_return_pct": 0.25,
+    "up_days_of_three": 1
+  },
+  {
+    "name": "电网设备",
+    "change_pct": -0.76,
+    "up_count": 39,
+    "down_count": 97,
+    "leader": "长城电工",
+    "three_day_return_pct": 0.25,
+    "up_days_of_three": 1
+  },
+  {
+    "name": "自动化设备",
+    "change_pct": -0.85,
+    "up_count": 33,
+    "down_count": 66,
+    "leader": "巨能股份",
+    "three_day_return_pct": 4.55,
+    "up_days_of_three": 2
+  },
+  {
+    "name": "汽车零部件",
+    "change_pct": -0.88,
+    "up_count": 72,
+    "down_count": 202,
+    "leader": "日上集团",
+    "three_day_return_pct": 1.56,
+    "up_days_of_three": 2
+  }
+]
