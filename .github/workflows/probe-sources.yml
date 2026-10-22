@@ -1,0 +1,36 @@
+name: Probe A-share data sources
+on:
+  push:
+    paths:
+      - .github/workflows/probe-sources.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install akshare==1.19.1
+      - name: Probe histories and sectors
+        shell: bash
+        run: |
+          python - <<'PY'
+          import akshare as ak,time
+          for symbol in ['sh600000','sz300001','bj920001','bj836149','bj430047','sh000001','sz399006']:
+              t=time.monotonic()
+              try:
+                  f=ak.stock_zh_a_hist_tx(symbol=symbol,start_date='20260401',end_date='20261022',timeout=12)
+                  print('HIST',symbol,len(f),f.tail(1).to_dict('records'),round(time.monotonic()-t,2),flush=True)
+              except Exception as e: print('HIST',symbol,type(e).__name__,str(e)[:160],round(time.monotonic()-t,2),flush=True)
+          for label, fn in [('industry_ths',ak.stock_board_industry_name_ths),('industry_em',ak.stock_board_industry_name_em)]:
+              t=time.monotonic()
+              try:
+                  f=fn()
+                  print('SECTOR',label,len(f),list(f.columns),f.head(1).to_dict('records'),round(time.monotonic()-t,2),flush=True)
+              except Exception as e: print('SECTOR',label,type(e).__name__,str(e)[:160],round(time.monotonic()-t,2),flush=True)
+          PY
