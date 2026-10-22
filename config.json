@@ -1,8 +1,16 @@
 {
-  "min_change_pct": 3.0,
-  "min_turnover_pct": 2.0,
-  "min_amount_cny": 100000000,
-  "max_report_rows": 100
+  "max_report_rows": 100,
+  "history_days": 120,
+  "history_workers": 12,
+  "minute_workers": 6,
+  "max_minute_stocks": 60,
+  "max_sector_report": 10,
+  "limit_up_tolerance_pct": 0.2,
+  "red_volume_ratio": 1.5,
+  "breakout_volume_ratio": 1.5,
+  "low_volume_ratio": 0.75,
+  "rebound_volume_ratio": 1.2,
+  "leading_sector_change_pct": 2.0
 }
 
 
