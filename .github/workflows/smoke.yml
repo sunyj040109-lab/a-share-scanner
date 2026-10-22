@@ -1,0 +1,41 @@
+name: Strategy smoke test
+
+on:
+  push:
+    paths:
+      - .github/workflows/smoke.yml
+      - scanner.py
+      - prepare.py
+      - strategy.py
+      - config.json
+      - tests/**
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - run: python -m unittest discover -s tests -v
+      - name: Check a balanced 60-stock live sample
+        run: |
+          python prepare.py --no-wait --sample 60 --output "$RUNNER_TEMP/history-sample.json"
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          payload=json.loads((Path(os.environ['RUNNER_TEMP'])/'history-sample.json').read_text())
+          full=sum(len(bars)>=120 for bars in payload['bars'].values())
+          bse=sum(code.startswith(('4','8','9')) for code in payload['bars'])
+          print(f'120-bar coverage: {full}/60; BSE histories: {bse}; errors: {len(payload["errors"])}')
+          if full<40 or bse<8:
+              raise SystemExit('Historical sample coverage below acceptance threshold')
+          PY
