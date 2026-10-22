@@ -419,6 +419,13 @@ def main(argv=None):
     if not trading_day(now.date()):
         print(f"{now.date()} 不是交易日，跳过。")
         return 0
+    import requests
+    original_get = requests.get
+    def bounded_get(*call_args, **call_kwargs):
+        if not call_kwargs.get("timeout"):
+            call_kwargs["timeout"] = 12
+        return original_get(*call_args, **call_kwargs)
+    requests.get = bounded_get
     import akshare as ak
     config = json.loads((Path(__file__).resolve().parent / "config.json").read_text(encoding="utf-8"))
     rows, counts = fetch_universe(ak)

@@ -160,7 +160,8 @@ def main(argv=None):
     # AKShare 的腾讯起始年份探测未显式设置 timeout；为整个预取进程加默认超时。
     original_get = requests.get
     def bounded_get(*call_args, **call_kwargs):
-        call_kwargs.setdefault("timeout", 12)
+        if not call_kwargs.get("timeout"):
+            call_kwargs["timeout"] = 12
         return original_get(*call_args, **call_kwargs)
     requests.get = bounded_get
     cfg = json.loads((Path(__file__).parent / "config.json").read_text(encoding="utf-8"))
