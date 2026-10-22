@@ -74,16 +74,22 @@ def evaluate_stock(quote: dict, bars: list[dict] | None, cfg: dict) -> dict:
                                        sum(bar["volume"] for bar in cluster), 2)}
     checks["volume_cluster_cost_proxy"] = signal(None if not cluster else price >= zone["low"], zone,
         "连续放量阳线的价格区间代理，不是实际主力持仓成本")
-    max_bar = max(bars, key=lambda bar: bar["volume"])
+    max_index = max(range(len(bars)), key=lambda index: bars[index]["volume"])
+    max_bar = bars[max_index]
     bearish_anchor = max_bar if max_bar["close"] < max_bar["open"] else None
     checks["bearish_max_volume_anchor"] = signal(bool(bearish_anchor),
         None if bearish_anchor is None else {key: bearish_anchor[key] for key in ("date", "high", "low", "volume")},
         "120 日最大量阴线；非复权价格，除权需人工核对")
     if bearish_anchor:
-        checks["anchor_unbroken"] = signal(price >= bearish_anchor["low"],
-            {"price": price, "anchor_low": bearish_anchor["low"]})
-        checks["volume_breakout"] = signal(price > bearish_anchor["high"] and volume_ratio >= cfg["breakout_volume_ratio"],
-            {"price": price, "anchor_high": bearish_anchor["high"], "volume_ratio_vs_20d": round(volume_ratio, 2)})
+        post_anchor_low = min([bar["low"] for bar in bars[max_index + 1:]] + [price])
+        checks["anchor_unbroken"] = signal(post_anchor_low >= bearish_anchor["low"],
+            {"anchor_low": bearish_anchor["low"], "minimum_since_anchor": post_anchor_low},
+            "比较锚点之后已完成日线的最低价和盘中现价；无法得知今日盘中是否曾短暂跌破")
+        checks["volume_breakout"] = signal(closes[-1] <= bearish_anchor["high"] < price and
+            volume_ratio >= cfg["breakout_volume_ratio"],
+            {"previous_close": closes[-1], "price": price, "anchor_high": bearish_anchor["high"],
+             "volume_ratio_vs_20d": round(volume_ratio, 2)},
+            "当日由锚点高点下方带量越过；盘中可能再次回落")
     else:
         checks["anchor_unbroken"] = signal(None, reason="无最大量阴线锚点")
         checks["volume_breakout"] = signal(None, reason="无最大量阴线锚点")

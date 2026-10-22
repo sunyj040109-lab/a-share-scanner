@@ -80,15 +80,24 @@ class ScannerTests(unittest.TestCase):
                 raise ConnectionError("Eastmoney unavailable")
             def stock_zh_a_daily(self, **kwargs):
                 return pd.DataFrame(records)
+        class SourceFallback(Source):
+            def stock_zh_a_daily(self, **kwargs):
+                raise ConnectionError("Sina unavailable")
+            def stock_zh_a_hist(self, **kwargs):
+                return pd.DataFrame(records).rename(columns={"date": "日期", "open": "开盘",
+                    "close": "收盘", "high": "最高", "low": "最低", "volume": "成交量", "amount": "成交额"})
         with patch("prepare.wait_bse_slot"):
             _, sh, sh_error = fetch_bars(Source(), {"code": "600000", "board": "SH"}, date(2026, 10, 22), 120)
             _, bj, bj_error = fetch_bars(Source(), {"code": "920001", "board": "BJ"}, date(2026, 10, 22), 120)
+            _, bj_fallback, fallback_error = fetch_bars(SourceFallback(), {"code": "920002", "board": "BJ"}, date(2026, 10, 22), 120)
         self.assertIsNone(sh_error)
         self.assertIsNone(bj_error)
+        self.assertIsNone(fallback_error)
         self.assertEqual(len(sh), 120)
         self.assertEqual(len(bj), 120)
         self.assertEqual(sh[-1]["volume"], 1000)
         self.assertEqual(bj[-1]["volume"], 1000)
+        self.assertEqual(bj_fallback[-1]["volume"], 100000)
 
     def test_calendar_and_reports(self):
         self.assertTrue(trading_day(date(2026, 10, 16), FakeCalendar()))

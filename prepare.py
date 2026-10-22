@@ -36,7 +36,7 @@ def fetch_bars(ak, row, as_of: date, history_days: int):
     # 多留 90 个日历日以覆盖周末、休市；只取昨日及以前的 120 根日线。
     start = (as_of - timedelta(days=history_days * 2)).strftime("%Y%m%d")
     end = as_of.strftime("%Y%m%d")
-    providers = ("eastmoney", "sina") if row["board"] == "BJ" else ("tencent", "eastmoney")
+    providers = ("sina", "eastmoney") if row["board"] == "BJ" else ("tencent", "eastmoney")
     failures = []
     for provider in providers:
         try:
@@ -126,7 +126,7 @@ def prepare(ak, rows, as_of: date, cfg: dict, deadline: datetime | None = None):
                     break
         finally:
             pool.shutdown(wait=False, cancel_futures=True)
-    # 北交所的东方财富接口可能限流；先取并在失败时回退新浪。
+    # 北交所新浪请求先于沪深；失败时回退东方财富，两者均限速。
     bse = [row for row in remaining if row["board"] == "BJ"]
     main = [row for row in remaining if row["board"] != "BJ"]
     collect(bse, min(2, cfg["history_workers"]))
