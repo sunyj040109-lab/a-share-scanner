@@ -18,7 +18,8 @@ jobs:
       - name: Probe Sina BSE daily history
         run: |
           python - <<'PY'
-          import akshare as ak,time,json\n          from pathlib import Path
+          import akshare as ak,time,json
+          from pathlib import Path
           for code in [r['code'] for r in json.loads(Path('docs/data/universe.json').read_text()) if r['board']=='BJ'][:30]:
               try:
                   frame=ak.stock_zh_a_daily(symbol='bj'+code,start_date='20260101',end_date='20261021',adjust='')
