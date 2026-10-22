@@ -5,6 +5,7 @@
   "minute_workers": 6,
   "max_minute_stocks": 60,
   "max_sector_report": 10,
+  "industry_watchlist": [],
   "limit_up_tolerance_pct": 0.2,
   "red_volume_ratio": 1.5,
   "breakout_volume_ratio": 1.5,

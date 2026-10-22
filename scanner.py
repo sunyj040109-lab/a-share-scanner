@@ -200,7 +200,10 @@ def fetch_sectors(ak, day: date, config: dict) -> list[dict]:
         if frame is None or frame.empty or not required.issubset(frame.columns):
             return []
         sectors = []
+        watchlist = set(config.get("industry_watchlist") or [])
         for raw in frame.to_dict("records"):
+            if watchlist and str(raw["板块"]) not in watchlist:
+                continue
             change = number(raw["涨跌幅"])
             if change is None:
                 continue
@@ -351,8 +354,9 @@ def write_outputs(root: Path, day: date, captured: datetime, rows: list[dict], c
               "缺数据记为 **unknown**，不判作失败；信号是量价代理，不是主力行为事实。\n\n"
               f"## 一、大盘择时\n\n{market_text}\n\n"
               "## 二、板块方向\n\n" + ("\n".join(sector_lines) if sector_lines else "板块数据暂不可用，主线判断为 unknown。") + "\n\n"
-              "以下是同花顺行业当时涨幅排序，不等于用户自定义的 70–80 个主流板块池；个股与板块映射仍需核验。\n\n"
-              f"## 三、个股候选\n\n{md_table if chosen else '无已验证同时满足三个硬条件的候选；请查看覆盖数，不能将缺数据解释为无机会。'}\n\n"
+              + ("以下按 config.json 的行业观察池排序；个股与行业的映射仍需核验。\n\n" if config.get("industry_watchlist") else
+                 "以下是同花顺行业当时涨幅排序，不等于用户自定义的 70–80 个主流板块池；个股与板块映射仍需核验。\n\n")
+              + f"## 三、个股候选\n\n{md_table if chosen else '无已验证同时满足三个硬条件的候选；请查看覆盖数，不能将缺数据解释为无机会。'}\n\n"
               + ("\n".join(detail_lines) if detail_lines else "") + "\n\n"
               "## 四、买卖节奏与数据边界\n\n"
               "5 分钟 K 线仅对候选中的前若干只抓取，已在 analysis.json 标出跳空、非早盘红量和回调形态。"
