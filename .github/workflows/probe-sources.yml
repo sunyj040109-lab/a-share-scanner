@@ -33,4 +33,16 @@ jobs:
                   f=fn()
                   print('SECTOR',label,len(f),list(f.columns),f.head(1).to_dict('records'),round(time.monotonic()-t,2),flush=True)
               except Exception as e: print('SECTOR',label,type(e).__name__,str(e)[:160],round(time.monotonic()-t,2),flush=True)
+          for label,fn in [('spot',ak.stock_zh_a_spot_tx),('industry_summary_ths',ak.stock_board_industry_summary_ths),('concept_ths',ak.stock_board_concept_name_ths)]:
+              t=time.monotonic()
+              try:
+                  f=fn()
+                  print('EXTRA',label,len(f),list(f.columns),f.head(1).to_dict('records'),round(time.monotonic()-t,2),flush=True)
+              except Exception as e: print('EXTRA',label,type(e).__name__,str(e)[:160],round(time.monotonic()-t,2),flush=True)
+          for label,fn in [('bse_em',lambda:ak.stock_zh_a_hist(symbol='920001',period='daily',start_date='20260401',end_date='20261022')),('minute_em',lambda:ak.stock_zh_a_hist_min_em(symbol='600000',period='5',start_date='2026-10-21 09:30:00',end_date='2026-10-21 15:00:00'))]:
+              t=time.monotonic()
+              try:
+                  f=fn()
+                  print('EXTRA',label,len(f),list(f.columns),f.head(1).to_dict('records'),round(time.monotonic()-t,2),flush=True)
+              except Exception as e: print('EXTRA',label,type(e).__name__,str(e)[:160],round(time.monotonic()-t,2),flush=True)
           PY
