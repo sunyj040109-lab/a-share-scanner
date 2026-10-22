@@ -8,7 +8,8 @@ from zoneinfo import ZoneInfo
 
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from scanner import board_for, fetch_universe, in_scan_window, main, normalize, normalize_tx, number, select, trading_day, write_outputs
+from scanner import board_for, fetch_universe, in_scan_window, main, normalize, normalize_tx, number, trading_day, write_outputs
+from strategy import add_minute_evidence, evaluate_stock
 
 
 class FakeCalendar:
@@ -43,7 +44,7 @@ class ScannerTests(unittest.TestCase):
         self.assertEqual(board_for("BJ", "836149"), "BJ")
         self.assertIsNone(board_for("BJ", "600000"))
 
-    def test_missing_data_stays_in_universe_but_not_selection(self):
+    def test_missing_data_stays_in_universe_and_is_unknown(self):
         rows = normalize("SZ", [
             {"代码": "300001", "名称": "甲", "最新价": 10, "涨跌幅": 4, "换手率": 3, "成交额": 200000000, "成交量": 100},
             {"代码": "300002", "名称": "乙", "最新价": "-", "涨跌幅": 4, "换手率": 3, "成交额": 200000000, "成交量": 100},
@@ -51,8 +52,9 @@ class ScannerTests(unittest.TestCase):
         ])
         self.assertEqual(len(rows), 2)
         self.assertIsNone(rows[1]["price"])
-        config = {"min_change_pct": 3, "min_turnover_pct": 2, "min_amount_cny": 100000000, "max_report_rows": 100}
-        self.assertEqual([r["code"] for r in select(rows, config)], ["300001"])
+        config = {"history_days": 120, "limit_up_tolerance_pct": 0.2,
+                  "red_volume_ratio": 1.5, "breakout_volume_ratio": 1.5}
+        self.assertEqual(evaluate_stock(rows[1], None, config)["status"], "unknown")
         self.assertIsNone(number(float("nan")))
 
     def test_tencent_units_and_board_filter(self):
@@ -69,12 +71,12 @@ class ScannerTests(unittest.TestCase):
         self.assertTrue(trading_day(date(2026, 10, 16), FakeCalendar()))
         self.assertFalse(trading_day(date(2026, 10, 17), FakeCalendar()))
         row = normalize("SH", [{"代码": "600000", "名称": "浦发银行", "最新价": 10, "涨跌幅": 4, "换手率": 3, "成交额": 200000000, "成交量": 100}])[0]
-        config = {"min_change_pct": 3, "min_turnover_pct": 2, "min_amount_cny": 100000000, "max_report_rows": 100}
+        config = {"max_report_rows": 100}
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
             summary = write_outputs(root, date(2026, 10, 16), datetime(2026, 10, 16, 14, 32, tzinfo=ZoneInfo("Asia/Shanghai")), [row], [row], {"SH": 1}, config)
             self.assertEqual(summary["universe_count"], 1)
-            self.assertEqual(summary["scan_type"], "intraday_1430")
+            self.assertEqual(summary["scan_type"], "intraday_strategy")
             self.assertEqual(json.loads((root / "docs/data/universe.json").read_text(encoding="utf-8"))[0]["code"], "600000")
             self.assertIn("viewport", (root / "docs/index.html").read_text(encoding="utf-8"))
 
@@ -84,10 +86,52 @@ class ScannerTests(unittest.TestCase):
 
     def test_intraday_window(self):
         tz = ZoneInfo("Asia/Shanghai")
-        self.assertFalse(in_scan_window(datetime(2026, 10, 16, 14, 29, tzinfo=tz)))
-        self.assertTrue(in_scan_window(datetime(2026, 10, 16, 14, 30, tzinfo=tz)))
-        self.assertTrue(in_scan_window(datetime(2026, 10, 16, 14, 44, tzinfo=tz)))
-        self.assertFalse(in_scan_window(datetime(2026, 10, 16, 14, 46, tzinfo=tz)))
+        self.assertFalse(in_scan_window(datetime(2026, 10, 16, 14, 24, tzinfo=tz)))
+        self.assertTrue(in_scan_window(datetime(2026, 10, 16, 14, 25, tzinfo=tz)))
+        self.assertTrue(in_scan_window(datetime(2026, 10, 16, 14, 34, tzinfo=tz)))
+        self.assertFalse(in_scan_window(datetime(2026, 10, 16, 14, 36, tzinfo=tz)))
+
+    def test_strategy_requires_history_and_keeps_unknown_separate(self):
+        cfg = {"history_days": 120, "limit_up_tolerance_pct": 0.2,
+               "red_volume_ratio": 1.5, "breakout_volume_ratio": 1.5}
+        bars = []
+        for index in range(120):
+            close = round(10 + 0.03 * index, 2)
+            if index == 60:
+                close = 13.0
+            bars.append({"date": f"2026-{1 + index // 30:02d}-{1 + index % 30:02d}",
+                         "open": 12 if index == 40 else close - 0.02,
+                         "close": close, "high": max(close, 12.1 if index == 40 else close + 0.03),
+                         "low": close - 0.1, "volume": 5000 if index == 40 else 1000})
+        quote = {"code": "600000", "name": "样本", "board": "SH", "price": 14,
+                 "volume_lots": 20}
+        result = evaluate_stock(quote, bars, cfg)
+        self.assertEqual(result["status"], "pass")
+        self.assertEqual(result["checks"]["bearish_max_volume_anchor"]["status"], "pass")
+        self.assertEqual(result["checks"]["operator_intent"]["status"], "unknown")
+        self.assertEqual(evaluate_stock(quote, bars[:-1], cfg)["status"], "unknown")
+        self.assertEqual(evaluate_stock({**quote, "name": "*ST 样本"}, bars, cfg)["status"], "excluded")
+
+    def test_strategy_report_carries_evidence_and_coverage(self):
+        row = normalize("SH", [{"代码": "600000", "名称": "样本", "最新价": 14,
+            "涨跌幅": 2, "换手率": 3, "成交额": 200000000, "成交量": 20}])[0]
+        analysis = {"600000": {"status": "pass", "checks": {
+            "past_limit_up": {"status": "pass", "evidence": [{"date": "2026-10-01"}]},
+            "red_volume_proxy": {"status": "pass", "evidence": {"volume_ratio_vs_20d": 2}},
+            "bearish_max_volume_anchor": {"status": "pass", "evidence": {"date": "2026-09-01", "high": 12}},
+            "non_morning_volume_stack": {"status": "unknown"},
+        }}}
+        cfg = {"max_report_rows": 10, "history_days": 120}
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            summary = write_outputs(root, date(2026, 10, 22), datetime(2026, 10, 22, 14, 26,
+                tzinfo=ZoneInfo("Asia/Shanghai")), [row], [row], {"SH": 1}, cfg,
+                analysis, {"pass": 1, "history_available": 1}, [],
+                {"up_count": 1, "down_count": 0, "amount_cny": 200000000})
+            self.assertEqual(summary["coverage"]["history_available"], 1)
+            self.assertIn("2026-09-01", (root / "REPORT.md").read_text(encoding="utf-8"))
+            self.assertIn("class='card'", (root / "docs/index.html").read_text(encoding="utf-8"))
+            self.assertEqual(json.loads((root / "docs/data/analysis.json").read_text(encoding="utf-8"))["600000"]["status"], "pass")
 
     def test_scheduled_run_reports_missed_window(self):
         with patch("scanner.in_scan_window", return_value=False), patch("scanner.trading_day", return_value=True):
