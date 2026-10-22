@@ -1,0 +1,48 @@
+name: Probe alternate market feeds
+on:
+  push:
+    paths:
+      - .github/workflows/probe-fallback.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Probe 5m and index feeds
+        run: |
+          python - <<'PY'
+          import akshare as ak
+          import requests
+          from datetime import datetime
+          from zoneinfo import ZoneInfo
+          day=datetime.now(ZoneInfo("Asia/Shanghai")).date()
+          print("DAY",day,flush=True)
+          for symbol in ("sh605488","sz002164","sz301591","bj920578"):
+              try:
+                  frame=ak.stock_zh_a_minute(symbol=symbol,period="5",adjust="")
+                  print("MIN",symbol,len(frame),list(frame.columns),frame.tail(2).to_dict("records"),flush=True)
+              except Exception as exc:
+                  print("MINERR",symbol,type(exc).__name__,str(exc)[:150],flush=True)
+          try:
+              frame=ak.stock_zh_a_hist_tx(symbol="sh000001",start_date="20261020",end_date="20261022")
+              print("HISTINDEX",len(frame),frame.tail(3).to_dict("records"),flush=True)
+          except Exception as exc:
+              print("HISTERR",type(exc).__name__,str(exc)[:150],flush=True)
+          try:
+              response=requests.get("https://qt.gtimg.cn/q=sh000001",timeout=12)
+              response.raise_for_status()
+              raw=response.content.decode("gbk",errors="replace")
+              fields=raw.split("~")
+              print("QUOTE",len(fields),[(i,fields[i]) for i in (1,2,3,6,30,37,38) if i<len(fields)],flush=True)
+          except Exception as exc:
+              print("QUOTEERR",type(exc).__name__,str(exc)[:150],flush=True)
+          PY
