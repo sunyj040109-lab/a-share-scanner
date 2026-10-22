@@ -1,4 +1,4 @@
-name: A-share 14:30 intraday scan
+name: A-share 14:00 prepare and 14:25 scan
 
 on:
   schedule:
@@ -29,11 +29,14 @@ jobs:
         run: python -m pip install -r requirements.txt
       - name: Check scanner logic
         run: python -m unittest discover -s tests -v
-      - name: Scan at 14:30 Beijing time
+      - name: Prepare 120-day daily bars from 14:00 Beijing time
+        continue-on-error: true
+        run: python prepare.py --output "$RUNNER_TEMP/history.json"
+      - name: Scan around 14:25 Beijing time
         id: scan
         shell: bash
         run: |
-          python scanner.py --wait-until-window --require-window --status-file "$RUNNER_TEMP/scan-status"
+          python scanner.py --wait-until-window --require-window --history-file "$RUNNER_TEMP/history.json" --status-file "$RUNNER_TEMP/scan-status"
           echo "updated=$(cat "$RUNNER_TEMP/scan-status")" >> "$GITHUB_OUTPUT"
       - name: Save fresh report to repository
         if: steps.scan.outputs.updated == 'true'
