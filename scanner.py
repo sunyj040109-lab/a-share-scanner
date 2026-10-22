@@ -232,7 +232,7 @@ def evaluate_market(ak, rows: list[dict], history: dict, sectors: list[dict], co
               "down_count": sum((row["change_pct"] or 0) < 0 for row in rows),
               "amount_cny": sum(row["amount_cny"] or 0 for row in rows), "checks": {}}
     checks = result["checks"]
-    checks["leading_sector"] = signal(None if not sectors or sectors[0]["three_day_return_pct"] is None else
+    checks["leading_sector"] = signal(None if not any(item["three_day_return_pct"] is not None for item in sectors) else
         any(item["change_pct"] >= config["leading_sector_change_pct"] and
             (item["three_day_return_pct"] or 0) > 0 and (item["up_days_of_three"] or 0) >= 2 for item in sectors),
         sectors[:3], "同花顺行业涨幅与最近三日持续性代理")
