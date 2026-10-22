@@ -8,30 +8,29 @@ permissions:
 jobs:
   probe:
     runs-on: ubuntu-latest
-    timeout-minutes: 6
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
-      - name: Probe BSE with low concurrency
+      - name: Probe Tencent history throughput
         run: |
           python - <<'PY'
-          import akshare as ak,json,time
+          import akshare as ak, json, time
           from datetime import date
           from concurrent.futures import ThreadPoolExecutor
           from pathlib import Path
           from prepare import fetch_bars
-          rows=[r for r in json.loads(Path('docs/data/universe.json').read_text()) if r['board']=='BJ'][:60]
+          rows=[r for r in json.loads(Path('docs/data/universe.json').read_text()) if r['board']!='BJ'][:100]
           start=time.monotonic()
           def one(r):
               c,b,e=fetch_bars(ak,r,date(2026,10,22),120)
-              time.sleep(.2)
               return c,len(b or []),e
-          with ThreadPoolExecutor(max_workers=2) as pool:
+          with ThreadPoolExecutor(max_workers=10) as pool:
               results=list(pool.map(one,rows))
-          print('BSE_60',sum(n>=120 for _,n,_ in results),sum(e is not None for _,_,e in results),round(time.monotonic()-start,2),flush=True)
+          print('TX_100',sum(n>=120 for _,n,_ in results),sum(e is not None for _,_,e in results),round(time.monotonic()-start,2),flush=True)
           for c,n,e in results:
-              if e: print('BSE_ERROR',c,e,flush=True)
+              if e: print('TX_ERROR',c,e,flush=True)
           PY
