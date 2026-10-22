@@ -9,7 +9,9 @@ import pandas as pd
 
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from scanner import board_for, fetch_universe, in_scan_window, main, normalize, normalize_tx, number, trading_day, write_outputs
+from scanner import (board_for, fetch_minutes, fetch_universe, in_scan_window, main,
+                     normalize, normalize_minute_bars, normalize_tx, number,
+                     parse_tencent_index_quote, trading_day, write_outputs)
 from strategy import add_minute_evidence, evaluate_stock
 from prepare import fetch_bars
 
@@ -68,6 +70,36 @@ class ScannerTests(unittest.TestCase):
         self.assertEqual([row["code"] for row in rows], ["600000", "920001"])
         self.assertEqual(rows[0]["amount_cny"], 200000000)
         self.assertIsNone(rows[1]["amount_cny"])
+
+    def test_index_quote_requires_current_trading_date(self):
+        fields = [""] * 31
+        fields[3], fields[6], fields[30] = "3658.03", "437691963", "20261022142500"
+        payload = ('v_sh000001="' + "~".join(fields) + '";').encode("gbk")
+        quote = parse_tencent_index_quote(payload, date(2026, 10, 22))
+        self.assertEqual(quote["volume"], 437691963)
+        with self.assertRaisesRegex(ValueError, "日期"):
+            parse_tencent_index_quote(payload, date(2026, 10, 23))
+
+    def test_minute_fallback_rejects_stale_and_future_bars(self):
+        day = date(2026, 10, 22)
+        times = [f"{day} 09:{minute:02d}:00" for minute in range(35, 60, 5)]
+        times += [f"{day} 10:{minute:02d}:00" for minute in range(0, 20, 5)]
+        times += [f"{day} 14:{minute:02d}:00" for minute in (15, 20, 25, 30)]
+        rows = [{"day": stamp, "open": "10", "close": "10.1", "high": "10.2",
+                 "low": "9.9", "volume": "100"} for stamp in times]
+        frame = pd.DataFrame(rows)
+        bars = normalize_minute_bars(frame, "Sina", day)
+        self.assertEqual(bars[-1]["time"], "2026-10-22 14:25:00")
+        self.assertEqual(len(bars), len(rows) - 1)
+        self.assertIsNone(normalize_minute_bars(frame.iloc[:8], "Sina", day))
+        class AlternateAK:
+            def stock_zh_a_minute(self, **kwargs):
+                raise ConnectionError("Sina unavailable")
+            def stock_zh_a_hist_min_em(self, **kwargs):
+                return frame.rename(columns={"day": "时间", "open": "开盘", "close": "收盘",
+                                             "high": "最高", "low": "最低", "volume": "成交量"})
+        fetched = fetch_minutes(AlternateAK(), [{"code": "605488", "board": "SH"}], day, 1)
+        self.assertEqual(fetched["605488"][0]["source"], "Eastmoney")
 
     def test_history_source_fallback_preserves_share_units(self):
         dates = pd.bdate_range("2026-04-01", periods=121)
@@ -175,4 +207,5 @@ class ScannerTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
 

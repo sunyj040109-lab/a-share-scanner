@@ -147,23 +147,44 @@ def load_history(path: Path | None, day: date) -> dict:
         return {"bars": {}, "errors": {}, "missing": str(exc)}
 
 
+def normalize_minute_bars(frame, source: str, day: date) -> list[dict] | None:
+    """只接受当日截至 14:25、且尾部足够接近扫描时刻的 5 分钟线。"""
+    if frame is None or frame.empty:
+        return None
+    fields = ({"time": "day", "open": "open", "close": "close", "high": "high",
+               "low": "low", "volume": "volume"} if source == "Sina" else
+              {"time": "时间", "open": "开盘", "close": "收盘", "high": "最高",
+               "low": "最低", "volume": "成交量"})
+    if not set(fields.values()).issubset(frame.columns):
+        return None
+    start, end = f"{day} 09:30:00", f"{day} 14:25:00"
+    bars = []
+    for raw in frame.to_dict("records"):
+        timestamp = str(raw[fields["time"]]).replace("T", " ")[:19]
+        if not start <= timestamp <= end:
+            continue
+        bar = {"time": timestamp, "source": source,
+               **{key: number(raw[field]) for key, field in fields.items() if key != "time"}}
+        if all(bar[key] is not None and bar[key] >= 0 for key in ("open", "close", "high", "low", "volume")):
+            bars.append(bar)
+    bars.sort(key=lambda item: item["time"])
+    return bars if len(bars) >= 8 and bars[-1]["time"] >= f"{day} 14:15:00" else None
+
+
 def fetch_minutes(ak, rows: list[dict], day: date, workers: int) -> dict:
     def one(row):
-        try:
-            frame = ak.stock_zh_a_hist_min_em(symbol=row["code"], period="5", adjust="",
-                start_date=f"{day} 09:30:00", end_date=f"{day} 14:25:00")
-            if frame is None or frame.empty:
-                return row["code"], None
-            bars = []
-            for raw in frame.to_dict("records"):
-                bar = {"time": str(raw["时间"]), **{key: number(raw[field]) for key, field in
-                    (("open", "开盘"), ("close", "收盘"), ("high", "最高"), ("low", "最低"), ("volume", "成交量"))}}
-                if all(bar[key] is not None for key in ("open", "close", "high", "low", "volume")):
-                    bars.append(bar)
-            return row["code"], bars
-        except Exception as exc:
-            print(f"{row['code']} 5 分钟 K 线不可用：{type(exc).__name__}", file=sys.stderr)
-            return row["code"], None
+        symbol = {"SH": "sh", "SZ_MAIN": "sz", "GEM": "sz", "BJ": "bj"}[row["board"]] + row["code"]
+        sources = (("Sina", lambda: ak.stock_zh_a_minute(symbol=symbol, period="5", adjust="")),
+                   ("Eastmoney", lambda: ak.stock_zh_a_hist_min_em(symbol=row["code"], period="5", adjust="",
+                       start_date=f"{day} 09:30:00", end_date=f"{day} 14:25:00")))
+        for source, getter in sources:
+            try:
+                bars = normalize_minute_bars(getter(), source, day)
+                if bars:
+                    return row["code"], bars
+            except Exception as exc:
+                print(f"{row['code']} {source} 5 分钟线失败：{type(exc).__name__}", file=sys.stderr)
+        return row["code"], None
     with ThreadPoolExecutor(max_workers=workers) as pool:
         return dict(pool.map(one, rows))
 
@@ -188,6 +209,8 @@ def analyze(rows: list[dict], history: dict, config: dict, ak, day: date):
     }
     coverage["minute_available"] = sum(bool(minute_bars.get(code)) for code in minute_bars)
     coverage["minute_attempted"] = len(minute_targets)
+    coverage["minute_sources"] = {source: sum(bool(bars) and bars[0]["source"] == source
+        for bars in minute_bars.values()) for source in ("Sina", "Eastmoney")}
     if history.get("missing") or history.get("source_unavailable") or history.get("deadline_reached"):
         coverage["history_note"] = history.get("missing") or ("历史接口不可用" if history.get("source_unavailable") else "历史抓取触及 14:24 截止时间")
     return chosen, results, coverage
@@ -233,7 +256,21 @@ def fetch_sectors(ak, day: date, config: dict) -> list[dict]:
         return []
 
 
-def evaluate_market(ak, rows: list[dict], history: dict, sectors: list[dict], config: dict) -> dict:
+def parse_tencent_index_quote(payload: bytes, day: date) -> dict:
+    text = payload.decode("gbk", errors="replace")
+    match = re.search(r'v_sh000001="([^"]+)"', text)
+    if not match:
+        raise ValueError("腾讯上证指数报价结构错误")
+    fields = match.group(1).split("~")
+    if len(fields) <= 30 or not fields[30].startswith(day.strftime("%Y%m%d")):
+        raise ValueError("腾讯上证指数报价日期不是本交易日")
+    price, volume = number(fields[3]), number(fields[6])
+    if price is None or price <= 0 or volume is None or volume <= 0:
+        raise ValueError("腾讯上证指数报价字段缺失")
+    return {"price": price, "volume": volume, "timestamp": fields[30]}
+
+
+def evaluate_market(ak, rows: list[dict], history: dict, sectors: list[dict], config: dict, day: date) -> dict:
     from strategy import signal
 
     result = {"up_count": sum((row["change_pct"] or 0) > 0 for row in rows),
@@ -245,13 +282,20 @@ def evaluate_market(ak, rows: list[dict], history: dict, sectors: list[dict], co
             (item["three_day_return_pct"] or 0) > 0 and (item["up_days_of_three"] or 0) >= 2 for item in sectors),
         sectors[:3], "同花顺行业涨幅与最近三日持续性代理")
     try:
-        spot = ak.stock_zh_index_spot_sina()
-        raw = next(item for item in spot.to_dict("records") if item["代码"] == "sh000001")
+        import requests
+        response = requests.get("https://qt.gtimg.cn/q=sh000001", timeout=8)
+        response.raise_for_status()
+        quote = parse_tencent_index_quote(response.content, day)
+        quoted_at = datetime.strptime(quote["timestamp"], "%Y%m%d%H%M%S").replace(tzinfo=TZ)
+        quote_age = (datetime.now(TZ) - quoted_at).total_seconds()
+        if quote_age < -60 or quote_age > 600:
+            raise ValueError("腾讯上证指数报价超过 10 分钟未更新")
         prior = history.get("index_bars", {}).get("sh000001", [])
         if len(prior) < 20:
             raise ValueError("上证指数历史不足 20 日")
-        current = number(raw["最新价"])
-        volume = number(raw["成交量"])
+        current, volume = quote["price"], quote["volume"]
+        result["index_quote_source"] = "Tencent"
+        result["index_quote_time"] = quote["timestamp"]
         previous_volumes = [bar["volume"] for bar in prior[-20:]]
         if current is None or volume is None or any(v is None or v <= 0 for v in previous_volumes):
             raise ValueError("上证指数行情字段缺失")
@@ -296,7 +340,7 @@ def write_outputs(root: Path, day: date, captured: datetime, rows: list[dict], c
     summary = {
         "trade_date": day.isoformat(), "captured_at_beijing": captured.isoformat(timespec="seconds"),
         "scan_type": "intraday_strategy", "scheduled_time_beijing": "14:25",
-        "source": "AKShare / Tencent spot + Tencent/Eastmoney/Sina daily + Eastmoney 5m + THS sectors",
+        "source": "AKShare / Tencent spot and index + Tencent/Eastmoney/Sina daily + Sina/Eastmoney 5m + THS sectors",
         "universe_count": len(rows), "selected_count": len(chosen),
         "boards": board_counts, "source_counts": counts, "filters": config,
         "missing_numeric_rows": sum(any(row[field] is None for field in FIELDS[3:]) for row in rows),
@@ -436,7 +480,7 @@ def main(argv=None):
     history = load_history(args.history_file, now.date())
     chosen, analysis, coverage = analyze(rows, history, config, ak, now.date())
     sectors = fetch_sectors(ak, now.date(), config)
-    market = evaluate_market(ak, rows, history, sectors, config)
+    market = evaluate_market(ak, rows, history, sectors, config, now.date())
     completed = datetime.now(TZ)
     if not in_scan_window(completed):
         print("分析完成时已超过 14:35，跳过本次发布。", file=sys.stderr)
@@ -451,4 +495,5 @@ def main(argv=None):
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
 
