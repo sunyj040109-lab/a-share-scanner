@@ -18,12 +18,12 @@ jobs:
       - name: Probe Sina BSE daily history
         run: |
           python - <<'PY'
-          import akshare as ak,time
-          for code in ('920001','836149','830799'):
+          import akshare as ak,time,json\n          from pathlib import Path
+          for code in [r['code'] for r in json.loads(Path('docs/data/universe.json').read_text()) if r['board']=='BJ'][:30]:
               try:
                   frame=ak.stock_zh_a_daily(symbol='bj'+code,start_date='20260101',end_date='20261021',adjust='')
                   print('SINA_BSE',code,len(frame),list(frame.columns),frame.tail(1).to_dict('records'),flush=True)
               except Exception as exc:
                   print('SINA_BSE_ERROR',code,type(exc).__name__,str(exc)[:120],flush=True)
-              time.sleep(2)
+              time.sleep(2.5)
           PY
