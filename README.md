@@ -40,9 +40,9 @@ GitHub cron 使用 UTC，休市由上海交易所日历判断。计划任务可�
 | `docs/data/universe.csv`、`.json` | 当天符合股票代码范围的全量快照 |
 | `docs/data/selected.csv`、`.json` | 三个硬条件均通过的个股候选 |
 | `docs/data/analysis.json` | 候选股逐项证据与 `unknown` 原因 |
-| `docs/data/status.csv` | 全市场每只股票的 pass/fail/unknown/excluded 状态与缺数原因 |
+| `docs/data/status.csv` | 全市场每只股票的 pass/fail/unknown/excluded 状态、未通过或未知的检查项、缺数原因 |
 | `docs/data/sectors.json` | 同花顺领先行业及最近三日代理 |
-| `docs/data/summary.json` | 日期、抓取时刻、覆盖率、失败/未知数、大盘状态 |
+| `docs/data/summary.json` | 日期、抓取时刻、各市场历史覆盖率、失败/未知数、大盘状态 |
 
 CSV 为 UTF-8 with BOM；JSON 缺失值为 `null`。历史原始日线仅在当次 GitHub Runner 的临时目录使用，**不会每日整包提交到 Git 仓库**，避免仓库无限膨胀。
 

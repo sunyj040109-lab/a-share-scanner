@@ -181,6 +181,11 @@ def analyze(rows: list[dict], history: dict, config: dict, ak, day: date):
     coverage = {state: sum(result["status"] == state for result in results.values())
                 for state in ("pass", "fail", "unknown", "excluded")}
     coverage["history_available"] = sum(code in history["bars"] for code in results)
+    coverage["history_by_board"] = {
+        label: {"available": sum(row["board"] == board and row["code"] in history["bars"] for row in rows),
+                "total": sum(row["board"] == board for row in rows)}
+        for board, label in LABELS.items()
+    }
     coverage["minute_available"] = sum(bool(minute_bars.get(code)) for code in minute_bars)
     coverage["minute_attempted"] = len(minute_targets)
     if history.get("missing") or history.get("source_unavailable") or history.get("deadline_reached"):
@@ -303,19 +308,26 @@ def write_outputs(root: Path, day: date, captured: datetime, rows: list[dict], c
             writer.writerows(content)
     evidence = {row["code"]: analysis[row["code"]] for row in chosen} if analysis else {}
     (data / "analysis.json").write_text(json.dumps(evidence, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    statuses = [{"code": row["code"], "name": row["name"],
-                 "status": analysis[row["code"]]["status"] if analysis else "unknown",
-                 "reason": (analysis[row["code"]]["checks"].get("history", {}).get("reason") or
-                            analysis[row["code"]]["checks"].get("security_type", {}).get("reason") or "") if analysis else "历史分析未运行"}
-                for row in rows]
+    statuses = []
+    for row in rows:
+        result = analysis.get(row["code"], {}) if analysis else {}
+        checks = result.get("checks", {})
+        statuses.append({"code": row["code"], "name": row["name"], "board": row["board"],
+            "status": result.get("status", "unknown"),
+            "failed_checks": ",".join(key for key, check in checks.items() if check["status"] == "fail"),
+            "unknown_checks": ",".join(key for key, check in checks.items() if check["status"] == "unknown"),
+            "reason": (checks.get("history", {}).get("reason") or
+                       checks.get("security_type", {}).get("reason") or "")})
     with (data / "status.csv").open("w", newline="", encoding="utf-8-sig") as handle:
-        writer = csv.DictWriter(handle, fieldnames=("code", "name", "status", "reason"))
+        writer = csv.DictWriter(handle, fieldnames=("code", "name", "board", "status", "failed_checks", "unknown_checks", "reason"))
         writer.writeheader()
         writer.writerows(statuses)
     (data / "sectors.json").write_text(json.dumps(sectors or [], ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     md_table, html_rows = table(chosen, config["max_report_rows"])
     timestamp = captured.strftime("%Y-%m-%d %H:%M")
     intro = f"交易日：{day} · 抓取完成：北京时间 {timestamp} · 股票池 {len(rows)} 只 · 历史日线覆盖 {(coverage or {}).get('history_available', 0)} 只 · 硬条件候选 {len(chosen)} 只。"
+    board_coverage = "；".join(f"{label} {part['available']}/{part['total']}" for label, part in
+        (coverage or {}).get("history_by_board", {}).items())
     sector_lines = [f"- {item['name']}：盘中涨跌幅 {fmt(item['change_pct'])}%，此前三日涨跌幅 {fmt(item['three_day_return_pct'])}%，上涨/下跌 {item['up_count']}/{item['down_count']}，领涨 {item['leader']}。" for item in (sectors or [])[:10]]
     detail_lines = []
     for row in chosen[:20] if analysis else []:
@@ -346,7 +358,7 @@ def write_outputs(root: Path, day: date, captured: datetime, rows: list[dict], c
               "5 分钟 K 线仅对候选中的前若干只抓取，已在 analysis.json 标出跳空、非早盘红量和回调形态。"
               "14:25 报告无法确认 MD 中‘首次开仓必须在 14:30 之后’，也无法读取个人持仓、成本或判断主力真实意图；14:30 后须再人工复核。"
               "止损线、做 T、五分钟卖点需要持仓和连续盘中数据，报告不发交易指令。\n\n"
-              f"数据覆盖：{json.dumps(coverage or {}, ensure_ascii=False)}。\n\n"
+              f"历史日线分市场覆盖：{board_coverage or '未知'}。详细覆盖与缺数原因：{json.dumps(coverage or {}, ensure_ascii=False)}。\n\n"
               "[全量 CSV](docs/data/universe.csv) · [候选 CSV](docs/data/selected.csv) · [逐股证据](docs/data/analysis.json) · "
               "[全市场状态](docs/data/status.csv) · [板块排名](docs/data/sectors.json) · [机器摘要](docs/data/summary.json)\n\n"
               "第三方盘中报价可能延迟；抓取完成时间不等于每只股票的真实报价时间。本报告仅供研究，不构成投资建议。\n")

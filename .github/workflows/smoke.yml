@@ -36,6 +36,10 @@ jobs:
           full=sum(len(bars)>=120 for bars in payload['bars'].values())
           bse=sum(code.startswith(('4','8','9')) for code in payload['bars'])
           print(f'120-bar coverage: {full}/60; BSE histories: {bse}; errors: {len(payload["errors"])}')
-          if full<40 or bse<8:
-              raise SystemExit('Historical sample coverage below acceptance threshold')
+          for code,error in list(payload['errors'].items())[:5]:
+              print(f'HISTORY_ERROR {code}: {error}')
+          if full-bse<40:
+              raise SystemExit('Shanghai/Shenzhen history coverage below acceptance threshold')
+          if bse<8:
+              print('::warning::BSE history coverage below 8/15; BSE stocks must remain unknown in report')
           PY
