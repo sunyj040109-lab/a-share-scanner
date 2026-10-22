@@ -8,22 +8,21 @@ permissions:
 jobs:
   probe:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install akshare==1.19.1
-      - name: Probe index and sector membership
+      - run: pip install -r requirements.txt
+      - name: Probe BSE batch conversion
         run: |
           python - <<'PY'
-          import akshare as ak,time
-          calls=[('index_spot_sina',ak.stock_zh_index_spot_sina),('industry_cons_em',lambda:ak.stock_board_industry_cons_em(symbol='半导体')),('minute_bj',lambda:ak.stock_zh_a_hist_min_em(symbol='920001',period='5',start_date='2026-10-21 09:30:00',end_date='2026-10-21 15:00:00'))]
-          for label,fn in calls:
-              t=time.monotonic()
-              try:
-                  f=fn()
-                  print('PROBE',label,len(f),list(f.columns),f.head(2).to_dict('records'),round(time.monotonic()-t,2),flush=True)
-              except Exception as e: print('PROBE',label,type(e).__name__,str(e)[:160],round(time.monotonic()-t,2),flush=True)
+          import akshare as ak
+          from datetime import date
+          from prepare import fetch_bars
+          for code in ['920000','920001','920002','920003','920005']:
+              row={'code':code,'board':'BJ'}
+              c,b,e=fetch_bars(ak,row,date(2026,10,22),120)
+              print('BSE',c,len(b or []),e,flush=True)
           PY
