@@ -22,7 +22,8 @@ jobs:
           from datetime import date
           from concurrent.futures import ThreadPoolExecutor
           from pathlib import Path
-          from prepare import history_symbol\n          from datetime import timedelta
+          from prepare import history_symbol
+          from datetime import timedelta
           rows=[r for r in json.loads(Path('docs/data/universe.json').read_text()) if r['board']!='BJ'][:100]
           start=time.monotonic()
           def one(r):
