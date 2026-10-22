@@ -303,6 +303,15 @@ def write_outputs(root: Path, day: date, captured: datetime, rows: list[dict], c
             writer.writerows(content)
     evidence = {row["code"]: analysis[row["code"]] for row in chosen} if analysis else {}
     (data / "analysis.json").write_text(json.dumps(evidence, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    statuses = [{"code": row["code"], "name": row["name"],
+                 "status": analysis[row["code"]]["status"] if analysis else "unknown",
+                 "reason": (analysis[row["code"]]["checks"].get("history", {}).get("reason") or
+                            analysis[row["code"]]["checks"].get("security_type", {}).get("reason") or "") if analysis else "历史分析未运行"}
+                for row in rows]
+    with (data / "status.csv").open("w", newline="", encoding="utf-8-sig") as handle:
+        writer = csv.DictWriter(handle, fieldnames=("code", "name", "status", "reason"))
+        writer.writeheader()
+        writer.writerows(statuses)
     (data / "sectors.json").write_text(json.dumps(sectors or [], ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     md_table, html_rows = table(chosen, config["max_report_rows"])
     timestamp = captured.strftime("%Y-%m-%d %H:%M")
@@ -339,7 +348,7 @@ def write_outputs(root: Path, day: date, captured: datetime, rows: list[dict], c
               "止损线、做 T、五分钟卖点需要持仓和连续盘中数据，报告不发交易指令。\n\n"
               f"数据覆盖：{json.dumps(coverage or {}, ensure_ascii=False)}。\n\n"
               "[全量 CSV](docs/data/universe.csv) · [候选 CSV](docs/data/selected.csv) · [逐股证据](docs/data/analysis.json) · "
-              "[板块排名](docs/data/sectors.json) · [机器摘要](docs/data/summary.json)\n\n"
+              "[全市场状态](docs/data/status.csv) · [板块排名](docs/data/sectors.json) · [机器摘要](docs/data/summary.json)\n\n"
               "第三方盘中报价可能延迟；抓取完成时间不等于每只股票的真实报价时间。本报告仅供研究，不构成投资建议。\n")
     (root / "REPORT.md").write_text(report, encoding="utf-8")
     body = (f"<p class='meta'>{html.escape(intro)}</p>"
@@ -347,7 +356,7 @@ def write_outputs(root: Path, day: date, captured: datetime, rows: list[dict], c
             f"<p>{html.escape(market_text)}</p>"
             "<h2>领先行业</h2><ul>" + "".join(f"<li>{html.escape(line[2:])}</li>" for line in sector_lines) + "</ul>"
             "<nav><a href='data/universe.csv'>全量 CSV</a><a href='data/universe.json'>全量 JSON</a>"
-            "<a href='data/selected.csv'>候选 CSV</a><a href='data/analysis.json'>逐股证据</a></nav>"
+            "<a href='data/selected.csv'>候选 CSV</a><a href='data/status.csv'>全市场状态</a><a href='data/analysis.json'>逐股证据</a></nav>"
             + ("<div class='scroll'><table><thead><tr><th>代码</th><th>名称</th><th>板块</th><th>现价</th><th>涨跌幅</th><th>换手率</th><th>成交额（亿元）</th></tr></thead><tbody>"
                + html_rows + "</tbody></table></div>" if chosen else "<p>今日无符合条件的股票。</p>"))
     if analysis and chosen:

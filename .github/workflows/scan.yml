@@ -29,9 +29,9 @@ jobs:
         run: python -m pip install -r requirements.txt
       - name: Check scanner logic
         run: python -m unittest discover -s tests -v
-      - name: Prepare 120-day daily bars from 14:00 Beijing time
+      - name: Preload completed 120-day history before 14:00 Beijing time
         continue-on-error: true
-        run: python prepare.py --output "$RUNNER_TEMP/history.json"
+        run: python prepare.py --start-early --output "$RUNNER_TEMP/history.json"
       - name: Scan around 14:25 Beijing time
         id: scan
         shell: bash

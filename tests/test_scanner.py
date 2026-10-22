@@ -98,10 +98,10 @@ class ScannerTests(unittest.TestCase):
         for index in range(120):
             close = round(10 + 0.03 * index, 2)
             if index == 60:
-                close = 13.0
+                close = 12.95
             bars.append({"date": f"2026-{1 + index // 30:02d}-{1 + index % 30:02d}",
                          "open": 12 if index == 40 else close - 0.02,
-                         "close": close, "high": max(close, 12.1 if index == 40 else close + 0.03),
+                         "close": close, "high": max(close, 12.1 if index == 40 else (close if index == 60 else close + 0.03)),
                          "low": close - 0.1, "volume": 5000 if index == 40 else 1000})
         quote = {"code": "600000", "name": "样本", "board": "SH", "price": 14,
                  "volume_lots": 20}
@@ -132,6 +132,7 @@ class ScannerTests(unittest.TestCase):
             self.assertIn("2026-09-01", (root / "REPORT.md").read_text(encoding="utf-8"))
             self.assertIn("class='card'", (root / "docs/index.html").read_text(encoding="utf-8"))
             self.assertEqual(json.loads((root / "docs/data/analysis.json").read_text(encoding="utf-8"))["600000"]["status"], "pass")
+            self.assertIn("600000", (root / "docs/data/status.csv").read_text(encoding="utf-8-sig"))
 
     def test_scheduled_run_reports_missed_window(self):
         with patch("scanner.in_scan_window", return_value=False), patch("scanner.trading_day", return_value=True):

@@ -30,10 +30,12 @@ def evaluate_stock(quote: dict, bars: list[dict] | None, cfg: dict) -> dict:
     limit_events = []
     for previous, current in zip(bars, bars[1:]):
         pct = 100 * (current["close"] / previous["close"] - 1)
-        if pct >= pct_limit - cfg["limit_up_tolerance_pct"]:
+        if (pct_limit - cfg["limit_up_tolerance_pct"] <= pct <=
+                pct_limit + cfg["limit_up_tolerance_pct"] and
+                current["high"] - current["close"] <= 0.01):
             limit_events.append({"date": current["date"], "change_pct": round(pct, 2)})
     checks["past_limit_up"] = signal(bool(limit_events), limit_events[-3:],
-        "按收盘涨幅近似识别；新股无涨跌幅限制、ST 和复权问题需人工核对")
+        "按收盘涨幅及收盘接近最高价近似识别；新股无涨跌幅限制、ST 和复权问题需人工核对")
     one_price = [bar["date"] for bar in bars if any(event["date"] == bar["date"] for event in limit_events)
                  and max(bar["open"], bar["close"], bar["high"], bar["low"]) -
                  min(bar["open"], bar["close"], bar["high"], bar["low"]) <= 0.01]

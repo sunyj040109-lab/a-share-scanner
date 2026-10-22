@@ -21,7 +21,7 @@ def fetch_bars(ak, row, as_of: date, history_days: int):
     # 多留 90 个日历日以覆盖周末、休市；只取昨日及以前的 120 根日线。
     start = (as_of - timedelta(days=history_days * 2)).strftime("%Y%m%d")
     end = as_of.strftime("%Y%m%d")
-    providers = ("eastmoney",) if row["board"] == "BJ" else ("eastmoney", "tencent")
+    providers = ("eastmoney",) if row["board"] == "BJ" else ("tencent", "eastmoney")
     failures = []
     for provider in providers:
         try:
@@ -51,7 +51,7 @@ def fetch_bars(ak, row, as_of: date, history_days: int):
 
 
 def prepare(ak, rows, as_of: date, cfg: dict, deadline: datetime | None = None):
-    result = {"trade_date": as_of.isoformat(), "source": "AKShare / Eastmoney daily with Tencent fallback",
+    result = {"trade_date": as_of.isoformat(), "source": "AKShare / Tencent daily with Eastmoney fallback; Eastmoney for BSE",
               "history_days": cfg["history_days"], "bars": {}, "errors": {}, "attempted": 0,
               "index_bars": {}, "sector_bars": {}}
     for symbol in ("sh000001", "sz399001", "sz399006"):
@@ -68,7 +68,7 @@ def prepare(ak, rows, as_of: date, cfg: dict, deadline: datetime | None = None):
     eligible = rows
     if not eligible:
         return result
-    # 先探测两个交易所；若接口整体失效，避免数千次无效请求。
+    # 先探测三个市场；单只失败不能推断整个板块不可用。
     probe = []
     for board in ("SH", "SZ_MAIN", "BJ"):
         sample = next((row for row in eligible if row["board"] == board), None)
@@ -83,29 +83,34 @@ def prepare(ak, rows, as_of: date, cfg: dict, deadline: datetime | None = None):
     if not any(bars for _, bars, _ in probe):
         result["source_unavailable"] = True
         return result
-    # 一个北交所代码取不到历史不能推断全市场不可用；继续逐只尝试并记录覆盖率。
-    unavailable_boards = {"SH" if code.startswith("6") else "SZ_MAIN"
-                          for code, bars, _ in probe if not bars and not code.startswith(("4", "8", "9"))}
-    remaining = [row for row in eligible if row["code"] not in result["bars"] and row["code"] not in result["errors"]
-                 and (row["board"] not in unavailable_boards or row["board"] == "GEM")]
-    workers = cfg["history_workers"]
-    pool = ThreadPoolExecutor(max_workers=workers)
-    try:
-        futures = {pool.submit(fetch_bars, ak, row, as_of, cfg["history_days"]): row for row in remaining}
-        for future in as_completed(futures):
-            code, bars, error = future.result()
-            result["attempted"] += 1
-            if error:
-                result["errors"][code] = error
-            else:
-                result["bars"][code] = bars
-            if result["attempted"] % 250 == 0:
-                print(f"历史日线完成 {result['attempted']}/{len(eligible)}，失败 {len(result['errors'])}", flush=True)
-            if deadline and datetime.now(TZ) >= deadline:
-                result["deadline_reached"] = True
-                break
-    finally:
-        pool.shutdown(wait=False, cancel_futures=True)
+    remaining = [row for row in eligible if row["code"] not in result["bars"]
+                 and row["code"] not in result["errors"]]
+    def collect(batch, workers):
+        if not batch:
+            return
+        pool = ThreadPoolExecutor(max_workers=workers)
+        try:
+            futures = {pool.submit(fetch_bars, ak, row, as_of, cfg["history_days"]): row for row in batch}
+            for future in as_completed(futures):
+                code, bars, error = future.result()
+                result["attempted"] += 1
+                if error:
+                    result["errors"][code] = error
+                else:
+                    result["bars"][code] = bars
+                if result["attempted"] % 250 == 0:
+                    print(f"历史日线完成 {result['attempted']}/{len(eligible)}，失败 {len(result['errors'])}", flush=True)
+                if deadline and datetime.now(TZ) >= deadline:
+                    result["deadline_reached"] = True
+                    break
+        finally:
+            pool.shutdown(wait=False, cancel_futures=True)
+    # 北交所仅东方财富可用；先取，免得沪深数千次请求影响这个接口。
+    bse = [row for row in remaining if row["board"] == "BJ"]
+    main = [row for row in remaining if row["board"] != "BJ"]
+    collect(bse, min(2, cfg["history_workers"]))
+    if not result.get("deadline_reached"):
+        collect(main, cfg["history_workers"])
     result["completed_at_beijing"] = datetime.now(TZ).isoformat(timespec="seconds")
     return result
 
@@ -115,12 +120,13 @@ def main(argv=None):
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--sample", type=int, default=0, help="只取前 N 只股票做接口测试")
     parser.add_argument("--no-wait", action="store_true")
+    parser.add_argument("--start-early", action="store_true", help="13 点后预取昨日以前的日线，14:24 截止")
     args = parser.parse_args(argv)
     now = datetime.now(TZ)
     if not trading_day(now.date()):
         print("休市，跳过历史预取")
         return 0
-    if not args.no_wait and now.time() < clock_time(14, 0):
+    if not args.no_wait and not args.start_early and now.time() < clock_time(14, 0):
         target = now.replace(hour=14, minute=0, second=0, microsecond=0)
         while now < target:
             time.sleep(min(60, (target - now).total_seconds()))
