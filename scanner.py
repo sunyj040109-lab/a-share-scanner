@@ -293,7 +293,7 @@ def write_outputs(root: Path, day: date, captured: datetime, rows: list[dict], c
     summary = {
         "trade_date": day.isoformat(), "captured_at_beijing": captured.isoformat(timespec="seconds"),
         "scan_type": "intraday_strategy", "scheduled_time_beijing": "14:25",
-        "source": "AKShare / Tencent spot + Tencent/Eastmoney daily + Eastmoney 5m + THS sectors",
+        "source": "AKShare / Tencent spot + Tencent/Eastmoney/Sina daily + Eastmoney 5m + THS sectors",
         "universe_count": len(rows), "selected_count": len(chosen),
         "boards": board_counts, "source_counts": counts, "filters": config,
         "missing_numeric_rows": sum(any(row[field] is None for field in FIELDS[3:]) for row in rows),

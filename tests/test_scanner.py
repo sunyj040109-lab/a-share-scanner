@@ -5,11 +5,13 @@ from unittest.mock import patch
 from datetime import date, datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
+import pandas as pd
 
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from scanner import board_for, fetch_universe, in_scan_window, main, normalize, normalize_tx, number, trading_day, write_outputs
 from strategy import add_minute_evidence, evaluate_stock
+from prepare import fetch_bars
 
 
 class FakeCalendar:
@@ -66,6 +68,27 @@ class ScannerTests(unittest.TestCase):
         self.assertEqual([row["code"] for row in rows], ["600000", "920001"])
         self.assertEqual(rows[0]["amount_cny"], 200000000)
         self.assertIsNone(rows[1]["amount_cny"])
+
+    def test_history_source_fallback_preserves_share_units(self):
+        dates = pd.bdate_range("2026-04-01", periods=121)
+        records = [{"date": stamp.date(), "open": 10, "close": 10, "high": 10,
+                    "low": 10, "volume": 1000, "amount": 10000} for stamp in dates]
+        class Source:
+            def stock_zh_a_hist_tx(self, **kwargs):
+                return pd.DataFrame(records)
+            def stock_zh_a_hist(self, **kwargs):
+                raise ConnectionError("Eastmoney unavailable")
+            def stock_zh_a_daily(self, **kwargs):
+                return pd.DataFrame(records)
+        with patch("prepare.wait_bse_slot"):
+            _, sh, sh_error = fetch_bars(Source(), {"code": "600000", "board": "SH"}, date(2026, 10, 22), 120)
+            _, bj, bj_error = fetch_bars(Source(), {"code": "920001", "board": "BJ"}, date(2026, 10, 22), 120)
+        self.assertIsNone(sh_error)
+        self.assertIsNone(bj_error)
+        self.assertEqual(len(sh), 120)
+        self.assertEqual(len(bj), 120)
+        self.assertEqual(sh[-1]["volume"], 1000)
+        self.assertEqual(bj[-1]["volume"], 1000)
 
     def test_calendar_and_reports(self):
         self.assertTrue(trading_day(date(2026, 10, 16), FakeCalendar()))

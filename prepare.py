@@ -5,12 +5,27 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+import threading
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import date, datetime, time as clock_time, timedelta
 from pathlib import Path
 
 from scanner import TZ, fetch_universe, number, trading_day
+
+_bse_lock = threading.Lock()
+_bse_next_slot = 0.0
+
+
+def wait_bse_slot():
+    """控制北交所东方财富请求速率，避免共享出口批量触发断连。"""
+    global _bse_next_slot
+    with _bse_lock:
+        now = time.monotonic()
+        delay = max(0.0, _bse_next_slot - now)
+        _bse_next_slot = max(now, _bse_next_slot) + 2.5
+    if delay:
+        time.sleep(delay)
 
 
 def history_symbol(row):
@@ -21,14 +36,20 @@ def fetch_bars(ak, row, as_of: date, history_days: int):
     # 多留 90 个日历日以覆盖周末、休市；只取昨日及以前的 120 根日线。
     start = (as_of - timedelta(days=history_days * 2)).strftime("%Y%m%d")
     end = as_of.strftime("%Y%m%d")
-    providers = ("eastmoney",) if row["board"] == "BJ" else ("tencent", "eastmoney")
+    providers = ("eastmoney", "sina") if row["board"] == "BJ" else ("tencent", "eastmoney")
     failures = []
     for provider in providers:
         try:
             if provider == "tencent":
                 frame = ak.stock_zh_a_hist_tx(symbol=history_symbol(row), start_date=start,
                                               end_date=end, adjust="", timeout=12)
+            elif provider == "sina":
+                wait_bse_slot()
+                frame = ak.stock_zh_a_daily(symbol=history_symbol(row), start_date=start,
+                                            end_date=end, adjust="")
             else:
+                if row["board"] == "BJ":
+                    wait_bse_slot()
                 frame = ak.stock_zh_a_hist(symbol=row["code"], period="daily",
                                            start_date=start, end_date=end, adjust="", timeout=12)
                 frame = frame.rename(columns={"日期": "date", "开盘": "open", "收盘": "close",
@@ -51,7 +72,7 @@ def fetch_bars(ak, row, as_of: date, history_days: int):
 
 
 def prepare(ak, rows, as_of: date, cfg: dict, deadline: datetime | None = None):
-    result = {"trade_date": as_of.isoformat(), "source": "AKShare / Tencent daily with Eastmoney fallback; Eastmoney for BSE",
+    result = {"trade_date": as_of.isoformat(), "source": "AKShare / Tencent, Eastmoney and Sina daily history",
               "history_days": cfg["history_days"], "bars": {}, "errors": {}, "attempted": 0,
               "index_bars": {}, "sector_bars": {}}
     for symbol in ("sh000001", "sz399001", "sz399006"):
@@ -105,7 +126,7 @@ def prepare(ak, rows, as_of: date, cfg: dict, deadline: datetime | None = None):
                     break
         finally:
             pool.shutdown(wait=False, cancel_futures=True)
-    # 北交所仅东方财富可用；先取，免得沪深数千次请求影响这个接口。
+    # 北交所的东方财富接口可能限流；先取并在失败时回退新浪。
     bse = [row for row in remaining if row["board"] == "BJ"]
     main = [row for row in remaining if row["board"] != "BJ"]
     collect(bse, min(2, cfg["history_workers"]))
