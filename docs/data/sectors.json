@@ -1,92 +1,92 @@
 [
   {
-    "name": "电机",
-    "change_pct": 4.7,
-    "up_count": 19,
-    "down_count": 6,
-    "leader": "华阳智能",
-    "three_day_return_pct": 3.04,
+    "name": "软件开发",
+    "change_pct": 4.9,
+    "up_count": 132,
+    "down_count": 7,
+    "leader": "众诚科技",
+    "three_day_return_pct": 0.03,
     "up_days_of_three": 2
-  },
-  {
-    "name": "工程机械",
-    "change_pct": 1.05,
-    "up_count": 24,
-    "down_count": 11,
-    "leader": "山河智能",
-    "three_day_return_pct": 1.85,
-    "up_days_of_three": 2
-  },
-  {
-    "name": "石油加工贸易",
-    "change_pct": -0.41,
-    "up_count": 6,
-    "down_count": 21,
-    "leader": "博汇股份",
-    "three_day_return_pct": -0.6,
-    "up_days_of_three": 1
-  },
-  {
-    "name": "美容护理",
-    "change_pct": -0.44,
-    "up_count": 14,
-    "down_count": 19,
-    "leader": "锦波生物",
-    "three_day_return_pct": -1.02,
-    "up_days_of_three": 1
-  },
-  {
-    "name": "证券",
-    "change_pct": -0.61,
-    "up_count": 6,
-    "down_count": 40,
-    "leader": "华鑫股份",
-    "three_day_return_pct": -2.34,
-    "up_days_of_three": 0
-  },
-  {
-    "name": "银行",
-    "change_pct": -0.62,
-    "up_count": 7,
-    "down_count": 34,
-    "leader": "建设银行",
-    "three_day_return_pct": -0.18,
-    "up_days_of_three": 1
-  },
-  {
-    "name": "轨交设备",
-    "change_pct": -0.72,
-    "up_count": 10,
-    "down_count": 20,
-    "leader": "金鹰重工",
-    "three_day_return_pct": 0.25,
-    "up_days_of_three": 1
-  },
-  {
-    "name": "电网设备",
-    "change_pct": -0.76,
-    "up_count": 39,
-    "down_count": 97,
-    "leader": "长城电工",
-    "three_day_return_pct": 0.25,
-    "up_days_of_three": 1
   },
   {
     "name": "自动化设备",
-    "change_pct": -0.85,
-    "up_count": 33,
-    "down_count": 66,
-    "leader": "巨能股份",
-    "three_day_return_pct": 4.55,
+    "change_pct": 4.83,
+    "up_count": 92,
+    "down_count": 6,
+    "leader": "新睿电子",
+    "three_day_return_pct": 1.7,
+    "up_days_of_three": 1
+  },
+  {
+    "name": "电机",
+    "change_pct": 4.73,
+    "up_count": 26,
+    "down_count": 0,
+    "leader": "华阳智能",
+    "three_day_return_pct": 5.71,
     "up_days_of_three": 2
   },
   {
-    "name": "汽车零部件",
-    "change_pct": -0.88,
-    "up_count": 72,
-    "down_count": 202,
-    "leader": "日上集团",
-    "three_day_return_pct": 1.56,
+    "name": "IT服务",
+    "change_pct": 3.77,
+    "up_count": 118,
+    "down_count": 11,
+    "leader": "海天瑞声",
+    "three_day_return_pct": 0.69,
     "up_days_of_three": 2
+  },
+  {
+    "name": "半导体",
+    "change_pct": 3.24,
+    "up_count": 167,
+    "down_count": 23,
+    "leader": "粤芯半导体",
+    "three_day_return_pct": -0.01,
+    "up_days_of_three": 2
+  },
+  {
+    "name": "电池",
+    "change_pct": 3.04,
+    "up_count": 105,
+    "down_count": 2,
+    "leader": "利元亨",
+    "three_day_return_pct": -4.54,
+    "up_days_of_three": 1
+  },
+  {
+    "name": "工程机械",
+    "change_pct": 3.02,
+    "up_count": 33,
+    "down_count": 3,
+    "leader": "南方路机",
+    "three_day_return_pct": 1.9,
+    "up_days_of_three": 2
+  },
+  {
+    "name": "游戏",
+    "change_pct": 2.94,
+    "up_count": 20,
+    "down_count": 2,
+    "leader": "宝通科技",
+    "three_day_return_pct": -3.78,
+    "up_days_of_three": 1
+  },
+  {
+    "name": "黑色家电",
+    "change_pct": 2.78,
+    "up_count": 9,
+    "down_count": 0,
+    "leader": "创维数字",
+    "three_day_return_pct": -0.2,
+    "up_days_of_three": 1
+  },
+  {
+    "name": "消费电子",
+    "change_pct": 2.77,
+    "up_count": 85,
+    "down_count": 11,
+    "leader": "长盈精密",
+    "three_day_return_pct": 0.26,
+    "up_days_of_three": 1
   }
 ]
