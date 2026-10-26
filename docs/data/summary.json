@@ -1,20 +1,20 @@
 {
-  "trade_date": "2026-10-23",
-  "captured_at_beijing": "2026-10-23T14:26:06+08:00",
+  "trade_date": "2026-10-26",
+  "captured_at_beijing": "2026-10-26T14:26:11+08:00",
   "scan_type": "intraday_strategy",
   "scheduled_time_beijing": "14:25",
   "source": "AKShare / Tencent spot and index + Tencent/Eastmoney/Sina daily + Sina/Eastmoney 5m + THS sectors",
-  "universe_count": 4951,
-  "selected_count": 60,
+  "universe_count": 4958,
+  "selected_count": 40,
   "boards": {
-    "沪市主板": 1695,
+    "沪市主板": 1700,
     "深市主板": 1493,
-    "创业板": 1410,
+    "创业板": 1412,
     "北交所": 353
   },
   "source_counts": {
-    "SH": 1695,
-    "SZ": 2903,
+    "SH": 1700,
+    "SZ": 2905,
     "BJ": 353
   },
   "filters": {
@@ -34,70 +34,70 @@
   },
   "missing_numeric_rows": 0,
   "coverage": {
-    "pass": 60,
-    "fail": 4628,
-    "unknown": 77,
+    "pass": 40,
+    "fail": 4654,
+    "unknown": 78,
     "excluded": 186,
-    "history_available": 4948,
+    "history_available": 4953,
     "history_by_board": {
       "沪市主板": {
-        "available": 1695,
-        "total": 1695
+        "available": 1699,
+        "total": 1700
       },
       "深市主板": {
         "available": 1492,
         "total": 1493
       },
       "创业板": {
-        "available": 1409,
-        "total": 1410
+        "available": 1412,
+        "total": 1412
       },
       "北交所": {
-        "available": 352,
+        "available": 350,
         "total": 353
       }
     },
-    "minute_available": 60,
-    "minute_attempted": 60,
+    "minute_available": 40,
+    "minute_attempted": 40,
     "minute_sources": {
-      "Sina": 60,
+      "Sina": 40,
       "Eastmoney": 0
     }
   },
   "market": {
-    "up_count": 3524,
-    "down_count": 1238,
-    "amount_cny": 1448834470000.0,
+    "up_count": 1893,
+    "down_count": 2903,
+    "amount_cny": 1169853330000.0,
     "checks": {
       "leading_sector": {
-        "status": "pass",
+        "status": "fail",
         "evidence": [
           {
-            "name": "软件开发",
-            "change_pct": 4.9,
-            "up_count": 132,
-            "down_count": 7,
-            "leader": "众诚科技",
-            "three_day_return_pct": 0.03,
-            "up_days_of_three": 2
-          },
-          {
-            "name": "自动化设备",
-            "change_pct": 4.83,
-            "up_count": 92,
-            "down_count": 6,
-            "leader": "新睿电子",
-            "three_day_return_pct": 1.7,
+            "name": "游戏",
+            "change_pct": 2.98,
+            "up_count": 20,
+            "down_count": 3,
+            "leader": "盛天网络",
+            "three_day_return_pct": -1.39,
             "up_days_of_three": 1
           },
           {
-            "name": "电机",
-            "change_pct": 4.73,
-            "up_count": 26,
-            "down_count": 0,
-            "leader": "华阳智能",
-            "three_day_return_pct": 5.71,
+            "name": "医药商业",
+            "change_pct": 2.89,
+            "up_count": 29,
+            "down_count": 2,
+            "leader": "英特集团",
+            "three_day_return_pct": -1.22,
             "up_days_of_three": 2
+          },
+          {
+            "name": "油气开采及服务",
+            "change_pct": 2.32,
+            "up_count": 16,
+            "down_count": 2,
+            "leader": "中海油服",
+            "three_day_return_pct": -1.76,
+            "up_days_of_three": 1
           }
         ],
         "reason": "同花顺行业涨幅与最近三日持续性代理"
@@ -105,8 +105,8 @@
       "above_ma5": {
         "status": "fail",
         "evidence": {
-          "index_price": 3679.4,
-          "ma5": 3703.35
+          "index_price": 3690.59,
+          "ma5": 3697.5
         },
         "reason": null
       },
@@ -114,13 +114,13 @@
         "status": "fail",
         "evidence": {
           "recent_low_volume_seen": false,
-          "today_volume_vs_recent_low": 1.27
+          "today_volume_vs_recent_low": 0.97
         },
         "reason": "以 14:25 的盘中量比较最近五日最低全天量，尾盘结果仍可能变化"
       }
     },
     "index_quote_source": "Tencent",
-    "index_quote_time": "20261023142603",
+    "index_quote_time": "20261026142609",
     "reversal_status": "fail"
   },
   "sector_count": 10
