@@ -1,92 +1,92 @@
 [
   {
-    "name": "游戏",
-    "change_pct": 2.98,
-    "up_count": 20,
-    "down_count": 3,
-    "leader": "盛天网络",
-    "three_day_return_pct": -1.39,
-    "up_days_of_three": 1
-  },
-  {
-    "name": "医药商业",
-    "change_pct": 2.89,
-    "up_count": 29,
-    "down_count": 2,
-    "leader": "英特集团",
-    "three_day_return_pct": -1.22,
+    "name": "电机",
+    "change_pct": 2.15,
+    "up_count": 16,
+    "down_count": 10,
+    "leader": "凯中精密",
+    "three_day_return_pct": 6.72,
     "up_days_of_three": 2
   },
   {
-    "name": "油气开采及服务",
-    "change_pct": 2.32,
-    "up_count": 16,
-    "down_count": 2,
-    "leader": "中海油服",
-    "three_day_return_pct": -1.76,
-    "up_days_of_three": 1
-  },
-  {
-    "name": "白酒",
-    "change_pct": 2.23,
-    "up_count": 19,
-    "down_count": 0,
-    "leader": "皇台酒业",
-    "three_day_return_pct": -1.85,
-    "up_days_of_three": 1
-  },
-  {
-    "name": "食品加工制造",
-    "change_pct": 1.35,
-    "up_count": 47,
-    "down_count": 18,
-    "leader": "桂发祥",
-    "three_day_return_pct": -1.11,
-    "up_days_of_three": 1
-  },
-  {
     "name": "银行",
-    "change_pct": 1.31,
+    "change_pct": 1.57,
     "up_count": 42,
     "down_count": 0,
-    "leader": "南京银行",
-    "three_day_return_pct": -1.98,
-    "up_days_of_three": 0
-  },
-  {
-    "name": "医疗器械",
-    "change_pct": 1.21,
-    "up_count": 104,
-    "down_count": 36,
-    "leader": "山外山",
-    "three_day_return_pct": -0.26,
+    "leader": "沪农商行",
+    "three_day_return_pct": 0.09,
     "up_days_of_three": 1
   },
   {
-    "name": "汽车服务及其他",
-    "change_pct": 1.16,
-    "up_count": 17,
-    "down_count": 7,
-    "leader": "上海物贸",
-    "three_day_return_pct": -1.66,
+    "name": "港口航运",
+    "change_pct": 0.6,
+    "up_count": 16,
+    "down_count": 14,
+    "leader": "中谷物流",
+    "three_day_return_pct": -1.65,
+    "up_days_of_three": 2
+  },
+  {
+    "name": "煤炭开采加工",
+    "change_pct": 0.51,
+    "up_count": 19,
+    "down_count": 13,
+    "leader": "安泰集团",
+    "three_day_return_pct": -3.48,
     "up_days_of_three": 1
   },
   {
-    "name": "物流",
-    "change_pct": 1.13,
-    "up_count": 38,
-    "down_count": 12,
-    "leader": "*ST瑞茂",
-    "three_day_return_pct": -2.75,
-    "up_days_of_three": 1
+    "name": "零售",
+    "change_pct": 0.28,
+    "up_count": 29,
+    "down_count": 38,
+    "leader": "茂业商业",
+    "three_day_return_pct": 1.24,
+    "up_days_of_three": 2
+  },
+  {
+    "name": "汽车整车",
+    "change_pct": 0.07,
+    "up_count": 7,
+    "down_count": 13,
+    "leader": "曙光股份",
+    "three_day_return_pct": -0.05,
+    "up_days_of_three": 2
   },
   {
     "name": "保险",
-    "change_pct": 1.09,
-    "up_count": 5,
-    "down_count": 0,
-    "leader": "中国太保",
-    "three_day_return_pct": 0.53,
+    "change_pct": 0.03,
+    "up_count": 2,
+    "down_count": 3,
+    "leader": "中国人保",
+    "three_day_return_pct": 2.51,
+    "up_days_of_three": 2
+  },
+  {
+    "name": "燃气",
+    "change_pct": 0.03,
+    "up_count": 12,
+    "down_count": 14,
+    "leader": "胜通能源",
+    "three_day_return_pct": -2.29,
+    "up_days_of_three": 2
+  },
+  {
+    "name": "机场航运",
+    "change_pct": -0.07,
+    "up_count": 8,
+    "down_count": 5,
+    "leader": "深圳机场",
+    "three_day_return_pct": 0.62,
+    "up_days_of_three": 2
+  },
+  {
+    "name": "公路铁路运输",
+    "change_pct": -0.23,
+    "up_count": 13,
+    "down_count": 16,
+    "leader": "龙江交通",
+    "three_day_return_pct": -0.71,
     "up_days_of_three": 1
   }
 ]
