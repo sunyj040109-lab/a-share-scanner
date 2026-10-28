@@ -1,20 +1,20 @@
 {
-  "trade_date": "2026-10-27",
-  "captured_at_beijing": "2026-10-27T14:26:02+08:00",
+  "trade_date": "2026-10-28",
+  "captured_at_beijing": "2026-10-28T14:27:00+08:00",
   "scan_type": "intraday_strategy",
   "scheduled_time_beijing": "14:25",
   "source": "AKShare / Tencent spot and index + Tencent/Eastmoney/Sina daily + Sina/Eastmoney 5m + THS sectors",
-  "universe_count": 4958,
-  "selected_count": 39,
+  "universe_count": 4954,
+  "selected_count": 38,
   "boards": {
     "沪市主板": 1699,
-    "深市主板": 1494,
-    "创业板": 1412,
+    "深市主板": 1492,
+    "创业板": 1410,
     "北交所": 353
   },
   "source_counts": {
     "SH": 1699,
-    "SZ": 2906,
+    "SZ": 2902,
     "BJ": 353
   },
   "filters": {
@@ -34,79 +34,80 @@
   },
   "missing_numeric_rows": 0,
   "coverage": {
-    "pass": 39,
-    "fail": 4651,
-    "unknown": 82,
-    "excluded": 186,
-    "history_available": 4950,
+    "pass": 38,
+    "fail": 4253,
+    "unknown": 478,
+    "excluded": 185,
+    "history_available": 4528,
     "history_by_board": {
       "沪市主板": {
-        "available": 1698,
+        "available": 1276,
         "total": 1699
       },
       "深市主板": {
-        "available": 1494,
-        "total": 1494
+        "available": 1492,
+        "total": 1492
       },
       "创业板": {
-        "available": 1412,
-        "total": 1412
+        "available": 1407,
+        "total": 1410
       },
       "北交所": {
-        "available": 346,
+        "available": 353,
         "total": 353
       }
     },
-    "minute_available": 39,
-    "minute_attempted": 39,
+    "minute_available": 37,
+    "minute_attempted": 38,
     "minute_sources": {
-      "Sina": 39,
+      "Sina": 37,
       "Eastmoney": 0
-    }
+    },
+    "history_note": "历史抓取触及 14:24 截止时间"
   },
   "market": {
-    "up_count": 777,
-    "down_count": 4094,
-    "amount_cny": 1046998190000.0,
+    "up_count": 3501,
+    "down_count": 1271,
+    "amount_cny": 1207673540000.0,
     "checks": {
       "leading_sector": {
-        "status": "pass",
+        "status": "fail",
         "evidence": [
           {
-            "name": "电机",
-            "change_pct": 2.15,
-            "up_count": 16,
-            "down_count": 10,
-            "leader": "凯中精密",
-            "three_day_return_pct": 6.72,
-            "up_days_of_three": 2
+            "name": "自动化设备",
+            "change_pct": 4.31,
+            "up_count": 92,
+            "down_count": 7,
+            "leader": "伟创电气",
+            "three_day_return_pct": null,
+            "up_days_of_three": null
           },
           {
-            "name": "银行",
-            "change_pct": 1.57,
-            "up_count": 42,
-            "down_count": 0,
-            "leader": "沪农商行",
-            "three_day_return_pct": 0.09,
-            "up_days_of_three": 1
+            "name": "半导体",
+            "change_pct": 4.17,
+            "up_count": 178,
+            "down_count": 12,
+            "leader": "富瀚微",
+            "three_day_return_pct": null,
+            "up_days_of_three": null
           },
           {
-            "name": "港口航运",
-            "change_pct": 0.6,
-            "up_count": 16,
-            "down_count": 14,
-            "leader": "中谷物流",
-            "three_day_return_pct": -1.65,
-            "up_days_of_three": 2
+            "name": "非金属材料",
+            "change_pct": 3.99,
+            "up_count": 14,
+            "down_count": 3,
+            "leader": "长江材料",
+            "three_day_return_pct": null,
+            "up_days_of_three": null
           }
         ],
         "reason": "同花顺行业涨幅与最近三日持续性代理"
       },
       "above_ma5": {
-        "status": "fail",
+        "status": "pass",
         "evidence": {
-          "index_price": 3677.21,
-          "ma5": 3687.25
+          "index_price": 3676.58,
+          "ma5": 3674.18
         },
         "reason": null
       },
@@ -114,13 +115,13 @@
         "status": "fail",
         "evidence": {
           "recent_low_volume_seen": false,
-          "today_volume_vs_recent_low": 0.91
+          "today_volume_vs_recent_low": 1.0
         },
         "reason": "以 14:25 的盘中量比较最近五日最低全天量，尾盘结果仍可能变化"
       }
     },
     "index_quote_source": "Tencent",
-    "index_quote_time": "20261027142600",
+    "index_quote_time": "20261028142657",
     "reversal_status": "fail"
   },
   "sector_count": 10

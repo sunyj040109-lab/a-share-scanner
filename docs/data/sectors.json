@@ -1,92 +1,92 @@
 [
   {
-    "name": "电机",
-    "change_pct": 2.15,
-    "up_count": 16,
-    "down_count": 10,
-    "leader": "凯中精密",
-    "three_day_return_pct": 6.72,
-    "up_days_of_three": 2
+    "name": "自动化设备",
+    "change_pct": 4.31,
+    "up_count": 92,
+    "down_count": 7,
+    "leader": "伟创电气",
+    "three_day_return_pct": null,
+    "up_days_of_three": null
   },
   {
-    "name": "银行",
-    "change_pct": 1.57,
-    "up_count": 42,
-    "down_count": 0,
-    "leader": "沪农商行",
-    "three_day_return_pct": 0.09,
-    "up_days_of_three": 1
+    "name": "半导体",
+    "change_pct": 4.17,
+    "up_count": 178,
+    "down_count": 12,
+    "leader": "富瀚微",
+    "three_day_return_pct": null,
+    "up_days_of_three": null
   },
   {
-    "name": "港口航运",
-    "change_pct": 0.6,
-    "up_count": 16,
-    "down_count": 14,
-    "leader": "中谷物流",
-    "three_day_return_pct": -1.65,
-    "up_days_of_three": 2
-  },
-  {
-    "name": "煤炭开采加工",
-    "change_pct": 0.51,
-    "up_count": 19,
-    "down_count": 13,
-    "leader": "安泰集团",
-    "three_day_return_pct": -3.48,
-    "up_days_of_three": 1
-  },
-  {
-    "name": "零售",
-    "change_pct": 0.28,
-    "up_count": 29,
-    "down_count": 38,
-    "leader": "茂业商业",
-    "three_day_return_pct": 1.24,
-    "up_days_of_three": 2
-  },
-  {
-    "name": "汽车整车",
-    "change_pct": 0.07,
-    "up_count": 7,
-    "down_count": 13,
-    "leader": "曙光股份",
-    "three_day_return_pct": -0.05,
-    "up_days_of_three": 2
-  },
-  {
-    "name": "保险",
-    "change_pct": 0.03,
-    "up_count": 2,
+    "name": "非金属材料",
+    "change_pct": 3.99,
+    "up_count": 14,
     "down_count": 3,
-    "leader": "中国人保",
-    "three_day_return_pct": 2.51,
-    "up_days_of_three": 2
+    "leader": "长江材料",
+    "three_day_return_pct": null,
+    "up_days_of_three": null
   },
   {
-    "name": "燃气",
-    "change_pct": 0.03,
-    "up_count": 12,
-    "down_count": 14,
-    "leader": "胜通能源",
-    "three_day_return_pct": -2.29,
-    "up_days_of_three": 2
+    "name": "医疗服务",
+    "change_pct": 3.88,
+    "up_count": 47,
+    "down_count": 8,
+    "leader": "诺禾致源",
+    "three_day_return_pct": null,
+    "up_days_of_three": null
   },
   {
-    "name": "机场航运",
-    "change_pct": -0.07,
-    "up_count": 8,
-    "down_count": 5,
-    "leader": "深圳机场",
-    "three_day_return_pct": 0.62,
-    "up_days_of_three": 2
+    "name": "影视院线",
+    "change_pct": 3.59,
+    "up_count": 16,
+    "down_count": 2,
+    "leader": "百纳千成",
+    "three_day_return_pct": null,
+    "up_days_of_three": null
   },
   {
-    "name": "公路铁路运输",
-    "change_pct": -0.23,
-    "up_count": 13,
-    "down_count": 16,
-    "leader": "龙江交通",
-    "three_day_return_pct": -0.71,
+    "name": "电子化学品",
+    "change_pct": 3.54,
+    "up_count": 44,
+    "down_count": 0,
+    "leader": "中石科技",
+    "three_day_return_pct": -5.45,
     "up_days_of_three": 1
+  },
+  {
+    "name": "其他电子",
+    "change_pct": 3.5,
+    "up_count": 32,
+    "down_count": 2,
+    "leader": "东南电子",
+    "three_day_return_pct": null,
+    "up_days_of_three": null
+  },
+  {
+    "name": "汽车零部件",
+    "change_pct": 3.45,
+    "up_count": 240,
+    "down_count": 34,
+    "leader": "朗信电气",
+    "three_day_return_pct": null,
+    "up_days_of_three": null
+  },
+  {
+    "name": "金属新材料",
+    "change_pct": 3.39,
+    "up_count": 32,
+    "down_count": 2,
+    "leader": "斯瑞新材",
+    "three_day_return_pct": -3.12,
+    "up_days_of_three": 1
+  },
+  {
+    "name": "元件",
+    "change_pct": 3.37,
+    "up_count": 59,
+    "down_count": 3,
+    "leader": "一博科技",
+    "three_day_return_pct": -9.99,
+    "up_days_of_three": 0
   }
 ]
