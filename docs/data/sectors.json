@@ -1,92 +1,92 @@
 [
   {
-    "name": "风电设备",
-    "change_pct": 2.49,
-    "up_count": 21,
-    "down_count": 11,
-    "leader": "飞沃科技",
-    "three_day_return_pct": -3.11,
+    "name": "白酒",
+    "change_pct": 5.52,
+    "up_count": 19,
+    "down_count": 0,
+    "leader": "皇台酒业",
+    "three_day_return_pct": -3.25,
+    "up_days_of_three": 1
+  },
+  {
+    "name": "医疗服务",
+    "change_pct": 2.35,
+    "up_count": 37,
+    "down_count": 18,
+    "leader": "万邦医药",
+    "three_day_return_pct": -1.48,
+    "up_days_of_three": 1
+  },
+  {
+    "name": "港口航运",
+    "change_pct": 1.72,
+    "up_count": 27,
+    "down_count": 4,
+    "leader": "锦江航运",
+    "three_day_return_pct": -0.3,
+    "up_days_of_three": 1
+  },
+  {
+    "name": "机场航运",
+    "change_pct": 0.98,
+    "up_count": 11,
+    "down_count": 2,
+    "leader": "春秋航空",
+    "three_day_return_pct": -0.69,
+    "up_days_of_three": 0
+  },
+  {
+    "name": "饮料制造",
+    "change_pct": 0.89,
+    "up_count": 30,
+    "down_count": 16,
+    "leader": "新乳业",
+    "three_day_return_pct": -3.04,
+    "up_days_of_three": 1
+  },
+  {
+    "name": "中药",
+    "change_pct": 0.71,
+    "up_count": 47,
+    "down_count": 17,
+    "leader": "羚锐制药",
+    "three_day_return_pct": -3.08,
     "up_days_of_three": 1
   },
   {
     "name": "银行",
-    "change_pct": 1.88,
-    "up_count": 40,
-    "down_count": 2,
-    "leader": "青岛银行",
-    "three_day_return_pct": 2.51,
+    "change_pct": 0.68,
+    "up_count": 29,
+    "down_count": 11,
+    "leader": "西安银行",
+    "three_day_return_pct": 2.98,
     "up_days_of_three": 2
   },
   {
-    "name": "保险",
-    "change_pct": 1.62,
-    "up_count": 4,
-    "down_count": 1,
-    "leader": "中国太保",
-    "three_day_return_pct": 1.02,
+    "name": "医药商业",
+    "change_pct": 0.6,
+    "up_count": 17,
+    "down_count": 13,
+    "leader": "百洋医药",
+    "three_day_return_pct": -3.21,
     "up_days_of_three": 1
-  },
-  {
-    "name": "煤炭开采加工",
-    "change_pct": 0.98,
-    "up_count": 23,
-    "down_count": 10,
-    "leader": "开滦股份",
-    "three_day_return_pct": 0.48,
-    "up_days_of_three": 1
-  },
-  {
-    "name": "影视院线",
-    "change_pct": 0.72,
-    "up_count": 11,
-    "down_count": 9,
-    "leader": "文投控股",
-    "three_day_return_pct": 0.73,
-    "up_days_of_three": 1
-  },
-  {
-    "name": "白酒",
-    "change_pct": 0.51,
-    "up_count": 9,
-    "down_count": 10,
-    "leader": "山西汾酒",
-    "three_day_return_pct": -0.86,
-    "up_days_of_three": 1
-  },
-  {
-    "name": "公路铁路运输",
-    "change_pct": 0.43,
-    "up_count": 18,
-    "down_count": 12,
-    "leader": "龙江交通",
-    "three_day_return_pct": 0.52,
-    "up_days_of_three": 2
   },
   {
     "name": "食品加工制造",
-    "change_pct": 0.14,
-    "up_count": 29,
-    "down_count": 36,
-    "leader": "巴比食品",
-    "three_day_return_pct": -0.09,
-    "up_days_of_three": 2
-  },
-  {
-    "name": "机场航运",
-    "change_pct": 0.11,
-    "up_count": 7,
-    "down_count": 6,
-    "leader": "华夏航空",
-    "three_day_return_pct": 0.44,
+    "change_pct": 0.42,
+    "up_count": 36,
+    "down_count": 28,
+    "leader": "黑芝麻",
+    "three_day_return_pct": -1.8,
     "up_days_of_three": 1
   },
   {
-    "name": "军工电子",
-    "change_pct": 0.08,
-    "up_count": 28,
-    "down_count": 33,
-    "leader": "中海达",
-    "three_day_return_pct": -3.03,
-    "up_days_of_three": 1
+    "name": "旅游及酒店",
+    "change_pct": 0.38,
+    "up_count": 19,
+    "down_count": 16,
+    "leader": "首旅酒店",
+    "three_day_return_pct": -1.46,
+    "up_days_of_three": 0
   }
 ]
