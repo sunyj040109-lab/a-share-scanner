@@ -1,92 +1,92 @@
 [
   {
-    "name": "影视院线",
-    "change_pct": 9.51,
-    "up_count": 20,
+    "name": "保险",
+    "change_pct": 1.93,
+    "up_count": 5,
     "down_count": 0,
-    "leader": "捷成股份",
-    "three_day_return_pct": -3.44,
+    "leader": "中国太保",
+    "three_day_return_pct": 1.34,
     "up_days_of_three": 2
+  },
+  {
+    "name": "机场航运",
+    "change_pct": 1.86,
+    "up_count": 13,
+    "down_count": 0,
+    "leader": "华夏航空",
+    "three_day_return_pct": 3.13,
+    "up_days_of_three": 2
+  },
+  {
+    "name": "电池",
+    "change_pct": 1.58,
+    "up_count": 76,
+    "down_count": 30,
+    "leader": "尚水智能",
+    "three_day_return_pct": -3.98,
+    "up_days_of_three": 1
+  },
+  {
+    "name": "养殖业",
+    "change_pct": 1.54,
+    "up_count": 26,
+    "down_count": 7,
+    "leader": "巨星农牧",
+    "three_day_return_pct": -0.79,
+    "up_days_of_three": 1
+  },
+  {
+    "name": "贸易",
+    "change_pct": 1.44,
+    "up_count": 9,
+    "down_count": 4,
+    "leader": "中成股份",
+    "three_day_return_pct": -0.36,
+    "up_days_of_three": 1
   },
   {
     "name": "游戏",
-    "change_pct": 9.04,
-    "up_count": 23,
-    "down_count": 0,
-    "leader": "富春股份",
-    "three_day_return_pct": -5.5,
-    "up_days_of_three": 1
-  },
-  {
-    "name": "文化传媒",
-    "change_pct": 8.36,
-    "up_count": 83,
-    "down_count": 2,
-    "leader": "流金科技",
-    "three_day_return_pct": -6.99,
-    "up_days_of_three": 1
-  },
-  {
-    "name": "软件开发",
-    "change_pct": 6.95,
-    "up_count": 136,
-    "down_count": 3,
-    "leader": "银之杰",
-    "three_day_return_pct": -9.28,
-    "up_days_of_three": 1
-  },
-  {
-    "name": "IT服务",
-    "change_pct": 5.53,
-    "up_count": 125,
-    "down_count": 3,
-    "leader": "华是科技",
-    "three_day_return_pct": -7.36,
-    "up_days_of_three": 1
-  },
-  {
-    "name": "教育",
-    "change_pct": 5.27,
+    "change_pct": 1.38,
     "up_count": 14,
-    "down_count": 1,
-    "leader": "ST豆神",
-    "three_day_return_pct": -4.87,
+    "down_count": 7,
+    "leader": "大晟文化",
+    "three_day_return_pct": 0.73,
     "up_days_of_three": 1
-  },
-  {
-    "name": "证券",
-    "change_pct": 4.62,
-    "up_count": 48,
-    "down_count": 0,
-    "leader": "国金证券",
-    "three_day_return_pct": -4.45,
-    "up_days_of_three": 0
   },
   {
     "name": "白酒",
-    "change_pct": 4.39,
-    "up_count": 18,
-    "down_count": 1,
-    "leader": "水井坊",
-    "three_day_return_pct": 2.84,
+    "change_pct": 1.2,
+    "up_count": 15,
+    "down_count": 3,
+    "leader": "皇台酒业",
+    "three_day_return_pct": 10.52,
+    "up_days_of_three": 3
+  },
+  {
+    "name": "影视院线",
+    "change_pct": 1.18,
+    "up_count": 8,
+    "down_count": 11,
+    "leader": "华智数媒",
+    "three_day_return_pct": 1.67,
     "up_days_of_three": 2
   },
   {
-    "name": "互联网电商",
-    "change_pct": 4.24,
-    "up_count": 20,
-    "down_count": 0,
-    "leader": "壹网壹创",
-    "three_day_return_pct": -4.64,
+    "name": "农产品加工",
+    "change_pct": 0.99,
+    "up_count": 24,
+    "down_count": 16,
+    "leader": "东方海洋",
+    "three_day_return_pct": -0.71,
     "up_days_of_three": 1
   },
   {
-    "name": "计算机设备",
-    "change_pct": 4.22,
-    "up_count": 77,
-    "down_count": 6,
-    "leader": "维宏股份",
-    "three_day_return_pct": -6.44,
+    "name": "旅游及酒店",
+    "change_pct": 0.99,
+    "up_count": 25,
+    "down_count": 7,
+    "leader": "陕西旅游",
+    "three_day_return_pct": 3.16,
     "up_days_of_three": 1
   }
 ]

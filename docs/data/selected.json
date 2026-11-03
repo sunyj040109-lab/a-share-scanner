@@ -3,90 +3,100 @@
     "code": "000678",
     "name": "襄阳轴承",
     "board": "SZ_MAIN",
-    "price": 19.89,
-    "change_pct": 10.01,
-    "turnover_pct": 33.07,
-    "amount_cny": 2880540000.0,
-    "volume_lots": 1519921.0
-  },
-  {
-    "code": "002708",
-    "name": "光洋股份",
-    "board": "SZ_MAIN",
-    "price": 20.38,
-    "change_pct": 7.15,
-    "turnover_pct": 28.11,
-    "amount_cny": 2785930000.0,
-    "volume_lots": 1432480.0
+    "price": 20.08,
+    "change_pct": 0.96,
+    "turnover_pct": 28.64,
+    "amount_cny": 2603040000.0,
+    "volume_lots": 1316217.0
   },
   {
     "code": "000530",
     "name": "冰山冷热",
     "board": "SZ_MAIN",
-    "price": 8.71,
-    "change_pct": 9.97,
-    "turnover_pct": 36.47,
-    "amount_cny": 1793470000.0,
-    "volume_lots": 2188702.0
+    "price": 9.1,
+    "change_pct": 4.48,
+    "turnover_pct": 39.3,
+    "amount_cny": 2106320000.0,
+    "volume_lots": 2358360.0
   },
   {
-    "code": "000700",
-    "name": "模塑科技",
+    "code": "002172",
+    "name": "澳洋健康",
     "board": "SZ_MAIN",
-    "price": 13.88,
-    "change_pct": 2.28,
-    "turnover_pct": 7.45,
-    "amount_cny": 924000000.0,
-    "volume_lots": 683806.0
-  },
-  {
-    "code": "001219",
-    "name": "青岛食品",
-    "board": "SZ_MAIN",
-    "price": 21.93,
-    "change_pct": 9.98,
-    "turnover_pct": 19.59,
-    "amount_cny": 765190000.0,
-    "volume_lots": 372523.0
+    "price": 7.09,
+    "change_pct": 9.08,
+    "turnover_pct": 37.73,
+    "amount_cny": 2001300000.0,
+    "volume_lots": 2886748.0
   },
   {
     "code": "000701",
     "name": "厦门信达",
     "board": "SZ_MAIN",
-    "price": 5.78,
-    "change_pct": 1.76,
-    "turnover_pct": 12.51,
-    "amount_cny": 486910000.0,
-    "volume_lots": 835503.0
+    "price": 6.11,
+    "change_pct": 4.44,
+    "turnover_pct": 14.04,
+    "amount_cny": 562810000.0,
+    "volume_lots": 937249.0
   },
   {
-    "code": "000995",
-    "name": "皇台酒业",
+    "code": "002612",
+    "name": "朗姿股份",
     "board": "SZ_MAIN",
-    "price": 15.6,
-    "change_pct": 10.01,
-    "turnover_pct": 7.11,
-    "amount_cny": 196560000.0,
-    "volume_lots": 126151.0
+    "price": 18.2,
+    "change_pct": 4.24,
+    "turnover_pct": 6.81,
+    "amount_cny": 319240000.0,
+    "volume_lots": 178040.0
+  },
+  {
+    "code": "002956",
+    "name": "西麦食品",
+    "board": "SZ_MAIN",
+    "price": 20.51,
+    "change_pct": 1.28,
+    "turnover_pct": 4.52,
+    "amount_cny": 295730000.0,
+    "volume_lots": 141215.0
   },
   {
     "code": "001328",
     "name": "登康口腔",
     "board": "SZ_MAIN",
-    "price": 34.17,
-    "change_pct": 3.67,
-    "turnover_pct": 2.99,
-    "amount_cny": 161640000.0,
-    "volume_lots": 48417.0
+    "price": 36.47,
+    "change_pct": 5.16,
+    "turnover_pct": 4.43,
+    "amount_cny": 254830000.0,
+    "volume_lots": 71683.0
+  },
+  {
+    "code": "002982",
+    "name": "湘佳股份",
+    "board": "SZ_MAIN",
+    "price": 14.04,
+    "change_pct": 4.15,
+    "turnover_pct": 7.57,
+    "amount_cny": 136400000.0,
+    "volume_lots": 98534.0
   },
   {
     "code": "000928",
     "name": "中钢国际",
     "board": "SZ_MAIN",
-    "price": 5.6,
-    "change_pct": 2.0,
-    "turnover_pct": 1.72,
-    "amount_cny": 137690000.0,
-    "volume_lots": 247182.0
+    "price": 5.66,
+    "change_pct": 0.89,
+    "turnover_pct": 1.43,
+    "amount_cny": 115430000.0,
+    "volume_lots": 205458.0
+  },
+  {
+    "code": "000995",
+    "name": "皇台酒业",
+    "board": "SZ_MAIN",
+    "price": 17.16,
+    "change_pct": 10.0,
+    "turnover_pct": 1.82,
+    "amount_cny": 55300000.0,
+    "volume_lots": 32227.0
   }
 ]
