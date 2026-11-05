@@ -1,1 +1,92 @@
-[]
+[
+  {
+    "name": "光伏设备",
+    "change_pct": 7.76,
+    "up_count": 69,
+    "down_count": 2,
+    "leader": "酉立智能",
+    "three_day_return_pct": 9.03,
+    "up_days_of_three": 3
+  },
+  {
+    "name": "贵金属",
+    "change_pct": 4.05,
+    "up_count": 13,
+    "down_count": 1,
+    "leader": "赤峰黄金",
+    "three_day_return_pct": 8.23,
+    "up_days_of_three": 1
+  },
+  {
+    "name": "能源金属",
+    "change_pct": 3.97,
+    "up_count": 13,
+    "down_count": 1,
+    "leader": "融捷股份",
+    "three_day_return_pct": 6.34,
+    "up_days_of_three": 3
+  },
+  {
+    "name": "影视院线",
+    "change_pct": 3.81,
+    "up_count": 19,
+    "down_count": 1,
+    "leader": "慈文传媒",
+    "three_day_return_pct": 13.47,
+    "up_days_of_three": 3
+  },
+  {
+    "name": "互联网电商",
+    "change_pct": 3.62,
+    "up_count": 19,
+    "down_count": 0,
+    "leader": "狮头股份",
+    "three_day_return_pct": 4.34,
+    "up_days_of_three": 2
+  },
+  {
+    "name": "文化传媒",
+    "change_pct": 3.54,
+    "up_count": 82,
+    "down_count": 3,
+    "leader": "福石控股",
+    "three_day_return_pct": 10.54,
+    "up_days_of_three": 2
+  },
+  {
+    "name": "电池",
+    "change_pct": 3.49,
+    "up_count": 103,
+    "down_count": 4,
+    "leader": "鹏辉能源",
+    "three_day_return_pct": 7.26,
+    "up_days_of_three": 3
+  },
+  {
+    "name": "通信服务",
+    "change_pct": 3.47,
+    "up_count": 40,
+    "down_count": 3,
+    "leader": "润泽科技",
+    "three_day_return_pct": 3.54,
+    "up_days_of_three": 2
+  },
+  {
+    "name": "IT服务",
+    "change_pct": 3.13,
+    "up_count": 120,
+    "down_count": 6,
+    "leader": "青云科技",
+    "three_day_return_pct": 6.03,
+    "up_days_of_three": 2
+  },
+  {
+    "name": "消费电子",
+    "change_pct": 3.12,
+    "up_count": 89,
+    "down_count": 7,
+    "leader": "精研科技",
+    "three_day_return_pct": 5.43,
+    "up_days_of_three": 2
+  }
+]
