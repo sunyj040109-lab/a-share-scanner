@@ -1,21 +1,21 @@
 {
-  "trade_date": "2026-11-05",
-  "captured_at_beijing": "2026-11-05T14:25:52+08:00",
+  "trade_date": "2026-11-06",
+  "captured_at_beijing": "2026-11-06T14:25:38+08:00",
   "scan_type": "intraday_strategy",
   "scheduled_time_beijing": "14:25",
   "source": "AKShare / Tencent spot and index + Tencent/Eastmoney/Sina daily + Sina/Eastmoney 5m + THS sectors",
-  "universe_count": 4959,
+  "universe_count": 4960,
   "selected_count": 11,
   "boards": {
     "沪市主板": 1700,
     "深市主板": 1495,
     "创业板": 1410,
-    "北交所": 354
+    "北交所": 355
   },
   "source_counts": {
     "SH": 1700,
     "SZ": 2905,
-    "BJ": 354
+    "BJ": 355
   },
   "filters": {
     "max_report_rows": 100,
@@ -35,26 +35,26 @@
   "missing_numeric_rows": 0,
   "coverage": {
     "pass": 11,
-    "fail": 1587,
-    "unknown": 3175,
-    "excluded": 186,
-    "history_available": 1725,
+    "fail": 3004,
+    "unknown": 1760,
+    "excluded": 185,
+    "history_available": 3185,
     "history_by_board": {
       "沪市主板": {
         "available": 1,
         "total": 1700
       },
       "深市主板": {
-        "available": 1373,
+        "available": 1494,
         "total": 1495
       },
       "创业板": {
-        "available": 0,
+        "available": 1335,
         "total": 1410
       },
       "北交所": {
-        "available": 351,
-        "total": 354
+        "available": 355,
+        "total": 355
       }
     },
     "minute_available": 11,
@@ -66,48 +66,48 @@
     "history_note": "历史抓取触及 14:24 截止时间"
   },
   "market": {
-    "up_count": 4076,
-    "down_count": 768,
-    "amount_cny": 1602565860000.0,
+    "up_count": 832,
+    "down_count": 4021,
+    "amount_cny": 1230490290000.0,
     "checks": {
       "leading_sector": {
-        "status": "pass",
+        "status": "fail",
         "evidence": [
           {
-            "name": "光伏设备",
-            "change_pct": 7.76,
-            "up_count": 69,
-            "down_count": 2,
-            "leader": "酉立智能",
-            "three_day_return_pct": 9.03,
+            "name": "种植业与林业",
+            "change_pct": 1.91,
+            "up_count": 19,
+            "down_count": 9,
+            "leader": "秋乐种业",
+            "three_day_return_pct": 4.06,
             "up_days_of_three": 3
           },
           {
-            "name": "贵金属",
-            "change_pct": 4.05,
-            "up_count": 13,
-            "down_count": 1,
-            "leader": "赤峰黄金",
-            "three_day_return_pct": 8.23,
-            "up_days_of_three": 1
+            "name": "公路铁路运输",
+            "change_pct": 1.05,
+            "up_count": 24,
+            "down_count": 7,
+            "leader": "龙江交通",
+            "three_day_return_pct": 0.87,
+            "up_days_of_three": 3
           },
           {
-            "name": "能源金属",
-            "change_pct": 3.97,
-            "up_count": 13,
-            "down_count": 1,
-            "leader": "融捷股份",
-            "three_day_return_pct": 6.34,
-            "up_days_of_three": 3
+            "name": "银行",
+            "change_pct": 0.9,
+            "up_count": 36,
+            "down_count": 3,
+            "leader": "沪农商行",
+            "three_day_return_pct": -1.35,
+            "up_days_of_three": 0
           }
         ],
         "reason": "同花顺行业涨幅与最近三日持续性代理"
       },
       "above_ma5": {
-        "status": "pass",
+        "status": "fail",
         "evidence": {
-          "index_price": 3679.56,
-          "ma5": 3642.18
+          "index_price": 3654.67,
+          "ma5": 3655.38
         },
         "reason": null
       },
@@ -115,13 +115,13 @@
         "status": "fail",
         "evidence": {
           "recent_low_volume_seen": false,
-          "today_volume_vs_recent_low": 1.14
+          "today_volume_vs_recent_low": 0.83
         },
         "reason": "以 14:25 的盘中量比较最近五日最低全天量，尾盘结果仍可能变化"
       }
     },
     "index_quote_source": "Tencent",
-    "index_quote_time": "20261105142548",
+    "index_quote_time": "20261106142533",
     "reversal_status": "fail"
   },
   "sector_count": 10

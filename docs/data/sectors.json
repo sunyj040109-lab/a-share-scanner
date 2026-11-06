@@ -1,92 +1,92 @@
 [
   {
-    "name": "光伏设备",
-    "change_pct": 7.76,
-    "up_count": 69,
-    "down_count": 2,
-    "leader": "酉立智能",
-    "three_day_return_pct": 9.03,
-    "up_days_of_three": 3
-  },
-  {
-    "name": "贵金属",
-    "change_pct": 4.05,
-    "up_count": 13,
-    "down_count": 1,
-    "leader": "赤峰黄金",
-    "three_day_return_pct": 8.23,
-    "up_days_of_three": 1
-  },
-  {
-    "name": "能源金属",
-    "change_pct": 3.97,
-    "up_count": 13,
-    "down_count": 1,
-    "leader": "融捷股份",
-    "three_day_return_pct": 6.34,
-    "up_days_of_three": 3
-  },
-  {
-    "name": "影视院线",
-    "change_pct": 3.81,
+    "name": "种植业与林业",
+    "change_pct": 1.91,
     "up_count": 19,
-    "down_count": 1,
-    "leader": "慈文传媒",
-    "three_day_return_pct": 13.47,
+    "down_count": 9,
+    "leader": "秋乐种业",
+    "three_day_return_pct": 4.06,
     "up_days_of_three": 3
   },
   {
-    "name": "互联网电商",
-    "change_pct": 3.62,
-    "up_count": 19,
-    "down_count": 0,
-    "leader": "狮头股份",
-    "three_day_return_pct": 4.34,
-    "up_days_of_three": 2
-  },
-  {
-    "name": "文化传媒",
-    "change_pct": 3.54,
-    "up_count": 82,
-    "down_count": 3,
-    "leader": "福石控股",
-    "three_day_return_pct": 10.54,
-    "up_days_of_three": 2
-  },
-  {
-    "name": "电池",
-    "change_pct": 3.49,
-    "up_count": 103,
-    "down_count": 4,
-    "leader": "鹏辉能源",
-    "three_day_return_pct": 7.26,
-    "up_days_of_three": 3
-  },
-  {
-    "name": "通信服务",
-    "change_pct": 3.47,
-    "up_count": 40,
-    "down_count": 3,
-    "leader": "润泽科技",
-    "three_day_return_pct": 3.54,
-    "up_days_of_three": 2
-  },
-  {
-    "name": "IT服务",
-    "change_pct": 3.13,
-    "up_count": 120,
-    "down_count": 6,
-    "leader": "青云科技",
-    "three_day_return_pct": 6.03,
-    "up_days_of_three": 2
-  },
-  {
-    "name": "消费电子",
-    "change_pct": 3.12,
-    "up_count": 89,
+    "name": "公路铁路运输",
+    "change_pct": 1.05,
+    "up_count": 24,
     "down_count": 7,
-    "leader": "精研科技",
-    "three_day_return_pct": 5.43,
+    "leader": "龙江交通",
+    "three_day_return_pct": 0.87,
+    "up_days_of_three": 3
+  },
+  {
+    "name": "银行",
+    "change_pct": 0.9,
+    "up_count": 36,
+    "down_count": 3,
+    "leader": "沪农商行",
+    "three_day_return_pct": -1.35,
+    "up_days_of_three": 0
+  },
+  {
+    "name": "电力",
+    "change_pct": 0.88,
+    "up_count": 67,
+    "down_count": 32,
+    "leader": "新能股份",
+    "three_day_return_pct": 3.48,
+    "up_days_of_three": 3
+  },
+  {
+    "name": "厨卫电器",
+    "change_pct": 0.21,
+    "up_count": 3,
+    "down_count": 6,
+    "leader": "日出东方",
+    "three_day_return_pct": 1.85,
     "up_days_of_three": 2
+  },
+  {
+    "name": "农产品加工",
+    "change_pct": 0.2,
+    "up_count": 15,
+    "down_count": 23,
+    "leader": "东方海洋",
+    "three_day_return_pct": 3.65,
+    "up_days_of_three": 3
+  },
+  {
+    "name": "养殖业",
+    "change_pct": 0.12,
+    "up_count": 11,
+    "down_count": 23,
+    "leader": "天山生物",
+    "three_day_return_pct": 4.03,
+    "up_days_of_three": 3
+  },
+  {
+    "name": "贸易",
+    "change_pct": -0.02,
+    "up_count": 4,
+    "down_count": 10,
+    "leader": "东方创业",
+    "three_day_return_pct": 3.64,
+    "up_days_of_three": 3
+  },
+  {
+    "name": "燃气",
+    "change_pct": -0.22,
+    "up_count": 12,
+    "down_count": 13,
+    "leader": "东方环宇",
+    "three_day_return_pct": 0.92,
+    "up_days_of_three": 2
+  },
+  {
+    "name": "光伏设备",
+    "change_pct": -0.4,
+    "up_count": 20,
+    "down_count": 51,
+    "leader": "贝特利",
+    "three_day_return_pct": 14.32,
+    "up_days_of_three": 3
   }
 ]
