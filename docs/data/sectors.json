@@ -1,92 +1,92 @@
 [
   {
-    "name": "种植业与林业",
-    "change_pct": 1.91,
-    "up_count": 19,
-    "down_count": 9,
-    "leader": "秋乐种业",
-    "three_day_return_pct": 4.06,
-    "up_days_of_three": 3
-  },
-  {
-    "name": "公路铁路运输",
-    "change_pct": 1.05,
-    "up_count": 24,
-    "down_count": 7,
-    "leader": "龙江交通",
-    "three_day_return_pct": 0.87,
-    "up_days_of_three": 3
-  },
-  {
-    "name": "银行",
-    "change_pct": 0.9,
-    "up_count": 36,
-    "down_count": 3,
-    "leader": "沪农商行",
-    "three_day_return_pct": -1.35,
-    "up_days_of_three": 0
-  },
-  {
-    "name": "电力",
-    "change_pct": 0.88,
-    "up_count": 67,
-    "down_count": 32,
-    "leader": "新能股份",
-    "three_day_return_pct": 3.48,
-    "up_days_of_three": 3
-  },
-  {
-    "name": "厨卫电器",
-    "change_pct": 0.21,
-    "up_count": 3,
-    "down_count": 6,
-    "leader": "日出东方",
-    "three_day_return_pct": 1.85,
-    "up_days_of_three": 2
-  },
-  {
-    "name": "农产品加工",
-    "change_pct": 0.2,
-    "up_count": 15,
-    "down_count": 23,
-    "leader": "东方海洋",
-    "three_day_return_pct": 3.65,
-    "up_days_of_three": 3
-  },
-  {
-    "name": "养殖业",
-    "change_pct": 0.12,
-    "up_count": 11,
-    "down_count": 23,
-    "leader": "天山生物",
-    "three_day_return_pct": 4.03,
-    "up_days_of_three": 3
-  },
-  {
-    "name": "贸易",
-    "change_pct": -0.02,
-    "up_count": 4,
-    "down_count": 10,
-    "leader": "东方创业",
-    "three_day_return_pct": 3.64,
-    "up_days_of_three": 3
+    "name": "煤炭开采加工",
+    "change_pct": 3.39,
+    "up_count": 33,
+    "down_count": 1,
+    "leader": "郑州煤电",
+    "three_day_return_pct": -1.76,
+    "up_days_of_three": 1
   },
   {
     "name": "燃气",
-    "change_pct": -0.22,
-    "up_count": 12,
-    "down_count": 13,
+    "change_pct": 3.36,
+    "up_count": 25,
+    "down_count": 1,
     "leader": "东方环宇",
-    "three_day_return_pct": 0.92,
+    "three_day_return_pct": 0.81,
     "up_days_of_three": 2
   },
   {
-    "name": "光伏设备",
-    "change_pct": -0.4,
-    "up_count": 20,
-    "down_count": 51,
-    "leader": "贝特利",
-    "three_day_return_pct": 14.32,
-    "up_days_of_three": 3
+    "name": "元件",
+    "change_pct": 3.04,
+    "up_count": 58,
+    "down_count": 3,
+    "leader": "奥士康",
+    "three_day_return_pct": 0.9,
+    "up_days_of_three": 1
+  },
+  {
+    "name": "厨卫电器",
+    "change_pct": 2.33,
+    "up_count": 7,
+    "down_count": 2,
+    "leader": "日出东方",
+    "three_day_return_pct": 1.74,
+    "up_days_of_three": 1
+  },
+  {
+    "name": "通信设备",
+    "change_pct": 2.16,
+    "up_count": 77,
+    "down_count": 15,
+    "leader": "通则康威",
+    "three_day_return_pct": 2.9,
+    "up_days_of_three": 2
+  },
+  {
+    "name": "小金属",
+    "change_pct": 1.8,
+    "up_count": 15,
+    "down_count": 13,
+    "leader": "金钛股份",
+    "three_day_return_pct": 4.27,
+    "up_days_of_three": 2
+  },
+  {
+    "name": "军工电子",
+    "change_pct": 1.76,
+    "up_count": 58,
+    "down_count": 4,
+    "leader": "航天电器",
+    "three_day_return_pct": 3.14,
+    "up_days_of_three": 2
+  },
+  {
+    "name": "电子化学品",
+    "change_pct": 1.37,
+    "up_count": 32,
+    "down_count": 11,
+    "leader": "鸿富诚",
+    "three_day_return_pct": 7.13,
+    "up_days_of_three": 2
+  },
+  {
+    "name": "消费电子",
+    "change_pct": 1.36,
+    "up_count": 68,
+    "down_count": 26,
+    "leader": "信维通信",
+    "three_day_return_pct": 5.6,
+    "up_days_of_three": 2
+  },
+  {
+    "name": "电机",
+    "change_pct": 1.35,
+    "up_count": 21,
+    "down_count": 5,
+    "leader": "江苏雷利",
+    "three_day_return_pct": 1.73,
+    "up_days_of_three": 2
   }
 ]

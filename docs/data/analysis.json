@@ -1,124 +1,4 @@
 {
-  "002086": {
-    "status": "pass",
-    "checks": {
-      "history": {
-        "status": "pass",
-        "evidence": {
-          "bars": 120,
-          "last_date": "2026-11-05"
-        },
-        "reason": null
-      },
-      "past_limit_up": {
-        "status": "pass",
-        "evidence": [
-          {
-            "date": "2026-11-02",
-            "change_pct": 9.89
-          },
-          {
-            "date": "2026-11-03",
-            "change_pct": 9.97
-          },
-          {
-            "date": "2026-11-05",
-            "change_pct": 10.06
-          }
-        ],
-        "reason": "按收盘涨幅及收盘接近最高价近似识别；新股无涨跌幅限制、ST 和复权问题需人工核对"
-      },
-      "one_price_limit_up": {
-        "status": "fail",
-        "evidence": [],
-        "reason": "日 K 线开高低收近乎同价；无法判断封板中途是否被砸开或主力试仓"
-      },
-      "uptrend": {
-        "status": "pass",
-        "evidence": {
-          "price": 3.97,
-          "ma5": 3.48,
-          "ma20": 2.57,
-          "ma60": 2.24,
-          "ma20_5d_ago": 2.16
-        },
-        "reason": null
-      },
-      "red_volume_proxy": {
-        "status": "pass",
-        "evidence": {
-          "volume_ratio_vs_20d": 2.26,
-          "price_vs_prev_close_pct": 9.97
-        },
-        "reason": "日级放量上涨代理；无法证明非早盘红色堆量或主力买入"
-      },
-      "volume_cluster_cost_proxy": {
-        "status": "pass",
-        "evidence": {
-          "from": "2026-10-29",
-          "to": "2026-10-30",
-          "low": 2.31,
-          "high": 2.83,
-          "volume_weighted_close": 2.71
-        },
-        "reason": "连续放量阳线的价格区间代理，不是实际主力持仓成本"
-      },
-      "bearish_max_volume_anchor": {
-        "status": "fail",
-        "evidence": null,
-        "reason": "120 日最大量阴线；非复权价格，除权需人工核对"
-      },
-      "anchor_unbroken": {
-        "status": "unknown",
-        "evidence": null,
-        "reason": "无最大量阴线锚点"
-      },
-      "volume_breakout": {
-        "status": "unknown",
-        "evidence": null,
-        "reason": "无最大量阴线锚点"
-      },
-      "recent_upper_shadow": {
-        "status": "pass",
-        "evidence": [
-          "2026-10-27"
-        ],
-        "reason": "只测上影线形态，不能判断是套人、洗盘还是试盘"
-      },
-      "gap_confirmation": {
-        "status": "unknown",
-        "evidence": null,
-        "reason": "待读取当日 5 分钟 K 线"
-      },
-      "pullback_stabilization": {
-        "status": "fail",
-        "evidence": {
-          "time": "2026-11-06 14:25:00",
-          "doji": false,
-          "inverted_hammer": false,
-          "prior_pullback": false
-        },
-        "reason": "仅识别 5 分钟回调及末根形态；尾盘入场需 14:30 后再确认"
-      },
-      "non_morning_volume_stack": {
-        "status": "pass",
-        "evidence": [
-          "2026-11-06 11:15:00"
-        ],
-        "reason": "5 分钟红量柱相对前 5 根放大；不能证明主动买单或主力吸筹"
-      },
-      "five_minute_exit": {
-        "status": "unknown",
-        "evidence": null,
-        "reason": "需要连续 5 分钟 K 线，且属于持仓管理"
-      },
-      "operator_intent": {
-        "status": "unknown",
-        "evidence": null,
-        "reason": "不能从公开量价数据确认主力真实意图"
-      }
-    }
-  },
   "000700": {
     "status": "pass",
     "checks": {
@@ -126,7 +6,7 @@
         "status": "pass",
         "evidence": {
           "bars": 120,
-          "last_date": "2026-11-05"
+          "last_date": "2026-11-06"
         },
         "reason": null
       },
@@ -156,19 +36,19 @@
       "uptrend": {
         "status": "pass",
         "evidence": {
-          "price": 15.06,
-          "ma5": 14.12,
-          "ma20": 12.34,
-          "ma60": 11.89,
-          "ma20_5d_ago": 11.77
+          "price": 15.38,
+          "ma5": 14.4,
+          "ma20": 12.54,
+          "ma60": 11.94,
+          "ma20_5d_ago": 11.83
         },
         "reason": null
       },
       "red_volume_proxy": {
         "status": "pass",
         "evidence": {
-          "volume_ratio_vs_20d": 149.11,
-          "price_vs_prev_close_pct": 0.4
+          "volume_ratio_vs_20d": 98.68,
+          "price_vs_prev_close_pct": 3.22
         },
         "reason": "日级放量上涨代理；无法证明非早盘红色堆量或主力买入"
       },
@@ -201,7 +81,8 @@
       "recent_upper_shadow": {
         "status": "pass",
         "evidence": [
-          "2026-10-30"
+          "2026-10-30",
+          "2026-11-06"
         ],
         "reason": "只测上影线形态，不能判断是套人、洗盘还是试盘"
       },
@@ -213,18 +94,16 @@
       "pullback_stabilization": {
         "status": "fail",
         "evidence": {
-          "time": "2026-11-06 14:25:00",
+          "time": "2026-11-09 14:25:00",
           "doji": false,
           "inverted_hammer": false,
-          "prior_pullback": false
+          "prior_pullback": true
         },
         "reason": "仅识别 5 分钟回调及末根形态；尾盘入场需 14:30 后再确认"
       },
       "non_morning_volume_stack": {
-        "status": "pass",
-        "evidence": [
-          "2026-11-06 14:15:00"
-        ],
+        "status": "fail",
+        "evidence": [],
         "reason": "5 分钟红量柱相对前 5 根放大；不能证明主动买单或主力吸筹"
       },
       "five_minute_exit": {
@@ -239,14 +118,14 @@
       }
     }
   },
-  "002300": {
+  "000559": {
     "status": "pass",
     "checks": {
       "history": {
         "status": "pass",
         "evidence": {
           "bars": 120,
-          "last_date": "2026-11-05"
+          "last_date": "2026-11-06"
         },
         "reason": null
       },
@@ -254,16 +133,16 @@
         "status": "pass",
         "evidence": [
           {
-            "date": "2026-09-16",
-            "change_pct": 9.97
+            "date": "2026-10-23",
+            "change_pct": 10.0
           },
           {
-            "date": "2026-09-18",
-            "change_pct": 10.03
+            "date": "2026-10-26",
+            "change_pct": 10.04
           },
           {
-            "date": "2026-11-03",
-            "change_pct": 9.96
+            "date": "2026-10-28",
+            "change_pct": 10.02
           }
         ],
         "reason": "按收盘涨幅及收盘接近最高价近似识别；新股无涨跌幅限制、ST 和复权问题需人工核对"
@@ -276,66 +155,84 @@
       "uptrend": {
         "status": "pass",
         "evidence": {
-          "price": 8.75,
-          "ma5": 8.37,
-          "ma20": 7.63,
-          "ma60": 7.61,
-          "ma20_5d_ago": 7.5
+          "price": 12.8,
+          "ma5": 12.64,
+          "ma20": 11.53,
+          "ma60": 11.23,
+          "ma20_5d_ago": 10.91
         },
         "reason": null
       },
       "red_volume_proxy": {
         "status": "pass",
         "evidence": {
-          "volume_ratio_vs_20d": 2.38,
-          "price_vs_prev_close_pct": 5.68
+          "volume_ratio_vs_20d": 77.45,
+          "price_vs_prev_close_pct": 2.48
         },
         "reason": "日级放量上涨代理；无法证明非早盘红色堆量或主力买入"
       },
       "volume_cluster_cost_proxy": {
         "status": "pass",
         "evidence": {
-          "from": "2026-09-18",
-          "to": "2026-09-21",
-          "low": 7.81,
-          "high": 9.03,
-          "volume_weighted_close": 8.7
+          "from": "2026-10-30",
+          "to": "2026-11-02",
+          "low": 11.63,
+          "high": 13.4,
+          "volume_weighted_close": 12.73
         },
         "reason": "连续放量阳线的价格区间代理，不是实际主力持仓成本"
       },
       "bearish_max_volume_anchor": {
-        "status": "fail",
-        "evidence": null,
+        "status": "pass",
+        "evidence": {
+          "date": "2026-10-29",
+          "high": 13.82,
+          "low": 12.96,
+          "volume": 2525926.0
+        },
         "reason": "120 日最大量阴线；非复权价格，除权需人工核对"
       },
       "anchor_unbroken": {
-        "status": "unknown",
-        "evidence": null,
-        "reason": "无最大量阴线锚点"
+        "status": "fail",
+        "evidence": {
+          "anchor_low": 12.96,
+          "minimum_since_anchor": 11.63
+        },
+        "reason": "比较锚点之后已完成日线的最低价和盘中现价；无法得知今日盘中是否曾短暂跌破"
       },
       "volume_breakout": {
-        "status": "unknown",
-        "evidence": null,
-        "reason": "无最大量阴线锚点"
+        "status": "fail",
+        "evidence": {
+          "previous_close": 12.49,
+          "price": 12.8,
+          "anchor_high": 13.82,
+          "volume_ratio_vs_20d": 77.45
+        },
+        "reason": "当日由锚点高点下方带量越过；盘中可能再次回落"
       },
       "recent_upper_shadow": {
         "status": "pass",
         "evidence": [
-          "2026-10-30"
+          "2026-10-30",
+          "2026-11-06"
         ],
         "reason": "只测上影线形态，不能判断是套人、洗盘还是试盘"
       },
       "gap_confirmation": {
-        "status": "unknown",
-        "evidence": null,
-        "reason": "待读取当日 5 分钟 K 线"
+        "status": "fail",
+        "evidence": {
+          "open": 12.7,
+          "latest_5m_close": 12.77,
+          "anchor_high": 13.82
+        },
+        "reason": "盘中尚未收盘，跳空保持状态可能变化"
       },
       "pullback_stabilization": {
         "status": "fail",
         "evidence": {
-          "time": "2026-11-06 14:25:00",
+          "time": "2026-11-09 14:25:00",
           "doji": true,
-          "inverted_hammer": true,
+          "inverted_hammer": false,
           "prior_pullback": false
         },
         "reason": "仅识别 5 分钟回调及末根形态；尾盘入场需 14:30 后再确认"
@@ -343,7 +240,7 @@
       "non_morning_volume_stack": {
         "status": "pass",
         "evidence": [
-          "2026-11-06 11:30:00"
+          "2026-11-09 10:35:00"
         ],
         "reason": "5 分钟红量柱相对前 5 根放大；不能证明主动买单或主力吸筹"
       },
@@ -359,14 +256,14 @@
       }
     }
   },
-  "002275": {
+  "001219": {
     "status": "pass",
     "checks": {
       "history": {
         "status": "pass",
         "evidence": {
           "bars": 120,
-          "last_date": "2026-11-05"
+          "last_date": "2026-11-06"
         },
         "reason": null
       },
@@ -374,12 +271,155 @@
         "status": "pass",
         "evidence": [
           {
+            "date": "2026-10-29",
+            "change_pct": 10.01
+          },
+          {
             "date": "2026-10-30",
-            "change_pct": 9.99
+            "change_pct": 9.98
           },
           {
             "date": "2026-11-02",
-            "change_pct": 10.01
+            "change_pct": 9.98
+          }
+        ],
+        "reason": "按收盘涨幅及收盘接近最高价近似识别；新股无涨跌幅限制、ST 和复权问题需人工核对"
+      },
+      "one_price_limit_up": {
+        "status": "pass",
+        "evidence": [
+          "2026-10-28",
+          "2026-10-29"
+        ],
+        "reason": "日 K 线开高低收近乎同价；无法判断封板中途是否被砸开或主力试仓"
+      },
+      "uptrend": {
+        "status": "pass",
+        "evidence": {
+          "price": 24.31,
+          "ma5": 22.78,
+          "ma20": 16.63,
+          "ma60": 14.08,
+          "ma20_5d_ago": 13.74
+        },
+        "reason": null
+      },
+      "red_volume_proxy": {
+        "status": "pass",
+        "evidence": {
+          "volume_ratio_vs_20d": 2.64,
+          "price_vs_prev_close_pct": 8.09
+        },
+        "reason": "日级放量上涨代理；无法证明非早盘红色堆量或主力买入"
+      },
+      "volume_cluster_cost_proxy": {
+        "status": "pass",
+        "evidence": {
+          "from": "2026-07-29",
+          "to": "2026-07-30",
+          "low": 11.93,
+          "high": 12.6,
+          "volume_weighted_close": 12.41
+        },
+        "reason": "连续放量阳线的价格区间代理，不是实际主力持仓成本"
+      },
+      "bearish_max_volume_anchor": {
+        "status": "pass",
+        "evidence": {
+          "date": "2026-11-03",
+          "high": 23.27,
+          "low": 21.4,
+          "volume": 52119200.0
+        },
+        "reason": "120 日最大量阴线；非复权价格，除权需人工核对"
+      },
+      "anchor_unbroken": {
+        "status": "fail",
+        "evidence": {
+          "anchor_low": 21.4,
+          "minimum_since_anchor": 19.97
+        },
+        "reason": "比较锚点之后已完成日线的最低价和盘中现价；无法得知今日盘中是否曾短暂跌破"
+      },
+      "volume_breakout": {
+        "status": "pass",
+        "evidence": {
+          "previous_close": 22.49,
+          "price": 24.31,
+          "anchor_high": 23.27,
+          "volume_ratio_vs_20d": 2.64
+        },
+        "reason": "当日由锚点高点下方带量越过；盘中可能再次回落"
+      },
+      "recent_upper_shadow": {
+        "status": "pass",
+        "evidence": [
+          "2026-11-03",
+          "2026-11-04"
+        ],
+        "reason": "只测上影线形态，不能判断是套人、洗盘还是试盘"
+      },
+      "gap_confirmation": {
+        "status": "fail",
+        "evidence": {
+          "open": 22.0,
+          "latest_5m_close": 24.26,
+          "anchor_high": 23.27
+        },
+        "reason": "盘中尚未收盘，跳空保持状态可能变化"
+      },
+      "pullback_stabilization": {
+        "status": "fail",
+        "evidence": {
+          "time": "2026-11-09 14:25:00",
+          "doji": false,
+          "inverted_hammer": false,
+          "prior_pullback": true
+        },
+        "reason": "仅识别 5 分钟回调及末根形态；尾盘入场需 14:30 后再确认"
+      },
+      "non_morning_volume_stack": {
+        "status": "pass",
+        "evidence": [
+          "2026-11-09 11:00:00",
+          "2026-11-09 11:05:00",
+          "2026-11-09 14:10:00"
+        ],
+        "reason": "5 分钟红量柱相对前 5 根放大；不能证明主动买单或主力吸筹"
+      },
+      "five_minute_exit": {
+        "status": "unknown",
+        "evidence": null,
+        "reason": "需要连续 5 分钟 K 线，且属于持仓管理"
+      },
+      "operator_intent": {
+        "status": "unknown",
+        "evidence": null,
+        "reason": "不能从公开量价数据确认主力真实意图"
+      }
+    }
+  },
+  "000530": {
+    "status": "pass",
+    "checks": {
+      "history": {
+        "status": "pass",
+        "evidence": {
+          "bars": 120,
+          "last_date": "2026-11-06"
+        },
+        "reason": null
+      },
+      "past_limit_up": {
+        "status": "pass",
+        "evidence": [
+          {
+            "date": "2026-10-29",
+            "change_pct": 10.03
+          },
+          {
+            "date": "2026-11-02",
+            "change_pct": 9.97
           },
           {
             "date": "2026-11-04",
@@ -391,67 +431,166 @@
       "one_price_limit_up": {
         "status": "pass",
         "evidence": [
-          "2026-11-02"
+          "2026-10-14"
         ],
         "reason": "日 K 线开高低收近乎同价；无法判断封板中途是否被砸开或主力试仓"
       },
       "uptrend": {
         "status": "pass",
         "evidence": {
-          "price": 18.67,
-          "ma5": 17.18,
-          "ma20": 13.67,
-          "ma60": 12.96,
-          "ma20_5d_ago": 12.27
+          "price": 9.57,
+          "ma5": 9.07,
+          "ma20": 8.23,
+          "ma60": 6.18,
+          "ma20_5d_ago": 7.1
         },
         "reason": null
       },
       "red_volume_proxy": {
         "status": "pass",
         "evidence": {
-          "volume_ratio_vs_20d": 4.96,
-          "price_vs_prev_close_pct": 6.32
+          "volume_ratio_vs_20d": 42.33,
+          "price_vs_prev_close_pct": 10.0
         },
         "reason": "日级放量上涨代理；无法证明非早盘红色堆量或主力买入"
       },
       "volume_cluster_cost_proxy": {
         "status": "pass",
         "evidence": {
-          "from": "2026-10-28",
-          "to": "2026-10-30",
-          "low": 12.31,
-          "high": 14.98,
-          "volume_weighted_close": 14.17
+          "from": "2026-10-15",
+          "to": "2026-10-23",
+          "low": 6.45,
+          "high": 9.53,
+          "volume_weighted_close": 8.33
         },
         "reason": "连续放量阳线的价格区间代理，不是实际主力持仓成本"
       },
       "bearish_max_volume_anchor": {
-        "status": "pass",
-        "evidence": {
-          "date": "2026-11-05",
-          "high": 19.12,
-          "low": 17.1,
-          "volume": 67818500.0
-        },
+        "status": "fail",
+        "evidence": null,
         "reason": "120 日最大量阴线；非复权价格，除权需人工核对"
       },
       "anchor_unbroken": {
-        "status": "pass",
-        "evidence": {
-          "anchor_low": 17.1,
-          "minimum_since_anchor": 18.67
-        },
-        "reason": "比较锚点之后已完成日线的最低价和盘中现价；无法得知今日盘中是否曾短暂跌破"
+        "status": "unknown",
+        "evidence": null,
+        "reason": "无最大量阴线锚点"
       },
       "volume_breakout": {
+        "status": "unknown",
+        "evidence": null,
+        "reason": "无最大量阴线锚点"
+      },
+      "recent_upper_shadow": {
+        "status": "pass",
+        "evidence": [
+          "2026-10-27",
+          "2026-11-03",
+          "2026-11-06"
+        ],
+        "reason": "只测上影线形态，不能判断是套人、洗盘还是试盘"
+      },
+      "gap_confirmation": {
+        "status": "unknown",
+        "evidence": null,
+        "reason": "待读取当日 5 分钟 K 线"
+      },
+      "pullback_stabilization": {
         "status": "fail",
         "evidence": {
-          "previous_close": 17.56,
-          "price": 18.67,
-          "anchor_high": 19.12,
-          "volume_ratio_vs_20d": 4.96
+          "time": "2026-11-09 14:25:00",
+          "doji": false,
+          "inverted_hammer": false,
+          "prior_pullback": false
         },
-        "reason": "当日由锚点高点下方带量越过；盘中可能再次回落"
+        "reason": "仅识别 5 分钟回调及末根形态；尾盘入场需 14:30 后再确认"
+      },
+      "non_morning_volume_stack": {
+        "status": "fail",
+        "evidence": [],
+        "reason": "5 分钟红量柱相对前 5 根放大；不能证明主动买单或主力吸筹"
+      },
+      "five_minute_exit": {
+        "status": "unknown",
+        "evidence": null,
+        "reason": "需要连续 5 分钟 K 线，且属于持仓管理"
+      },
+      "operator_intent": {
+        "status": "unknown",
+        "evidence": null,
+        "reason": "不能从公开量价数据确认主力真实意图"
+      }
+    }
+  },
+  "001308": {
+    "status": "pass",
+    "checks": {
+      "history": {
+        "status": "pass",
+        "evidence": {
+          "bars": 120,
+          "last_date": "2026-11-06"
+        },
+        "reason": null
+      },
+      "past_limit_up": {
+        "status": "pass",
+        "evidence": [
+          {
+            "date": "2026-11-06",
+            "change_pct": 9.98
+          }
+        ],
+        "reason": "按收盘涨幅及收盘接近最高价近似识别；新股无涨跌幅限制、ST 和复权问题需人工核对"
+      },
+      "one_price_limit_up": {
+        "status": "fail",
+        "evidence": [],
+        "reason": "日 K 线开高低收近乎同价；无法判断封板中途是否被砸开或主力试仓"
+      },
+      "uptrend": {
+        "status": "pass",
+        "evidence": {
+          "price": 22.11,
+          "ma5": 19.95,
+          "ma20": 18.68,
+          "ma60": 18.27,
+          "ma20_5d_ago": 18.15
+        },
+        "reason": null
+      },
+      "red_volume_proxy": {
+        "status": "pass",
+        "evidence": {
+          "volume_ratio_vs_20d": 7.56,
+          "price_vs_prev_close_pct": 5.59
+        },
+        "reason": "日级放量上涨代理；无法证明非早盘红色堆量或主力买入"
+      },
+      "volume_cluster_cost_proxy": {
+        "status": "pass",
+        "evidence": {
+          "from": "2026-10-23",
+          "to": "2026-10-26",
+          "low": 17.23,
+          "high": 19.42,
+          "volume_weighted_close": 18.91
+        },
+        "reason": "连续放量阳线的价格区间代理，不是实际主力持仓成本"
+      },
+      "bearish_max_volume_anchor": {
+        "status": "fail",
+        "evidence": null,
+        "reason": "120 日最大量阴线；非复权价格，除权需人工核对"
+      },
+      "anchor_unbroken": {
+        "status": "unknown",
+        "evidence": null,
+        "reason": "无最大量阴线锚点"
+      },
+      "volume_breakout": {
+        "status": "unknown",
+        "evidence": null,
+        "reason": "无最大量阴线锚点"
       },
       "recent_upper_shadow": {
         "status": "pass",
@@ -461,19 +600,15 @@
         "reason": "只测上影线形态，不能判断是套人、洗盘还是试盘"
       },
       "gap_confirmation": {
-        "status": "fail",
-        "evidence": {
-          "open": 17.92,
-          "latest_5m_close": 18.66,
-          "anchor_high": 19.12
-        },
-        "reason": "盘中尚未收盘，跳空保持状态可能变化"
+        "status": "unknown",
+        "evidence": null,
+        "reason": "待读取当日 5 分钟 K 线"
       },
       "pullback_stabilization": {
-        "status": "fail",
+        "status": "pass",
         "evidence": {
-          "time": "2026-11-06 14:25:00",
-          "doji": false,
+          "time": "2026-11-09 14:25:00",
+          "doji": true,
           "inverted_hammer": false,
           "prior_pullback": true
         },
@@ -482,10 +617,9 @@
       "non_morning_volume_stack": {
         "status": "pass",
         "evidence": [
-          "2026-11-06 13:50:00",
-          "2026-11-06 13:55:00",
-          "2026-11-06 14:05:00",
-          "2026-11-06 14:10:00"
+          "2026-11-09 11:15:00",
+          "2026-11-09 14:05:00",
+          "2026-11-09 14:10:00"
         ],
         "reason": "5 分钟红量柱相对前 5 根放大；不能证明主动买单或主力吸筹"
       },
@@ -501,14 +635,14 @@
       }
     }
   },
-  "000768": {
+  "000810": {
     "status": "pass",
     "checks": {
       "history": {
         "status": "pass",
         "evidence": {
           "bars": 120,
-          "last_date": "2026-11-05"
+          "last_date": "2026-11-06"
         },
         "reason": null
       },
@@ -516,124 +650,16 @@
         "status": "pass",
         "evidence": [
           {
-            "date": "2026-06-12",
-            "change_pct": 10.01
-          }
-        ],
-        "reason": "按收盘涨幅及收盘接近最高价近似识别；新股无涨跌幅限制、ST 和复权问题需人工核对"
-      },
-      "one_price_limit_up": {
-        "status": "pass",
-        "evidence": [
-          "2026-06-12"
-        ],
-        "reason": "日 K 线开高低收近乎同价；无法判断封板中途是否被砸开或主力试仓"
-      },
-      "uptrend": {
-        "status": "pass",
-        "evidence": {
-          "price": 23.85,
-          "ma5": 23.47,
-          "ma20": 23.15,
-          "ma60": 22.48,
-          "ma20_5d_ago": 22.96
-        },
-        "reason": null
-      },
-      "red_volume_proxy": {
-        "status": "pass",
-        "evidence": {
-          "volume_ratio_vs_20d": 95.27,
-          "price_vs_prev_close_pct": 0.63
-        },
-        "reason": "日级放量上涨代理；无法证明非早盘红色堆量或主力买入"
-      },
-      "volume_cluster_cost_proxy": {
-        "status": "pass",
-        "evidence": {
-          "from": "2026-09-01",
-          "to": "2026-09-02",
-          "low": 21.8,
-          "high": 23.66,
-          "volume_weighted_close": 22.86
-        },
-        "reason": "连续放量阳线的价格区间代理，不是实际主力持仓成本"
-      },
-      "bearish_max_volume_anchor": {
-        "status": "fail",
-        "evidence": null,
-        "reason": "120 日最大量阴线；非复权价格，除权需人工核对"
-      },
-      "anchor_unbroken": {
-        "status": "unknown",
-        "evidence": null,
-        "reason": "无最大量阴线锚点"
-      },
-      "volume_breakout": {
-        "status": "unknown",
-        "evidence": null,
-        "reason": "无最大量阴线锚点"
-      },
-      "recent_upper_shadow": {
-        "status": "pass",
-        "evidence": [
-          "2026-10-28",
-          "2026-10-30"
-        ],
-        "reason": "只测上影线形态，不能判断是套人、洗盘还是试盘"
-      },
-      "gap_confirmation": {
-        "status": "unknown",
-        "evidence": null,
-        "reason": "待读取当日 5 分钟 K 线"
-      },
-      "pullback_stabilization": {
-        "status": "fail",
-        "evidence": {
-          "time": "2026-11-06 14:25:00",
-          "doji": false,
-          "inverted_hammer": false,
-          "prior_pullback": false
-        },
-        "reason": "仅识别 5 分钟回调及末根形态；尾盘入场需 14:30 后再确认"
-      },
-      "non_morning_volume_stack": {
-        "status": "pass",
-        "evidence": [
-          "2026-11-06 10:15:00",
-          "2026-11-06 10:35:00"
-        ],
-        "reason": "5 分钟红量柱相对前 5 根放大；不能证明主动买单或主力吸筹"
-      },
-      "five_minute_exit": {
-        "status": "unknown",
-        "evidence": null,
-        "reason": "需要连续 5 分钟 K 线，且属于持仓管理"
-      },
-      "operator_intent": {
-        "status": "unknown",
-        "evidence": null,
-        "reason": "不能从公开量价数据确认主力真实意图"
-      }
-    }
-  },
-  "301079": {
-    "status": "pass",
-    "checks": {
-      "history": {
-        "status": "pass",
-        "evidence": {
-          "bars": 120,
-          "last_date": "2026-11-05"
-        },
-        "reason": null
-      },
-      "past_limit_up": {
-        "status": "pass",
-        "evidence": [
+            "date": "2026-07-10",
+            "change_pct": 10.03
+          },
           {
-            "date": "2026-10-29",
-            "change_pct": 20.01
+            "date": "2026-10-23",
+            "change_pct": 9.99
+          },
+          {
+            "date": "2026-10-26",
+            "change_pct": 9.98
           }
         ],
         "reason": "按收盘涨幅及收盘接近最高价近似识别；新股无涨跌幅限制、ST 和复权问题需人工核对"
@@ -646,19 +672,19 @@
       "uptrend": {
         "status": "pass",
         "evidence": {
-          "price": 34.04,
-          "ma5": 33.69,
-          "ma20": 29.19,
-          "ma60": 28.56,
-          "ma20_5d_ago": 27.11
+          "price": 11.05,
+          "ma5": 10.85,
+          "ma20": 9.99,
+          "ma60": 9.7,
+          "ma20_5d_ago": 9.48
         },
         "reason": null
       },
       "red_volume_proxy": {
         "status": "pass",
         "evidence": {
-          "volume_ratio_vs_20d": 1.65,
-          "price_vs_prev_close_pct": 2.53
+          "volume_ratio_vs_20d": 99.92,
+          "price_vs_prev_close_pct": 2.13
         },
         "reason": "日级放量上涨代理；无法证明非早盘红色堆量或主力买入"
       },
@@ -666,38 +692,38 @@
         "status": "pass",
         "evidence": {
           "from": "2026-11-03",
-          "to": "2026-11-05",
-          "low": 29.8,
-          "high": 36.1,
-          "volume_weighted_close": 33.47
+          "to": "2026-11-04",
+          "low": 10.1,
+          "high": 11.25,
+          "volume_weighted_close": 10.64
         },
         "reason": "连续放量阳线的价格区间代理，不是实际主力持仓成本"
       },
       "bearish_max_volume_anchor": {
         "status": "pass",
         "evidence": {
-          "date": "2026-10-30",
-          "high": 39.98,
-          "low": 35.88,
-          "volume": 33872700.0
+          "date": "2026-10-27",
+          "high": 11.54,
+          "low": 10.5,
+          "volume": 1214085.0
         },
         "reason": "120 日最大量阴线；非复权价格，除权需人工核对"
       },
       "anchor_unbroken": {
         "status": "fail",
         "evidence": {
-          "anchor_low": 35.88,
-          "minimum_since_anchor": 29.8
+          "anchor_low": 10.5,
+          "minimum_since_anchor": 9.67
         },
         "reason": "比较锚点之后已完成日线的最低价和盘中现价；无法得知今日盘中是否曾短暂跌破"
       },
       "volume_breakout": {
         "status": "fail",
         "evidence": {
-          "previous_close": 33.2,
-          "price": 34.04,
-          "anchor_high": 39.98,
-          "volume_ratio_vs_20d": 1.65
+          "previous_close": 10.82,
+          "price": 11.05,
+          "anchor_high": 11.54,
+          "volume_ratio_vs_20d": 99.92
         },
         "reason": "当日由锚点高点下方带量越过；盘中可能再次回落"
       },
@@ -705,283 +731,24 @@
         "status": "pass",
         "evidence": [
           "2026-10-27",
-          "2026-10-30"
+          "2026-10-28",
+          "2026-11-03"
         ],
         "reason": "只测上影线形态，不能判断是套人、洗盘还是试盘"
       },
       "gap_confirmation": {
         "status": "fail",
         "evidence": {
-          "open": 31.5,
-          "latest_5m_close": 34.05,
-          "anchor_high": 39.98
+          "open": 11.02,
+          "latest_5m_close": 11.06,
+          "anchor_high": 11.54
         },
         "reason": "盘中尚未收盘，跳空保持状态可能变化"
       },
       "pullback_stabilization": {
         "status": "fail",
         "evidence": {
-          "time": "2026-11-06 14:25:00",
-          "doji": false,
-          "inverted_hammer": false,
-          "prior_pullback": false
-        },
-        "reason": "仅识别 5 分钟回调及末根形态；尾盘入场需 14:30 后再确认"
-      },
-      "non_morning_volume_stack": {
-        "status": "pass",
-        "evidence": [
-          "2026-11-06 11:30:00",
-          "2026-11-06 13:05:00",
-          "2026-11-06 13:10:00",
-          "2026-11-06 13:15:00"
-        ],
-        "reason": "5 分钟红量柱相对前 5 根放大；不能证明主动买单或主力吸筹"
-      },
-      "five_minute_exit": {
-        "status": "unknown",
-        "evidence": null,
-        "reason": "需要连续 5 分钟 K 线，且属于持仓管理"
-      },
-      "operator_intent": {
-        "status": "unknown",
-        "evidence": null,
-        "reason": "不能从公开量价数据确认主力真实意图"
-      }
-    }
-  },
-  "300949": {
-    "status": "pass",
-    "checks": {
-      "history": {
-        "status": "pass",
-        "evidence": {
-          "bars": 120,
-          "last_date": "2026-11-05"
-        },
-        "reason": null
-      },
-      "past_limit_up": {
-        "status": "pass",
-        "evidence": [
-          {
-            "date": "2026-10-26",
-            "change_pct": 20.0
-          }
-        ],
-        "reason": "按收盘涨幅及收盘接近最高价近似识别；新股无涨跌幅限制、ST 和复权问题需人工核对"
-      },
-      "one_price_limit_up": {
-        "status": "fail",
-        "evidence": [],
-        "reason": "日 K 线开高低收近乎同价；无法判断封板中途是否被砸开或主力试仓"
-      },
-      "uptrend": {
-        "status": "pass",
-        "evidence": {
-          "price": 56.26,
-          "ma5": 47.54,
-          "ma20": 33.9,
-          "ma60": 26.64,
-          "ma20_5d_ago": 27.14
-        },
-        "reason": null
-      },
-      "red_volume_proxy": {
-        "status": "pass",
-        "evidence": {
-          "volume_ratio_vs_20d": 1.72,
-          "price_vs_prev_close_pct": 11.08
-        },
-        "reason": "日级放量上涨代理；无法证明非早盘红色堆量或主力买入"
-      },
-      "volume_cluster_cost_proxy": {
-        "status": "pass",
-        "evidence": {
-          "from": "2026-11-04",
-          "to": "2026-11-05",
-          "low": 41.97,
-          "high": 51.13,
-          "volume_weighted_close": 48.2
-        },
-        "reason": "连续放量阳线的价格区间代理，不是实际主力持仓成本"
-      },
-      "bearish_max_volume_anchor": {
-        "status": "fail",
-        "evidence": null,
-        "reason": "120 日最大量阴线；非复权价格，除权需人工核对"
-      },
-      "anchor_unbroken": {
-        "status": "unknown",
-        "evidence": null,
-        "reason": "无最大量阴线锚点"
-      },
-      "volume_breakout": {
-        "status": "unknown",
-        "evidence": null,
-        "reason": "无最大量阴线锚点"
-      },
-      "recent_upper_shadow": {
-        "status": "pass",
-        "evidence": [
-          "2026-10-28",
-          "2026-10-29",
-          "2026-10-30"
-        ],
-        "reason": "只测上影线形态，不能判断是套人、洗盘还是试盘"
-      },
-      "gap_confirmation": {
-        "status": "unknown",
-        "evidence": null,
-        "reason": "待读取当日 5 分钟 K 线"
-      },
-      "pullback_stabilization": {
-        "status": "fail",
-        "evidence": {
-          "time": "2026-11-06 14:25:00",
-          "doji": false,
-          "inverted_hammer": false,
-          "prior_pullback": false
-        },
-        "reason": "仅识别 5 分钟回调及末根形态；尾盘入场需 14:30 后再确认"
-      },
-      "non_morning_volume_stack": {
-        "status": "pass",
-        "evidence": [
-          "2026-11-06 10:15:00",
-          "2026-11-06 13:05:00",
-          "2026-11-06 13:15:00"
-        ],
-        "reason": "5 分钟红量柱相对前 5 根放大；不能证明主动买单或主力吸筹"
-      },
-      "five_minute_exit": {
-        "status": "unknown",
-        "evidence": null,
-        "reason": "需要连续 5 分钟 K 线，且属于持仓管理"
-      },
-      "operator_intent": {
-        "status": "unknown",
-        "evidence": null,
-        "reason": "不能从公开量价数据确认主力真实意图"
-      }
-    }
-  },
-  "000635": {
-    "status": "pass",
-    "checks": {
-      "history": {
-        "status": "pass",
-        "evidence": {
-          "bars": 120,
-          "last_date": "2026-11-05"
-        },
-        "reason": null
-      },
-      "past_limit_up": {
-        "status": "pass",
-        "evidence": [
-          {
-            "date": "2026-09-02",
-            "change_pct": 9.97
-          },
-          {
-            "date": "2026-10-26",
-            "change_pct": 10.01
-          },
-          {
-            "date": "2026-11-05",
-            "change_pct": 9.95
-          }
-        ],
-        "reason": "按收盘涨幅及收盘接近最高价近似识别；新股无涨跌幅限制、ST 和复权问题需人工核对"
-      },
-      "one_price_limit_up": {
-        "status": "pass",
-        "evidence": [
-          "2026-09-01",
-          "2026-09-02"
-        ],
-        "reason": "日 K 线开高低收近乎同价；无法判断封板中途是否被砸开或主力试仓"
-      },
-      "uptrend": {
-        "status": "pass",
-        "evidence": {
-          "price": 9.26,
-          "ma5": 8.2,
-          "ma20": 7.92,
-          "ma60": 7.33,
-          "ma20_5d_ago": 7.79
-        },
-        "reason": null
-      },
-      "red_volume_proxy": {
-        "status": "pass",
-        "evidence": {
-          "volume_ratio_vs_20d": 204.12,
-          "price_vs_prev_close_pct": 6.07
-        },
-        "reason": "日级放量上涨代理；无法证明非早盘红色堆量或主力买入"
-      },
-      "volume_cluster_cost_proxy": {
-        "status": "pass",
-        "evidence": {
-          "from": "2026-10-12",
-          "to": "2026-10-14",
-          "low": 7.9,
-          "high": 8.83,
-          "volume_weighted_close": 8.31
-        },
-        "reason": "连续放量阳线的价格区间代理，不是实际主力持仓成本"
-      },
-      "bearish_max_volume_anchor": {
-        "status": "pass",
-        "evidence": {
-          "date": "2026-09-03",
-          "high": 8.45,
-          "low": 7.26,
-          "volume": 649646.0
-        },
-        "reason": "120 日最大量阴线；非复权价格，除权需人工核对"
-      },
-      "anchor_unbroken": {
-        "status": "fail",
-        "evidence": {
-          "anchor_low": 7.26,
-          "minimum_since_anchor": 6.69
-        },
-        "reason": "比较锚点之后已完成日线的最低价和盘中现价；无法得知今日盘中是否曾短暂跌破"
-      },
-      "volume_breakout": {
-        "status": "fail",
-        "evidence": {
-          "previous_close": 8.73,
-          "price": 9.26,
-          "anchor_high": 8.45,
-          "volume_ratio_vs_20d": 204.12
-        },
-        "reason": "当日由锚点高点下方带量越过；盘中可能再次回落"
-      },
-      "recent_upper_shadow": {
-        "status": "pass",
-        "evidence": [
-          "2026-10-28",
-          "2026-10-30"
-        ],
-        "reason": "只测上影线形态，不能判断是套人、洗盘还是试盘"
-      },
-      "gap_confirmation": {
-        "status": "pass",
-        "evidence": {
-          "open": 8.51,
-          "latest_5m_close": 9.27,
-          "anchor_high": 8.45
-        },
-        "reason": "盘中尚未收盘，跳空保持状态可能变化"
-      },
-      "pullback_stabilization": {
-        "status": "fail",
-        "evidence": {
-          "time": "2026-11-06 14:25:00",
+          "time": "2026-11-09 14:25:00",
           "doji": false,
           "inverted_hammer": false,
           "prior_pullback": true
@@ -989,124 +756,8 @@
         "reason": "仅识别 5 分钟回调及末根形态；尾盘入场需 14:30 后再确认"
       },
       "non_morning_volume_stack": {
-        "status": "pass",
-        "evidence": [
-          "2026-11-06 11:20:00",
-          "2026-11-06 13:05:00"
-        ],
-        "reason": "5 分钟红量柱相对前 5 根放大；不能证明主动买单或主力吸筹"
-      },
-      "five_minute_exit": {
-        "status": "unknown",
-        "evidence": null,
-        "reason": "需要连续 5 分钟 K 线，且属于持仓管理"
-      },
-      "operator_intent": {
-        "status": "unknown",
-        "evidence": null,
-        "reason": "不能从公开量价数据确认主力真实意图"
-      }
-    }
-  },
-  "002985": {
-    "status": "pass",
-    "checks": {
-      "history": {
-        "status": "pass",
-        "evidence": {
-          "bars": 120,
-          "last_date": "2026-11-05"
-        },
-        "reason": null
-      },
-      "past_limit_up": {
-        "status": "pass",
-        "evidence": [
-          {
-            "date": "2026-06-12",
-            "change_pct": 10.01
-          }
-        ],
-        "reason": "按收盘涨幅及收盘接近最高价近似识别；新股无涨跌幅限制、ST 和复权问题需人工核对"
-      },
-      "one_price_limit_up": {
         "status": "fail",
         "evidence": [],
-        "reason": "日 K 线开高低收近乎同价；无法判断封板中途是否被砸开或主力试仓"
-      },
-      "uptrend": {
-        "status": "pass",
-        "evidence": {
-          "price": 29.37,
-          "ma5": 28.34,
-          "ma20": 27.39,
-          "ma60": 27.1,
-          "ma20_5d_ago": 26.9
-        },
-        "reason": null
-      },
-      "red_volume_proxy": {
-        "status": "pass",
-        "evidence": {
-          "volume_ratio_vs_20d": 2.08,
-          "price_vs_prev_close_pct": 3.2
-        },
-        "reason": "日级放量上涨代理；无法证明非早盘红色堆量或主力买入"
-      },
-      "volume_cluster_cost_proxy": {
-        "status": "pass",
-        "evidence": {
-          "from": "2026-10-16",
-          "to": "2026-10-19",
-          "low": 26.35,
-          "high": 27.77,
-          "volume_weighted_close": 27.22
-        },
-        "reason": "连续放量阳线的价格区间代理，不是实际主力持仓成本"
-      },
-      "bearish_max_volume_anchor": {
-        "status": "fail",
-        "evidence": null,
-        "reason": "120 日最大量阴线；非复权价格，除权需人工核对"
-      },
-      "anchor_unbroken": {
-        "status": "unknown",
-        "evidence": null,
-        "reason": "无最大量阴线锚点"
-      },
-      "volume_breakout": {
-        "status": "unknown",
-        "evidence": null,
-        "reason": "无最大量阴线锚点"
-      },
-      "recent_upper_shadow": {
-        "status": "pass",
-        "evidence": [
-          "2026-10-29",
-          "2026-11-03"
-        ],
-        "reason": "只测上影线形态，不能判断是套人、洗盘还是试盘"
-      },
-      "gap_confirmation": {
-        "status": "unknown",
-        "evidence": null,
-        "reason": "待读取当日 5 分钟 K 线"
-      },
-      "pullback_stabilization": {
-        "status": "fail",
-        "evidence": {
-          "time": "2026-11-06 14:25:00",
-          "doji": false,
-          "inverted_hammer": false,
-          "prior_pullback": false
-        },
-        "reason": "仅识别 5 分钟回调及末根形态；尾盘入场需 14:30 后再确认"
-      },
-      "non_morning_volume_stack": {
-        "status": "pass",
-        "evidence": [
-          "2026-11-06 10:20:00"
-        ],
         "reason": "5 分钟红量柱相对前 5 根放大；不能证明主动买单或主力吸筹"
       },
       "five_minute_exit": {
@@ -1121,14 +772,14 @@
       }
     }
   },
-  "000156": {
+  "000701": {
     "status": "pass",
     "checks": {
       "history": {
         "status": "pass",
         "evidence": {
           "bars": 120,
-          "last_date": "2026-11-05"
+          "last_date": "2026-11-06"
         },
         "reason": null
       },
@@ -1136,12 +787,12 @@
         "status": "pass",
         "evidence": [
           {
-            "date": "2026-10-23",
-            "change_pct": 9.99
+            "date": "2026-10-16",
+            "change_pct": 10.06
           },
           {
-            "date": "2026-11-02",
-            "change_pct": 9.97
+            "date": "2026-10-29",
+            "change_pct": 9.98
           }
         ],
         "reason": "按收盘涨幅及收盘接近最高价近似识别；新股无涨跌幅限制、ST 和复权问题需人工核对"
@@ -1154,30 +805,30 @@
       "uptrend": {
         "status": "pass",
         "evidence": {
-          "price": 7.84,
-          "ma5": 7.62,
-          "ma20": 7.41,
-          "ma60": 7.1,
-          "ma20_5d_ago": 7.28
+          "price": 6.12,
+          "ma5": 6.01,
+          "ma20": 5.48,
+          "ma60": 5.26,
+          "ma20_5d_ago": 5.22
         },
         "reason": null
       },
       "red_volume_proxy": {
         "status": "pass",
         "evidence": {
-          "volume_ratio_vs_20d": 91.34,
-          "price_vs_prev_close_pct": 0.38
+          "volume_ratio_vs_20d": 112.86,
+          "price_vs_prev_close_pct": 6.07
         },
         "reason": "日级放量上涨代理；无法证明非早盘红色堆量或主力买入"
       },
       "volume_cluster_cost_proxy": {
         "status": "pass",
         "evidence": {
-          "from": "2026-10-23",
-          "to": "2026-10-26",
-          "low": 6.69,
-          "high": 8.26,
-          "volume_weighted_close": 7.92
+          "from": "2026-10-29",
+          "to": "2026-11-03",
+          "low": 5.04,
+          "high": 6.44,
+          "volume_weighted_close": 5.84
         },
         "reason": "连续放量阳线的价格区间代理，不是实际主力持仓成本"
       },
@@ -1199,8 +850,8 @@
       "recent_upper_shadow": {
         "status": "pass",
         "evidence": [
-          "2026-10-28",
-          "2026-11-03"
+          "2026-10-30",
+          "2026-11-06"
         ],
         "reason": "只测上影线形态，不能判断是套人、洗盘还是试盘"
       },
@@ -1212,7 +863,7 @@
       "pullback_stabilization": {
         "status": "fail",
         "evidence": {
-          "time": "2026-11-06 14:25:00",
+          "time": "2026-11-09 14:25:00",
           "doji": false,
           "inverted_hammer": false,
           "prior_pullback": false
@@ -1222,7 +873,9 @@
       "non_morning_volume_stack": {
         "status": "pass",
         "evidence": [
-          "2026-11-06 10:35:00"
+          "2026-11-09 10:55:00",
+          "2026-11-09 13:10:00",
+          "2026-11-09 14:15:00"
         ],
         "reason": "5 分钟红量柱相对前 5 根放大；不能证明主动买单或主力吸筹"
       },
@@ -1238,14 +891,14 @@
       }
     }
   },
-  "000541": {
+  "000065": {
     "status": "pass",
     "checks": {
       "history": {
         "status": "pass",
         "evidence": {
           "bars": 120,
-          "last_date": "2026-11-05"
+          "last_date": "2026-11-06"
         },
         "reason": null
       },
@@ -1253,8 +906,8 @@
         "status": "pass",
         "evidence": [
           {
-            "date": "2026-06-16",
-            "change_pct": 9.94
+            "date": "2026-08-24",
+            "change_pct": 10.03
           }
         ],
         "reason": "按收盘涨幅及收盘接近最高价近似识别；新股无涨跌幅限制、ST 和复权问题需人工核对"
@@ -1267,83 +920,66 @@
       "uptrend": {
         "status": "pass",
         "evidence": {
-          "price": 5.17,
-          "ma5": 5.01,
-          "ma20": 5.01,
-          "ma60": 4.95,
-          "ma20_5d_ago": 4.98
+          "price": 9.9,
+          "ma5": 9.87,
+          "ma20": 9.66,
+          "ma60": 9.64,
+          "ma20_5d_ago": 9.6
         },
         "reason": null
       },
       "red_volume_proxy": {
         "status": "pass",
         "evidence": {
-          "volume_ratio_vs_20d": 261.89,
-          "price_vs_prev_close_pct": 2.99
+          "volume_ratio_vs_20d": 73.72,
+          "price_vs_prev_close_pct": 0.3
         },
         "reason": "日级放量上涨代理；无法证明非早盘红色堆量或主力买入"
       },
       "volume_cluster_cost_proxy": {
         "status": "pass",
         "evidence": {
-          "from": "2026-10-13",
-          "to": "2026-10-16",
-          "low": 4.88,
-          "high": 5.3,
-          "volume_weighted_close": 5.12
+          "from": "2026-10-22",
+          "to": "2026-10-23",
+          "low": 9.7,
+          "high": 10.38,
+          "volume_weighted_close": 9.97
         },
         "reason": "连续放量阳线的价格区间代理，不是实际主力持仓成本"
       },
       "bearish_max_volume_anchor": {
-        "status": "pass",
-        "evidence": {
-          "date": "2026-06-17",
-          "high": 5.3,
-          "low": 5.12,
-          "volume": 392252.0
-        },
+        "status": "fail",
+        "evidence": null,
         "reason": "120 日最大量阴线；非复权价格，除权需人工核对"
       },
       "anchor_unbroken": {
-        "status": "fail",
-        "evidence": {
-          "anchor_low": 5.12,
-          "minimum_since_anchor": 4.76
-        },
-        "reason": "比较锚点之后已完成日线的最低价和盘中现价；无法得知今日盘中是否曾短暂跌破"
+        "status": "unknown",
+        "evidence": null,
+        "reason": "无最大量阴线锚点"
       },
       "volume_breakout": {
-        "status": "fail",
-        "evidence": {
-          "previous_close": 5.02,
-          "price": 5.17,
-          "anchor_high": 5.3,
-          "volume_ratio_vs_20d": 261.89
-        },
-        "reason": "当日由锚点高点下方带量越过；盘中可能再次回落"
+        "status": "unknown",
+        "evidence": null,
+        "reason": "无最大量阴线锚点"
       },
       "recent_upper_shadow": {
         "status": "pass",
         "evidence": [
-          "2026-10-26",
-          "2026-10-30",
-          "2026-11-04"
+          "2026-10-27",
+          "2026-10-29",
+          "2026-11-06"
         ],
         "reason": "只测上影线形态，不能判断是套人、洗盘还是试盘"
       },
       "gap_confirmation": {
-        "status": "fail",
-        "evidence": {
-          "open": 4.95,
-          "latest_5m_close": 5.17,
-          "anchor_high": 5.3
-        },
-        "reason": "盘中尚未收盘，跳空保持状态可能变化"
+        "status": "unknown",
+        "evidence": null,
+        "reason": "待读取当日 5 分钟 K 线"
       },
       "pullback_stabilization": {
         "status": "fail",
         "evidence": {
-          "time": "2026-11-06 14:25:00",
+          "time": "2026-11-09 14:25:00",
           "doji": false,
           "inverted_hammer": false,
           "prior_pullback": false
@@ -1353,10 +989,8 @@
       "non_morning_volume_stack": {
         "status": "pass",
         "evidence": [
-          "2026-11-06 11:05:00",
-          "2026-11-06 13:35:00",
-          "2026-11-06 13:40:00",
-          "2026-11-06 13:55:00"
+          "2026-11-09 10:25:00",
+          "2026-11-09 10:45:00"
         ],
         "reason": "5 分钟红量柱相对前 5 根放大；不能证明主动买单或主力吸筹"
       },
