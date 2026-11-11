@@ -1,212 +1,172 @@
 [
   {
+    "code": "000678",
+    "name": "襄阳轴承",
+    "board": "SZ_MAIN",
+    "price": 21.19,
+    "change_pct": 10.02,
+    "turnover_pct": 37.09,
+    "amount_cny": 3421320000.0,
+    "volume_lots": 1704775.0
+  },
+  {
     "code": "000530",
     "name": "冰山冷热",
     "board": "SZ_MAIN",
-    "price": 10.53,
-    "change_pct": 10.03,
-    "turnover_pct": 24.36,
-    "amount_cny": 1527740000.0,
-    "volume_lots": 1461711.0
+    "price": 11.14,
+    "change_pct": 5.79,
+    "turnover_pct": 37.14,
+    "amount_cny": 2450060000.0,
+    "volume_lots": 2228938.0
+  },
+  {
+    "code": "002578",
+    "name": "闽发铝业",
+    "board": "SZ_MAIN",
+    "price": 6.09,
+    "change_pct": 0.5,
+    "turnover_pct": 28.41,
+    "amount_cny": 1505500000.0,
+    "volume_lots": 2446734.0
   },
   {
     "code": "000559",
     "name": "万向钱潮",
     "board": "SZ_MAIN",
-    "price": 13.12,
-    "change_pct": 2.26,
-    "turnover_pct": 3.21,
-    "amount_cny": 1421340000.0,
-    "volume_lots": 1067351.0
+    "price": 13.44,
+    "change_pct": 1.82,
+    "turnover_pct": 3.37,
+    "amount_cny": 1494530000.0,
+    "volume_lots": 1121831.0
   },
   {
-    "code": "000678",
-    "name": "襄阳轴承",
+    "code": "002009",
+    "name": "天奇股份",
     "board": "SZ_MAIN",
-    "price": 19.26,
-    "change_pct": 9.99,
-    "turnover_pct": 15.21,
-    "amount_cny": 1289940000.0,
-    "volume_lots": 698883.0
+    "price": 19.97,
+    "change_pct": 3.79,
+    "turnover_pct": 21.2,
+    "amount_cny": 1482480000.0,
+    "volume_lots": 751076.0
   },
   {
     "code": "000700",
     "name": "模塑科技",
     "board": "SZ_MAIN",
-    "price": 15.97,
-    "change_pct": 3.17,
-    "turnover_pct": 8.61,
-    "amount_cny": 1272330000.0,
-    "volume_lots": 790312.0
+    "price": 17.1,
+    "change_pct": 5.56,
+    "turnover_pct": 9.66,
+    "amount_cny": 1479530000.0,
+    "volume_lots": 886507.0
   },
   {
-    "code": "002889",
-    "name": "东方嘉盛",
+    "code": "002779",
+    "name": "中坚科技",
     "board": "SZ_MAIN",
-    "price": 17.16,
-    "change_pct": 4.63,
-    "turnover_pct": 26.48,
-    "amount_cny": 1164080000.0,
-    "volume_lots": 665292.0
-  },
-  {
-    "code": "300291",
-    "name": "百纳千成",
-    "board": "GEM",
-    "price": 6.77,
-    "change_pct": 10.26,
-    "turnover_pct": 16.85,
-    "amount_cny": 1041850000.0,
-    "volume_lots": 1568786.0
+    "price": 100.5,
+    "change_pct": 10.0,
+    "turnover_pct": 6.79,
+    "amount_cny": 1077100000.0,
+    "volume_lots": 112555.0
   },
   {
     "code": "300426",
     "name": "华智数媒",
     "board": "GEM",
-    "price": 11.19,
-    "change_pct": 17.05,
-    "turnover_pct": 24.49,
-    "amount_cny": 1012110000.0,
-    "volume_lots": 979596.0
+    "price": 11.55,
+    "change_pct": 0.7,
+    "turnover_pct": 22.35,
+    "amount_cny": 1008030000.0,
+    "volume_lots": 894159.0
   },
   {
-    "code": "002045",
-    "name": "国光电器",
+    "code": "002291",
+    "name": "遥望科技",
     "board": "SZ_MAIN",
-    "price": 11.41,
-    "change_pct": 10.03,
-    "turnover_pct": 15.81,
-    "amount_cny": 960500000.0,
-    "volume_lots": 888354.0
+    "price": 6.12,
+    "change_pct": 3.2,
+    "turnover_pct": 12.92,
+    "amount_cny": 693120000.0,
+    "volume_lots": 1123073.0
   },
   {
-    "code": "001219",
-    "name": "青岛食品",
+    "code": "002425",
+    "name": "凯撒文化",
     "board": "SZ_MAIN",
-    "price": 25.28,
-    "change_pct": 5.07,
-    "turnover_pct": 20.37,
-    "amount_cny": 958360000.0,
-    "volume_lots": 387520.0
+    "price": 3.83,
+    "change_pct": 10.06,
+    "turnover_pct": 16.3,
+    "amount_cny": 567110000.0,
+    "volume_lots": 1500226.0
   },
   {
-    "code": "002712",
-    "name": "思美传媒",
+    "code": "002362",
+    "name": "汉王科技",
     "board": "SZ_MAIN",
-    "price": 6.08,
-    "change_pct": 3.58,
-    "turnover_pct": 24.8,
-    "amount_cny": 808980000.0,
-    "volume_lots": 1341165.0
-  },
-  {
-    "code": "000995",
-    "name": "皇台酒业",
-    "board": "SZ_MAIN",
-    "price": 17.28,
-    "change_pct": 3.47,
-    "turnover_pct": 25.34,
-    "amount_cny": 760300000.0,
-    "volume_lots": 449480.0
-  },
-  {
-    "code": "300556",
-    "name": "丝路视觉",
-    "board": "GEM",
-    "price": 21.5,
-    "change_pct": 15.97,
-    "turnover_pct": 28.33,
-    "amount_cny": 618600000.0,
-    "volume_lots": 307345.0
-  },
-  {
-    "code": "001308",
-    "name": "康冠科技",
-    "board": "SZ_MAIN",
-    "price": 24.19,
-    "change_pct": 10.0,
-    "turnover_pct": 4.51,
-    "amount_cny": 551440000.0,
-    "volume_lots": 238078.0
-  },
-  {
-    "code": "000810",
-    "name": "创维数字",
-    "board": "SZ_MAIN",
-    "price": 12.14,
-    "change_pct": 9.96,
-    "turnover_pct": 4.08,
-    "amount_cny": 526110000.0,
-    "volume_lots": 456350.0
-  },
-  {
-    "code": "002088",
-    "name": "鲁阳节能",
-    "board": "SZ_MAIN",
-    "price": 11.16,
-    "change_pct": 0.72,
-    "turnover_pct": 7.83,
-    "amount_cny": 438630000.0,
-    "volume_lots": 396116.0
-  },
-  {
-    "code": "001388",
-    "name": "信通电子",
-    "board": "SZ_MAIN",
-    "price": 24.22,
-    "change_pct": 3.99,
-    "turnover_pct": 14.33,
-    "amount_cny": 427110000.0,
-    "volume_lots": 179321.0
+    "price": 18.69,
+    "change_pct": 10.01,
+    "turnover_pct": 12.55,
+    "amount_cny": 474420000.0,
+    "volume_lots": 260594.0
   },
   {
     "code": "300695",
     "name": "兆丰股份",
     "board": "GEM",
-    "price": 62.64,
-    "change_pct": 9.72,
-    "turnover_pct": 5.22,
-    "amount_cny": 320500000.0,
-    "volume_lots": 53341.0
-  },
-  {
-    "code": "000065",
-    "name": "北方国际",
-    "board": "SZ_MAIN",
-    "price": 10.16,
-    "change_pct": 2.32,
-    "turnover_pct": 2.34,
-    "amount_cny": 252790000.0,
-    "volume_lots": 249021.0
-  },
-  {
-    "code": "000156",
-    "name": "华数传媒",
-    "board": "SZ_MAIN",
-    "price": 7.9,
-    "change_pct": 2.6,
-    "turnover_pct": 1.86,
-    "amount_cny": 249300000.0,
-    "volume_lots": 316218.0
+    "price": 70.09,
+    "change_pct": 11.32,
+    "turnover_pct": 6.2,
+    "amount_cny": 429220000.0,
+    "volume_lots": 63395.0
   },
   {
     "code": "000635",
     "name": "英 力 特",
     "board": "SZ_MAIN",
-    "price": 9.25,
-    "change_pct": 3.24,
-    "turnover_pct": 7.41,
-    "amount_cny": 247990000.0,
-    "volume_lots": 271934.0
+    "price": 10.21,
+    "change_pct": 10.02,
+    "turnover_pct": 10.45,
+    "amount_cny": 383350000.0,
+    "volume_lots": 383262.0
   },
   {
-    "code": "000541",
-    "name": "佛山照明",
+    "code": "001388",
+    "name": "信通电子",
     "board": "SZ_MAIN",
-    "price": 5.37,
-    "change_pct": 5.5,
-    "turnover_pct": 3.68,
-    "amount_cny": 245200000.0,
-    "volume_lots": 452595.0
+    "price": 24.89,
+    "change_pct": 1.59,
+    "turnover_pct": 12.0,
+    "amount_cny": 369810000.0,
+    "volume_lots": 150148.0
+  },
+  {
+    "code": "000701",
+    "name": "厦门信达",
+    "board": "SZ_MAIN",
+    "price": 6.11,
+    "change_pct": 0.33,
+    "turnover_pct": 7.34,
+    "amount_cny": 302590000.0,
+    "volume_lots": 490381.0
+  },
+  {
+    "code": "001282",
+    "name": "三联锻造",
+    "board": "SZ_MAIN",
+    "price": 18.7,
+    "change_pct": 10.0,
+    "turnover_pct": 7.94,
+    "amount_cny": 219930000.0,
+    "volume_lots": 121334.0
+  },
+  {
+    "code": "000156",
+    "name": "华数传媒",
+    "board": "SZ_MAIN",
+    "price": 7.93,
+    "change_pct": 0.13,
+    "turnover_pct": 1.4,
+    "amount_cny": 187770000.0,
+    "volume_lots": 238252.0
   }
 ]
