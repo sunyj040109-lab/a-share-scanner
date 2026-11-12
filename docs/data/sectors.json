@@ -1,92 +1,92 @@
 [
   {
-    "name": "元件",
-    "change_pct": 5.12,
-    "up_count": 62,
-    "down_count": 1,
-    "leader": "南亚新材",
-    "three_day_return_pct": -0.49,
-    "up_days_of_three": 2
+    "name": "燃气",
+    "change_pct": 0.86,
+    "up_count": 14,
+    "down_count": 11,
+    "leader": "东方环宇",
+    "three_day_return_pct": 6.77,
+    "up_days_of_three": 3
   },
   {
-    "name": "通信设备",
-    "change_pct": 4.68,
-    "up_count": 81,
-    "down_count": 12,
-    "leader": "宇特光电",
-    "three_day_return_pct": 0.55,
-    "up_days_of_three": 2
+    "name": "医疗服务",
+    "change_pct": 0.61,
+    "up_count": 27,
+    "down_count": 28,
+    "leader": "澳洋健康",
+    "three_day_return_pct": 2.8,
+    "up_days_of_three": 3
   },
   {
-    "name": "游戏",
-    "change_pct": 3.61,
-    "up_count": 21,
-    "down_count": 2,
-    "leader": "凯撒文化",
-    "three_day_return_pct": 0.79,
+    "name": "白酒",
+    "change_pct": 0.51,
+    "up_count": 8,
+    "down_count": 11,
+    "leader": "皇台酒业",
+    "three_day_return_pct": -2.77,
     "up_days_of_three": 1
   },
   {
-    "name": "电子化学品",
-    "change_pct": 3.19,
-    "up_count": 39,
-    "down_count": 4,
-    "leader": "中石科技",
-    "three_day_return_pct": -1.03,
+    "name": "养殖业",
+    "change_pct": 0.45,
+    "up_count": 17,
+    "down_count": 15,
+    "leader": "好当家",
+    "three_day_return_pct": -0.18,
     "up_days_of_three": 2
+  },
+  {
+    "name": "饮料制造",
+    "change_pct": 0.26,
+    "up_count": 24,
+    "down_count": 18,
+    "leader": "阳光乳业",
+    "three_day_return_pct": 0.31,
+    "up_days_of_three": 1
+  },
+  {
+    "name": "军工装备",
+    "change_pct": 0.12,
+    "up_count": 32,
+    "down_count": 50,
+    "leader": "北方长龙",
+    "three_day_return_pct": 1.36,
+    "up_days_of_three": 3
   },
   {
     "name": "半导体",
-    "change_pct": 3.18,
-    "up_count": 178,
-    "down_count": 10,
-    "leader": "利扬芯片",
-    "three_day_return_pct": -0.03,
-    "up_days_of_three": 2
+    "change_pct": 0.12,
+    "up_count": 71,
+    "down_count": 116,
+    "leader": "燧原科技",
+    "three_day_return_pct": 6.66,
+    "up_days_of_three": 3
   },
   {
-    "name": "自动化设备",
-    "change_pct": 3.1,
-    "up_count": 85,
-    "down_count": 13,
-    "leader": "杰普特",
-    "three_day_return_pct": 1.06,
-    "up_days_of_three": 2
-  },
-  {
-    "name": "燃气",
-    "change_pct": 3.07,
-    "up_count": 24,
-    "down_count": 2,
-    "leader": "胜利股份",
-    "three_day_return_pct": 3.46,
-    "up_days_of_three": 2
-  },
-  {
-    "name": "其他电子",
-    "change_pct": 2.17,
-    "up_count": 32,
-    "down_count": 2,
-    "leader": "富信科技",
-    "three_day_return_pct": -0.47,
+    "name": "农产品加工",
+    "change_pct": 0.1,
+    "up_count": 14,
+    "down_count": 24,
+    "leader": "东方海洋",
+    "three_day_return_pct": -0.08,
     "up_days_of_three": 1
   },
   {
-    "name": "塑料制品",
-    "change_pct": 2.12,
-    "up_count": 60,
-    "down_count": 15,
-    "leader": "唯科科技",
-    "three_day_return_pct": 1.1,
+    "name": "生物制品",
+    "change_pct": -0.04,
+    "up_count": 20,
+    "down_count": 35,
+    "leader": "双成药业",
+    "three_day_return_pct": 0.13,
     "up_days_of_three": 2
   },
   {
-    "name": "通用设备",
-    "change_pct": 2.12,
-    "up_count": 201,
-    "down_count": 49,
-    "leader": "同飞股份",
-    "three_day_return_pct": 1.11,
-    "up_days_of_three": 2
+    "name": "电子化学品",
+    "change_pct": -0.07,
+    "up_count": 12,
+    "down_count": 31,
+    "leader": "菲沃泰",
+    "three_day_return_pct": 6.08,
+    "up_days_of_three": 3
   }
 ]
