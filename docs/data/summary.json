@@ -1,15 +1,15 @@
 {
-  "trade_date": "2026-11-13",
-  "captured_at_beijing": "2026-11-13T14:25:48+08:00",
+  "trade_date": "2026-11-16",
+  "captured_at_beijing": "2026-11-16T14:25:33+08:00",
   "scan_type": "intraday_strategy",
   "scheduled_time_beijing": "14:25",
   "source": "AKShare / Tencent spot and index + Tencent/Eastmoney/Sina daily + Sina/Eastmoney 5m + THS sectors",
   "universe_count": 4954,
-  "selected_count": 11,
+  "selected_count": 0,
   "boards": {
     "沪市主板": 1697,
-    "深市主板": 1494,
-    "创业板": 1408,
+    "深市主板": 1492,
+    "创业板": 1410,
     "北交所": 355
   },
   "source_counts": {
@@ -34,71 +34,71 @@
   },
   "missing_numeric_rows": 0,
   "coverage": {
-    "pass": 11,
-    "fail": 1809,
-    "unknown": 2950,
+    "pass": 0,
+    "fail": 265,
+    "unknown": 4505,
     "excluded": 184,
-    "history_available": 1954,
+    "history_available": 310,
     "history_by_board": {
       "沪市主板": {
         "available": 1,
         "total": 1697
       },
       "深市主板": {
-        "available": 1494,
-        "total": 1494
+        "available": 1,
+        "total": 1492
       },
       "创业板": {
-        "available": 106,
-        "total": 1408
+        "available": 0,
+        "total": 1410
       },
       "北交所": {
-        "available": 353,
+        "available": 308,
         "total": 355
       }
     },
-    "minute_available": 11,
-    "minute_attempted": 11,
+    "minute_available": 0,
+    "minute_attempted": 0,
     "minute_sources": {
-      "Sina": 11,
+      "Sina": 0,
       "Eastmoney": 0
     },
     "history_note": "历史抓取触及 14:24 截止时间"
   },
   "market": {
-    "up_count": 739,
-    "down_count": 4139,
-    "amount_cny": 1221678100000.0,
+    "up_count": 923,
+    "down_count": 3929,
+    "amount_cny": 1066864450000.0,
     "checks": {
       "leading_sector": {
-        "status": "pass",
+        "status": "fail",
         "evidence": [
           {
-            "name": "影视院线",
-            "change_pct": 4.48,
-            "up_count": 13,
-            "down_count": 7,
-            "leader": "幸福蓝海",
-            "three_day_return_pct": 4.69,
-            "up_days_of_three": 2
+            "name": "小家电",
+            "change_pct": 1.82,
+            "up_count": 16,
+            "down_count": 10,
+            "leader": "北鼎股份",
+            "three_day_return_pct": -3.02,
+            "up_days_of_three": 0
           },
           {
             "name": "银行",
             "change_pct": 1.49,
             "up_count": 42,
             "down_count": 0,
-            "leader": "青岛银行",
-            "three_day_return_pct": -0.29,
+            "leader": "苏州银行",
+            "three_day_return_pct": 0.97,
             "up_days_of_three": 2
           },
           {
             "name": "保险",
-            "change_pct": 1.33,
-            "up_count": 5,
+            "change_pct": 1.35,
+            "up_count": 4,
             "down_count": 0,
             "leader": "中国太保",
-            "three_day_return_pct": -2.39,
-            "up_days_of_three": 0
+            "three_day_return_pct": -0.53,
+            "up_days_of_three": 1
           }
         ],
         "reason": "同花顺行业涨幅与最近三日持续性代理"
@@ -106,8 +106,8 @@
       "above_ma5": {
         "status": "fail",
         "evidence": {
-          "index_price": 3637.08,
-          "ma5": 3659.61
+          "index_price": 3588.79,
+          "ma5": 3644.67
         },
         "reason": null
       },
@@ -115,13 +115,13 @@
         "status": "fail",
         "evidence": {
           "recent_low_volume_seen": false,
-          "today_volume_vs_recent_low": 1.01
+          "today_volume_vs_recent_low": 0.96
         },
         "reason": "以 14:25 的盘中量比较最近五日最低全天量，尾盘结果仍可能变化"
       }
     },
     "index_quote_source": "Tencent",
-    "index_quote_time": "20261113142545",
+    "index_quote_time": "20261116142530",
     "reversal_status": "fail"
   },
   "sector_count": 10
